@@ -33,8 +33,9 @@
 
   <body>
 
-    <nav class="navbar navbar-fixed-top">
-      <div class="container">
+    <nav class="navbar navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -42,7 +43,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">voiceful</a>
+          <a class="navbar-brand" href="#">
+            <img alt="voiceful" src="img/voicefulx2.png">
+          </a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -50,7 +53,8 @@
             <li><a href="#">WHAT INDUSTRIES?</a></li>
             <li><a href="#">WHO'S BEHIND VOICEFUL?</a></li>
             <li><a href="#">CONTACT</a></li>
-            <li><a href="#">DEMOS</a></li>
+            <li><a href="#" class="btn btn-default navbar-btn">DEMOS</a></li>
+            <!--<li><button type="button" class="btn btn-default navbar-btn">DEMOS</button></li>-->
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -58,12 +62,16 @@
 
     <div class="container-fluid">
 
-      <div id="slider"></div>
+      <div id="slider">
+        <a href="#" class="text-center">
+          <img id="player" alt="video" src="img/player.png">
+        </a>
+      </div>
 
-      <div id="first-row" class="row">
+      <div id="first-row" class="row section text-center">
         <div class="col-xs-12">
-          <h1 class="text-center">Give voice to your ideas</h1>
-          <p class="text-center subtitle">
+          <h1>Give voice to your ideas</h1>
+          <p class="subtitle">
             Voice is the main form of human expression. We want to help<br>
             people communicate better so we have created Voiceful, a toolkit<br>
             that uses voice to create new ways of expressing yourself.
@@ -71,8 +79,72 @@
         </div>
       </div>
 
-      <div class="row">
-
+      <div class="row section grey-bg text-center">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12">
+              <h2>WHAT CAN YOU DO<br>WITH VOICEFUL?</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3 col-xs-offset-3">
+              <img class="icon-img" src="img/icon1.png">
+              <h4>Say it with a song</h4>
+              <p>You write the lyrics, and an incredibly expressive voice sings it.</p>
+            </div>
+            <div class="col-xs-3">
+              <img class="icon-img" src="img/icon2.png">
+              <h4>Make a celebrity sing</h4>
+              <p>Commission us your own voice model, be it a famous or non-famous, dead or alive, real or virtual character. Then use it through the Voiceful API.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3 col-xs-offset-3">
+              <img class="icon-img" src="img/icon3.png">
+              <h4>Transform your voice</h4>
+              <p>Sound like a robot. Sound like your son. Sound faster, or chilled. Sound like you can sing.</p>
+            </div>
+            <div class="col-xs-3">
+              <img class="icon-img" src="img/icon4.png">
+              <h4>Have an idea?</h4>
+              <p>Let’s talk. We’re a collaborative bunch.</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-xs-12">
+              <h3>Try Voiceful and create new<br>ways of expressing yourself</h3>
+              <p class="subtitle">
+                Check our videos below that show the technologies<br>
+                and the features available on Voiceful.
+              </p>
+            </div>
+          </div>
+          <div class="row tech-boxes">
+            <div class="col-xs-10 col-xs-offset-1">
+              <div class="row">
+                <div class="col-xs-4 tech-box">
+                  <img src="img/player.png">
+                  <h4>Synthesize</h4>
+                  <h5>SINGING / MUSIC</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut</p>
+                </div>
+                <div class="col-xs-4 tech-box">
+                  <img src="img/player.png">
+                  <h4>Transform</h4>
+                  <h5>SINGING / MUSIC</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut</p>
+                </div>
+                <div class="col-xs-4 tech-box">
+                  <img src="img/player.png">
+                  <h4>Expression Transfer</h4>
+                  <h5>SINGING / MUSIC</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div><!-- /.container -->

@@ -1,16 +1,70 @@
 body {
-    padding-top: 60px;
+    padding-top: 50px;
+}
+ /* change fluid margins */
+.container-fluid {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.row {
+    margin-right: -30px;
+    margin-left: -30px;
+}
+/* center align navbar items for non-collapsed navbar */
+@media (min-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+}
+.navbar-brand {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.navbar-brand img {
+    height: 30px;
+}
+#navbar a {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #3C3C3B;
+}
+#navbar a.navbar-btn {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 9px;
+    margin-bottom: 0;
 }
 #slider {
-    background: url("../img/slider.jpg") center;
+    background: url("../img/slider.jpg") 60%;
     background-size: cover;
     height: 545px;
     position: absolute;
     left: 0;
     right: 0;
 }
+#slider img#player {
+    display: block;
+    margin: auto;
+    width: 142px;
+    padding-top: 201px;
+}
 #first-row {
     margin-top: 545px;
+    padding-top: 0;
+}
+.section {
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+.grey-bg {
+    background-color: rgb(247,247,247);
 }
 h1 {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -18,9 +72,60 @@ h1 {
     font-weight: bold;
     color: #575756;;
 }
+h2 {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    color: #575756;;
+}
+h3 {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #575756;;
+}
+h4 {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #575756;;
+}
+h5 {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #B1B1B1;
+}
+p {
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: lighter;
+    color: #575756;;
+}
+hr {
+    border-top: 3px solid #575756;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 125px;
+}
 .subtitle {
     font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 24px;
     font-weight: lighter;
     color: #575756;;
+}
+.icon-img {
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+.tech-boxes {
+    padding-top: 60px;
+}
+.tech-box {
+    background-color: white;
+    background-clip: content-box;
+}
+.tech-box img {
+    padding-top: 30px;
+    padding-bottom: 50px;
 }
