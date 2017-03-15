@@ -1,0 +1,26 @@
+body {
+    padding-top: 60px;
+}
+#slider {
+    background: url("../img/slider.jpg") center;
+    background-size: cover;
+    height: 545px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+#first-row {
+    margin-top: 545px;
+}
+h1 {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 45px;
+    font-weight: bold;
+    color: #575756;;
+}
+.subtitle {
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: lighter;
+    color: #575756;;
+}
