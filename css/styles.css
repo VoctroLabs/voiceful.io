@@ -129,3 +129,10 @@ hr {
     padding-top: 30px;
     padding-bottom: 50px;
 }
+#how h2 {
+    padding-bottom: 40px;
+}
+#how .vertical-block {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
