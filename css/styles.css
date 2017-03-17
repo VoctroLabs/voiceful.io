@@ -142,3 +142,11 @@ hr {
 #clients h4 {
     padding-top: 20px;
 }
+#people h2 {
+    padding-bottom: 40px;
+}
+#people .subtitle {
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-top: 40px;
+}
