@@ -1,5 +1,6 @@
 body {
     padding-top: 50px;
+    position: relative;
 }
  /* change fluid margins */
 .container-fluid {
@@ -9,6 +10,9 @@ body {
 .row {
     margin-right: -30px;
     margin-left: -30px;
+}
+.navbar {
+    background-color: #FFFFFF;
 }
 /* center align navbar items for non-collapsed navbar */
 @media (min-width: 768px) {
@@ -101,6 +105,10 @@ h6 {
     font-size: 11px;
     font-weight: bold;
     color: #B1B1B1;
+}
+a {
+    color: #575756;
+    text-decoration: underline;
 }
 p {
     font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -216,9 +224,29 @@ footer h5 {
 footer h6 {
     font-weight: normal;
 }
+footer h6 a {
+    color: #B1B1B1;
+}
 footer #social {
     margin-top: 15px;
 }
 footer #social img {
     padding-right: 5px;
+}
+#footer-logo {
+    padding-bottom: 20px;
+}
+.modal-dialog {
+    border-radius: 0;
+}
+.modal-body {
+    background-color: rgb(60,60,59);
+    padding: 50px;
+}
+.modal-body .close {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    color: #FFFFFF;
+    font-size: 42px;
 }
