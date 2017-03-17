@@ -76,7 +76,7 @@ h2 {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 30px;
     font-weight: normal;
-    color: #575756;;
+    color: #575756;
 }
 h3 {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -134,5 +134,11 @@ hr {
 }
 #how .vertical-block {
     padding-bottom: 20px;
+    padding-top: 20px;
+}
+#clients h2 {
+    padding-bottom: 60px;
+}
+#clients h4 {
     padding-top: 20px;
 }
