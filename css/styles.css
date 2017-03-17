@@ -92,6 +92,12 @@ h4 {
 }
 h5 {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #B1B1B1;
+}
+h6 {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 11px;
     font-weight: bold;
     color: #B1B1B1;
@@ -149,4 +155,70 @@ hr {
     font-weight: bold;
     padding-bottom: 10px;
     padding-top: 40px;
+}
+#contact {
+    background-color: rgb(87,87,86);
+    color: #B1B1B1;
+    padding-top: 50px;
+}
+#contact h2 {
+    color: #B1B1B1;
+    padding-bottom: 50px;
+}
+#contact p {
+    color: #B1B1B1;
+}
+.form-control {
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: lighter;
+    color: #B1B1B1;
+    border-color: #B1B1B1;
+    background-color: rgb(87,87,86);
+}
+#contact #send {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    color: #FFFFFF;
+    padding-right: 40px;
+    padding-left: 40px;
+    background-color: rgb(202,85,93);
+    border-color: rgb(202,85,93);
+}
+.contact-box {
+    padding-top: 80px;
+}
+.contact-box img {
+    padding-bottom: 20px;
+    max-height: 70px;
+    max-width: 70px;
+    width: auto;
+    height: auto;
+}
+footer {
+    background-color: rgb(60,60,59);
+    padding-top: 30px;
+    padding-bottom: 100px;
+}
+footer .row {
+    margin-right: 0;
+    margin-left: 0;
+}
+footer p {
+    color: #B1B1B1;
+    font-size: 14px;
+}
+footer h5 {
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+footer h6 {
+    font-weight: normal;
+}
+footer #social {
+    margin-top: 15px;
+}
+footer #social img {
+    padding-right: 5px;
 }
