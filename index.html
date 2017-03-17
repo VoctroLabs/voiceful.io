@@ -255,16 +255,17 @@
           <p>Please send us a message to get a quote for your projects or to explore options for collaboration.</p>
         </div>
         <div class="col-xs-offset-3 col-xs-6">
-          <form>
+          <form action="https://formspree.io/info@voctrolabs.com" method="POST">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Name">
+              <input name="name" type="text" class="form-control" placeholder="Name">
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" placeholder="Email">
+              <input name="email" type="email" class="form-control" placeholder="Email">
             </div>
             <div class="form-group">
-              <textarea class="form-control" rows="3" placeholder="Briefing"></textarea>
+              <textarea name="briefing" class="form-control" rows="3" placeholder="Briefing"></textarea>
             </div>
+            <input type="hidden" name="_subject" value="Voiceful.io contact" />
             <button id="send" type="submit" class="btn btn-danger pull-right">SEND</button>
           </form>
         </div>
