@@ -263,6 +263,13 @@ footer #social img {
     color: #FFFFFF;
     font-size: 42px;
 }
+.modal-body .close:hover {
+    cursor: pointer;
+    cursor: hand;
+}
+.modal-body .close:focus {
+    outline: none;
+}
 .video-wrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
@@ -282,5 +289,13 @@ footer #social img {
     }
     .footer br {
         display: block;
+    }
+    .modal-body {
+        padding: 30px;
+    }
+    .modal-body .close {
+        font-size: 25px;
+        top: 2px;
+        right: 9px;
     }
 }
