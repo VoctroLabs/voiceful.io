@@ -280,4 +280,7 @@ footer #social img {
     br {
         display: none;
     }
+    .footer br {
+        display: block;
+    }
 }
