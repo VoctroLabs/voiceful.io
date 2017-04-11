@@ -275,7 +275,6 @@ footer #social img {
 .video-wrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
-    padding-top: 25px;
     height: 0;
 }
 .video-wrapper iframe {
