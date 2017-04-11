@@ -204,8 +204,11 @@ hr {
     background-color: rgb(202,85,93);
     border-color: rgb(202,85,93);
 }
+.contact-boxes {
+    padding-top: 50px;
+}
 .contact-box {
-    padding-top: 80px;
+    padding-top: 30px;
 }
 .contact-box img {
     padding-bottom: 20px;
