@@ -8,7 +8,6 @@ body {
 }
 .navbar .navbar-header {
     padding-left: 30px;
-    padding-right: 30px;
 }
 .navbar .navbar-header .navbar-brand {
     padding-top: 10px;
@@ -17,6 +16,9 @@ body {
 }
 .navbar .navbar-header .navbar-brand img {
     height: 30px;
+}
+.navbar .navbar-header .navbar-toggle:focus {
+    background-color: transparent;
 }
 /* center align navbar items */
 .navbar .navbar-nav {
