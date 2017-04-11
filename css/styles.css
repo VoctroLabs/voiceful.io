@@ -15,7 +15,7 @@ body {
     padding-left: 0;
 }
 .navbar .navbar-header .navbar-brand img {
-    height: 30px;
+    height: 32px;
 }
 .navbar .navbar-header .navbar-toggle:focus {
     background-color: transparent;
