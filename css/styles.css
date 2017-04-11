@@ -68,6 +68,34 @@ body {
     width: 142px;
     padding-top: 201px;
 }
+div {
+    z-index: 1;
+}
+#rubric {
+    position: relative;
+}
+#rubric-inner:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../img/rubric_small.png"), url("../img/rubric_big.png"), url("../img/rubric_small.png"), url("../img/rubric_big.png");
+    background-position: -95px 0px, -200px 650px, 90vw 450px, 85vw 1150px;
+    background-repeat: repeat-y;
+    z-index: 0;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+    #rubric-inner:after {
+        background-position: -150px 0px, -300px 650px, 90vw 450px, 85vw 1150px;
+    }
+}
+@media (max-width: 767px) {
+    #rubric-inner:after {
+        background-image: none;
+    }
+}
 #first-row {
     margin-top: 545px;
     padding-top: 0;
