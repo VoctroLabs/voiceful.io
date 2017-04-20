@@ -86,6 +86,219 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
+    <div id="usage-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Usage table</h4>
+          </div>
+          <div class="modal-body">
+            <div class="table-responsive no-border">
+              <table class="table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th class="text-center">User input is...</th>
+                  <th class="text-center">What languages?</th>
+                  <th class="text-center">Processing</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="active">
+                  <th scope="row" colspan="4">Synthetic voices</th>
+                </tr>
+                <tr>
+                  <td>Speech content</td>
+                  <td class="text-center vertical-center">Text</td>
+                  <td class="text-center vertical-center">Catalog: ENG, SPA</td>
+                  <td rowspan="2" class="text-center vertical-center">Batch</td>
+                </tr>
+                <tr>
+                  <td>Singing content</td>
+                  <td class="text-center vertical-center" style="max-width: 150px">Text and/or MIDI, MusicXML</td>
+                  <td class="text-center vertical-center">Custom: any</td>
+                </tr>
+                <tr class="active">
+                  <th scope="row" colspan="4">Transformed voices</th>
+                </tr>
+                <tr>
+                  <td>Speech content</td>
+                  <td rowspan="2" class="text-center vertical-center">Mic-in or Audio file</td>
+                  <td rowspan="2" class="text-center vertical-center">Any</td>
+                  <td rowspan="2" class="text-center vertical-center">Real-time, batch</td>
+                </tr>
+                <tr>
+                  <td>Singing content</td>
+                </tr>
+                <tr class="active">
+                  <th scope="row" colspan="4">Voice Description</th>
+                </tr>
+                <tr>
+                  <td>Speech content</td>
+                  <td rowspan="2" class="text-center vertical-center">Mic-in or Audio file</td>
+                  <td rowspan="2" class="text-center vertical-center">Any</td>
+                  <td rowspan="2" class="text-center vertical-center">Real-time, batch</td>
+                </tr>
+                <tr>
+                  <td>Singing content</td>
+                </tr>
+                <tr class="active">
+                  <th scope="row" colspan="4">Pitch and Time change</th>
+                </tr>
+                <tr>
+                  <td>Speech content</td>
+                  <td rowspan="3" class="text-center vertical-center">Audio file</td>
+                  <td rowspan="3" class="text-center vertical-center">Any</td>
+                  <td rowspan="3" class="text-center vertical-center">Real-time, batch</td>
+                </tr>
+                <tr>
+                  <td>Singing content</td>
+                </tr>
+                <tr>
+                  <td>Audio content</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="software-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Software integration table</h4>
+          </div>
+          <div class="modal-body">
+            <div class="table-responsive no-border">
+              <table class="table table-hide-empty-cells table-center-content">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th colspan="3" class="active left-border">Supported SDK clients</th>
+                  <th colspan="2" class="active left-border">Audio DSP Architecture</th>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th class="left-border">Web</th>
+                  <th>Mobile</th>
+                  <th>Desktop <br>Server</th>
+                  <th class="left-border">Mobile <br><small>(on device)</small></th>
+                  <th>Cloud API <br><small>(on server)</small></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Available on Voiceful</th>
+                  <td class="left-border">JS/PHP*</td>
+                  <td>iOS <br>Android</td>
+                  <td>Linux <br>OSX <br>Windows</td>
+                  <td class="text-center left-border"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                  <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Custom built</th>
+                  <td class="left-border">JS/PHP*</td>
+                  <td>iOS <br>Android</td>
+                  <td>Linux< br>OSX <br>Windows</td>
+                  <td class="text-center left-border"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                  <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="6">
+                    <em>*Clients also available for Python and Ruby.</em>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+            </div>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="features-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Features table</h4>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Features</th>
+                  <th class="text-center">Available on Voiceful</th>
+                  <th class="text-center">Custom built</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="active">
+                  <th scope="row" colspan="3">Synthetic voices</th>
+                </tr>
+                <tr>
+                  <td>Catalogue: <br>male pop, female pop</td>
+                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Custom: <br>celebrities, artists, personal...</td>
+                  <td></td>
+                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                </tr>
+                <tr class="active">
+                  <th scope="row" colspan="3">Transformed voices</th>
+                </tr>
+                <tr>
+                  <td>Human: <br>male, female, child, elder</td>
+                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Fiction: <br>robot, alien, cartoon, monster</td>
+                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Custom: <br>game character, ...</td>
+                  <td></td>
+                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                </tr>
+                <tr class="active">
+                  <th scope="row" colspan="3">Pitch and Time change</th>
+                </tr>
+                <tr>
+                  <td>Time-scaling, Pitch-shifting, <br>Auto-tune, Time Alignment</td>
+                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                  <td></td>
+                </tr>
+                <tr class="active">
+                  <th scope="row" colspan="3">Voice Description</th>
+                </tr>
+                <tr>
+                  <td>Voice data analysis</td>
+                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Graphics and design</td>
+                  <td></td>
+                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                </tr>
+              </tbody>
+      </table>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
     <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -191,7 +404,7 @@
                 Voiceful is a toolkit built to design digital and mobile experiences with speech and singing voice.
                 Whether you’re a creative agency, an app developer or a content production company,
                 Voiceful helps you bring to life ideas that include voice interaction and personalization.
-                <strong><a href="#contact">+More info</a></strong>
+                <strong><a data-toggle="modal" href="#usage-modal">+More info</a></strong>
               </p>
             </div>
             <div class="vertical-block">
@@ -201,7 +414,7 @@
                 Our API allows to develop ideas and integrate them easily into your app, website, game, social network or
                 products. You can use the API directly or through our website where you can manage, monitor and customize
                 your built – and get our support if you need.
-                <strong><a href="#contact">+More info</a></strong>
+                <strong><a data-toggle="modal" href="#software-modal">+More info</a></strong>
               </p>
             </div>
             <div class="vertical-block">
@@ -211,7 +424,7 @@
                 Voiceful combines pre-defined features with a series of elements that can be configured for each project,
                 like language, background music or specific technology adaptation. We can also build ideas from scratch
                 if we love them. Contact us.
-                <strong><a href="#contact">+More info</a></strong>
+                <strong><a data-toggle="modal" href="#features-modal">+More info</a></strong>
               </p>
             </div>
             <div class="vertical-block">

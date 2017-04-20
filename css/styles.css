@@ -316,6 +316,9 @@ footer #social img {
     br {
         display: none;
     }
+    table br {
+        display: block;
+    }
     .footer br {
         display: block;
     }
@@ -327,4 +330,27 @@ footer #social img {
         top: 2px;
         right: 9px;
     }
+}
+.table-hide-empty-cells {
+    border-collapse: separate;
+    empty-cells: hide;
+}
+.no-border {
+    border: 0;
+}
+.left-border {
+    border-left: 1px solid #ddd;
+}
+.right-border {
+    border-right: 1px solid #ddd;
+}
+.table-center-content>tbody>tr>td,
+.table-center-content>tbody>tr>th,
+.table-center-content>thead>tr>th {
+    vertical-align: middle;
+    text-align: center;
+}
+.vertical-center,
+.table>tbody>tr>td.vertical-center {
+    vertical-align: middle;
 }
