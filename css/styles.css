@@ -267,7 +267,7 @@ footer h5 {
 footer h6 {
     font-weight: normal;
 }
-footer h6 a {
+footer a {
     color: #B1B1B1;
 }
 footer #social {
@@ -279,25 +279,25 @@ footer #social img {
 #footer-logo {
     padding-bottom: 20px;
 }
-.modal-dialog {
+#video-modal .modal-dialog {
     border-radius: 0;
 }
-.modal-body {
+#video-modal .modal-body {
     background-color: rgb(60,60,59);
     padding: 50px;
 }
-.modal-body .close {
+#video-modal .modal-body .close {
     position: absolute;
     top: 0;
     right: 14px;
     color: #FFFFFF;
     font-size: 42px;
 }
-.modal-body .close:hover {
+#video-modal .modal-body .close:hover {
     cursor: pointer;
     cursor: hand;
 }
-.modal-body .close:focus {
+#video-modal .modal-body .close:focus {
     outline: none;
 }
 .video-wrapper {
