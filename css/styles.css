@@ -159,8 +159,8 @@ p {
 }
 hr {
     border-top: 3px solid #575756;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     width: 125px;
 }
 .subtitle {
@@ -172,6 +172,24 @@ hr {
 .icon-img {
     padding-top: 60px;
     padding-bottom: 30px;
+    height: 183px;
+    width: auto;
+    object-fit: none;
+}
+.btn-demos {
+    background-color: rgb(247,247,247);
+    border: 2px #575756 solid;
+    color: #575756;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 6px 30px;
+    text-decoration: none;
+}
+.btn-demos:focus, .btn-demos:hover {
+    background-color: #575756;
+    border-color: #575756;
+    color: rgb(247,247,247);
 }
 .tech-boxes {
     padding-top: 60px;
