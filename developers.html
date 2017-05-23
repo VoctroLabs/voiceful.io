@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../Downloads/bootstrap-3.3.7/docs/favicon.ico">
+
+    <title>Voiceful</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:300,600" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-target="#navbar">
+
+    <div id="video-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="video-wrapper">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/91ZCL-4WWTw?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="legal-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Legal notice</h4>
+          </div>
+          <div class="modal-body">
+            <p>
+              For the purposes of complying with Spanish Law 34/2002 on information society services
+              and electronic commerce, the following information on Voctro Labs, S.L. is provided:
+            </p>
+            <table class="table">
+              <tbody>
+                <tr>
+                  <th scope="row">Corporate Name</th>
+                  <td>Voctro Labs, S.L.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Address</th>
+                  <td>Carrer Llacuna 162, 08018 Barcelona</td>
+                </tr>
+                <tr>
+                  <th scope="row">E-mail address</th>
+                  <td>info@voctrolabs.com</td>
+                </tr>
+                <tr>
+                  <th scope="row">Entry data in the Companies Registry of Barcelona</th>
+                  <td>Volume 42942, Folio 161, Page number B 420239</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tax Code</th>
+                  <td>B65699662</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="usage-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Usage table</h4>
+          </div>
+          <div class="modal-body">
+            <div class="table-responsive no-border">
+              <table class="table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th class="text-center">User input is...</th>
+                  <th class="text-center">What languages?</th>
+                  <th class="text-center">Processing</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="active">
+                  <th scope="row" colspan="4">Synthetic voices</th>
+                </tr>
+                <tr>
+                  <td>Speech content</td>
+                  <td class="text-center vertical-center">Text</td>
+                  <td class="text-center vertical-center">Catalog: ENG, SPA</td>
+                  <td rowspan="2" class="text-center vertical-center">Batch</td>
+                </tr>
+                <tr>
+                  <td>Singing content</td>
+                  <td class="text-center vertical-center" style="max-width: 150px">Text and/or MIDI, MusicXML</td>
+                  <td class="text-center vertical-center">Custom: any</td>
+                </tr>
+                <tr class="active">
+                  <th scope="row" colspan="4">Transformed voices</th>
+                </tr>
+                <tr>
+                  <td>Speech content</td>
+                  <td rowspan="2" class="text-center vertical-center">Mic-in or Audio file</td>
+                  <td rowspan="2" class="text-center vertical-center">Any</td>
+                  <td rowspan="2" class="text-center vertical-center">Real-time, batch</td>
+                </tr>
+                <tr>
+                  <td>Singing content</td>
+                </tr>
+                <tr class="active">
+                  <th scope="row" colspan="4">Voice Description</th>
+                </tr>
+                <tr>
+                  <td>Speech content</td>
+                  <td rowspan="2" class="text-center vertical-center">Mic-in or Audio file</td>
+                  <td rowspan="2" class="text-center vertical-center">Any</td>
+                  <td rowspan="2" class="text-center vertical-center">Real-time, batch</td>
+                </tr>
+                <tr>
+                  <td>Singing content</td>
+                </tr>
+                <tr class="active">
+                  <th scope="row" colspan="4">Pitch and Time change</th>
+                </tr>
+                <tr>
+                  <td>Speech content</td>
+                  <td rowspan="3" class="text-center vertical-center">Audio file</td>
+                  <td rowspan="3" class="text-center vertical-center">Any</td>
+                  <td rowspan="3" class="text-center vertical-center">Real-time, batch</td>
+                </tr>
+                <tr>
+                  <td>Singing content</td>
+                </tr>
+                <tr>
+                  <td>Audio content</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="software-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Software integration table</h4>
+          </div>
+          <div class="modal-body">
+            <div class="table-responsive no-border">
+              <table class="table table-hide-empty-cells table-center-content">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th colspan="3" class="active left-border">Supported SDK clients</th>
+                  <th colspan="2" class="active left-border">Audio DSP Architecture</th>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th class="left-border">Web</th>
+                  <th>Mobile</th>
+                  <th>Desktop <br>Server</th>
+                  <th class="left-border">Mobile <br><small>(on device)</small></th>
+                  <th>Cloud API <br><small>(on server)</small></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Available on Voiceful</th>
+                  <td class="left-border">JS/PHP*</td>
+                  <td>iOS <br>Android</td>
+                  <td>Linux <br>OSX <br>Windows</td>
+                  <td class="text-center left-border"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                  <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Custom built</th>
+                  <td class="left-border">JS/PHP*</td>
+                  <td>iOS <br>Android</td>
+                  <td>Linux <br>OSX <br>Windows</td>
+                  <td class="text-center left-border"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                  <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="6">
+                    <em>*Clients also available for Python and Ruby.</em>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+            </div>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="features-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Features table</h4>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Features</th>
+                  <th class="text-center">Available on Voiceful</th>
+                  <th class="text-center">Custom built</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="active">
+                  <th scope="row" colspan="3">Synthetic voices</th>
+                </tr>
+                <tr>
+                  <td>Catalogue: <br>male pop, female pop</td>
+                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Custom: <br>celebrities, artists, personal...</td>
+                  <td></td>
+                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                </tr>
+                <tr class="active">
+                  <th scope="row" colspan="3">Transformed voices</th>
+                </tr>
+                <tr>
+                  <td>Human: <br>male, female, child, elder</td>
+                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Fiction: <br>robot, alien, cartoon, monster</td>
+                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Custom: <br>game character, ...</td>
+                  <td></td>
+                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                </tr>
+                <tr class="active">
+                  <th scope="row" colspan="3">Pitch and Time change</th>
+                </tr>
+                <tr>
+                  <td>Time-scaling, Pitch-shifting, <br>Auto-tune, Time Alignment</td>
+                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                  <td></td>
+                </tr>
+                <tr class="active">
+                  <th scope="row" colspan="3">Voice Description</th>
+                </tr>
+                <tr>
+                  <td>Voice data analysis</td>
+                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Graphics and design</td>
+                  <td></td>
+                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                </tr>
+              </tbody>
+      </table>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <img alt="voiceful" src="img/voicefulx2.png">
+          </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#how">HOW DOES IT WORK?</a></li>
+            <li><a href="#clients">WHO USES IT?</a></li>
+            <li><a href="#people">WHO'S BEHIND VOICEFUL?</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="https://www.voctrolabs.com/cloud-demos/index_votrans_live.html" target="_blank"
+                   class="btn btn-default navbar-btn">DEMOS</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div id="first-row-devel" class="row section text-center">
+        <div class="col-xs-12">
+          <h1>Developers</h1>
+        </div>
+        <div class="col-xs-12">
+          <p class="subtitle">
+          We aim to put Voiceful available to those creative minds and companies around the globe that are bringing new digital experiences and services to the society.
+          Check out our tools, documentation and example code, and request a free evaluation account.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div id="rubric" class="container-fluid">
+      <div id="rubric-inner">
+        <div id="what" class="row section grey-bg text-center">
+          <div class="col-xs-12">
+            <div class="row">
+              <div class="col-xs-12">
+                <h2>Documentation</h2>
+              </div>
+              <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+          <p>
+          Voiceful consists of a set of audio tools (e.g. time-scaling, voice analysis, voice transformation, voice generation, audio mixing, etc.).  Voiceful offers a RESTful API and it can be also integrated in standalone mobile, desktop or server applications as a native library using our SDK. Please find examples of both options below:
+          </p>
+        </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+                <h3>Cloud API</h3>
+                <p>
+                  You can check the full documentation here: <a href="https://cloud.voctrolabs.com/docs/api"> https://cloud.voctrolabs.com/docs/api</a> .
+                </p>
+                <p> Python example code: TODO <br> PHP example code:  TODO
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+                <h3>Standalone SDK</h3>
+                <p>
+                  All tools available in the Voiceful API are also available as a Standalone SDK, which can be integrated as cross-platform C++ libraries. (SDK clients available upon request).
+                </p>
+                                <p> C++ example code: TODO
+                </p>
+
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div id="how" class="row section text-center">
+          <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+            <h2>FEATURED TOOLS</h2>
+<p>            Voiceful combines +15 years of R&D expertise in audio and music technologies with latest artificial intelligence for voice generation. 
+Our patented technology portfolio originate from academic research carried out by Voctro Labs’ cofounders at MTG-UPF[link]. 
+</p>
+            <div class="vertical-block">
+              <img class="icon-img" src="img/icon3.png">
+              <h4>Voice generation - VoSyn</h4>
+              <p> Our expressive voice generation approach is based on Deep Learning, and it was initially developed to generate artificial singing voice with high realism. <br>
+                Recent advances in the area of Machine Learning and Artificial Intelligence can be applied to the generation of a human-like voice signals. Given a set of recordings of a speaker or singer of several minutes, we can create a voice model that captures its main treats, including singing expression. Once this voice model is loaded, Voiceful can generate new content. You can refer to the technical details in this research publication.
+                <strong><a data-toggle="modal" href="#vosyn-modal">+More info</a></strong>
+              </p>
+            </div>
+            <div class="vertical-block">
+              
+              <h4>Voice Transformation - VoTrans</h4>
+              <p>
+                Manipulating voice recordings have several applications in the creative media industries. For example, we can transform the voice of an actor in a monster sound for a film, change a male voice into a kid voice for a social app, among others. <br>
+                 Voiceful offers a patented voice transformation technology [Patent Nr.]   that can be integrated in real-time (e.g. a plugin for a Unity videogame, audio FX in a DAW) or as batch processing tool in a post-production workflow (e.g. for film, games, animation, TV, music). 
+                <strong><a data-toggle="modal" href="#votrans-modal">+More info</a></strong>
+              </p>
+            </div>
+            <div class="vertical-block">              
+              <h4>Voice Alignment and Auto-tuning | VoAlign</h4>
+              <p>
+                Editing a voice recording without altering the original voice quality has been extensively used in music and film productions with tools such as auto-tune and dialogue synchronization. Voiceful provides a tool that analyzes and automatically corrects a voice recording. We can align it to a reference recording for lip-syncing or ADR, or apply auto-tuning automatically to an estimated musical key.
+                <strong><a data-toggle="modal" href="#voalign-modal">+More info</a></strong>
+              </p>
+            </div>
+            <div class="vertical-block">              
+              <h4>Voice Description | VoDesc</h4>
+              <p>
+              It is a voice analysis tool that extracts acoustic and musical information from a voice recording. Data can be sent in real-time, or exported in a readable format to be used in for example visualization applications or singing rating videogame.   <br>
+                A voice recording conveys an incredible amount of information. For speech, it can be information about the words, about the person, about the emotion; while for singing voice it can bring also information about notes, intonation, the key and tempo of a song. To make clear, Voiceful is not a speech recognition solution. Besides the world of creative media, the analysis algorithms in Voiceful can be further extended for Medical or forensic applications. Check in this example the analysis and exported data. 
+                 <strong><a data-toggle="modal" href="#vodesc-modal">+More info</a></strong>
+              </p>
+            </div>
+
+            <div class="vertical-block">              
+              <h4>Time-scaling and Pitch-shifting | VoScale</h4>
+              <p>
+              Beyond voice signals, Voiceful can also apply high-quality time-scaling and pitch-shifting to any audio recording. Be it a commercial music downmix, be it a field-recording for a film, Voiceful can change the duration and key while preserving the quality of the original recording. We are happy when clients with trained ears choose Voiceful over other solutions in the market. You can check some demo examples <a> here [LINK VOSCALE VIDEO]. 
+                 <strong><a data-toggle="modal" href="#voscale-modal">+More info</a></strong>
+              </p>
+            </div>
+            <div class="vertical-block">              
+              <h4>Mixing and FX | VoMix</h4>
+              <p>
+              This is a utility to automatically mix the contents generated by Voiceful with existing musical or FX background tracks. <br> 
+              VoMix works as a virtual DAW, including all necessary audio effects such as autogain, compression, EQ, reverb, mastering to deliver the final audio files in a professional-like quality. All parameters are configurable and design through our VoMix-Designer GUI tool [see screenshot]. 
+                 <strong><a data-toggle="modal" href="#vomix-modal">+More info</a></strong>
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <div id="customize" class="row section grey-bg text-center">
+          <div class="col-xs-12">
+            <h2>CUSTOM DEVELOPMENTS</h2>
+          </div>
+          <div class="col-xs-offset-1 col-xs-10">
+            <div class="row">
+              <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                               
+                <p class="subtitle">We can extend and customize our technologies for the specific needs of your project idea. Talk to us!</p>
+              </div>
+              
+            </div>
+          </div>
+        </div>       
+
+        <div id="request" class="row section text-center">
+          <div class="col-xs-12">
+            <h2>EVALUATION ACCOUNT</h2>
+          </div>
+          <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+            <p>We provide a 1-month access to Voiceful Cloud API for evaluation purposes.</p>
+<p>Request us a free Evaluation Account and obtain the Terms of Use and Pricing information (only available for professionals: companies, business individuals or research institutions).</p>
+            <form action="https://formspree.io/info@voctrolabs.com" method="POST">
+              <div class="form-group">
+                <input name="name" type="text" class="form-control" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <input name="email" type="email" class="form-control" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input name="company" type="text" class="form-control" placeholder="Company">
+              </div>
+              <div class="form-group">
+                <input name="sector" class="form-control" rows="2" placeholder="Sector: advertising, videogames, app developer, music, film, VR, brands, artist, research, education, other.">
+              </div>
+
+              <div class="form-group">
+                <input name="integration" class="form-control" rows="2" placeholder="Integration: Cloud API, Standalone SDK (Mobile), Standalone SDK (Server/Desktop)">
+              </div>
+              <div class="form-group">
+                <textarea name="purpose" class="form-control" rows="3" placeholder="Purpose of use"></textarea>
+              </div>
+              <input type="hidden" name="_subject" value="Voiceful.io contact" />
+              <button id="send" type="submit" class="btn btn-danger pull-right">SEND</button>
+            </form>
+            <div class="clearfix"></div>            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-sm-3">
+            <img id="footer-logo" src="img/footer_logo.png" srcset="img/footer_logox2.png 2x">
+            <p>
+              Voiceful is a product of <strong>Voctro Labs</strong><br>
+              <strong>
+                info @ voctrolabs . com<br>
+                +34 935 511 498<br>
+                C/ Llacuna 162 08018<br>
+                Barcelona<br>
+              </strong>
+            </p>
+            <p><a data-toggle="modal" href="#legal-modal">LEGAL NOTICE</a></p>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
