@@ -86,218 +86,97 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    <div id="usage-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div id="vosyn-modal" class="modal fade" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Usage table</h4>
+            <h4 class="modal-title">VoSyn</h4>
           </div>
           <div class="modal-body">
-            <div class="table-responsive no-border">
-              <table class="table">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th class="text-center">User input is...</th>
-                  <th class="text-center">What languages?</th>
-                  <th class="text-center">Processing</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="active">
-                  <th scope="row" colspan="4">Synthetic voices</th>
-                </tr>
-                <tr>
-                  <td>Speech content</td>
-                  <td class="text-center vertical-center">Text</td>
-                  <td class="text-center vertical-center">Catalog: ENG, SPA</td>
-                  <td rowspan="2" class="text-center vertical-center">Batch</td>
-                </tr>
-                <tr>
-                  <td>Singing content</td>
-                  <td class="text-center vertical-center" style="max-width: 150px">Text and/or MIDI, MusicXML</td>
-                  <td class="text-center vertical-center">Custom: any</td>
-                </tr>
-                <tr class="active">
-                  <th scope="row" colspan="4">Transformed voices</th>
-                </tr>
-                <tr>
-                  <td>Speech content</td>
-                  <td rowspan="2" class="text-center vertical-center">Mic-in or Audio file</td>
-                  <td rowspan="2" class="text-center vertical-center">Any</td>
-                  <td rowspan="2" class="text-center vertical-center">Real-time, batch</td>
-                </tr>
-                <tr>
-                  <td>Singing content</td>
-                </tr>
-                <tr class="active">
-                  <th scope="row" colspan="4">Voice Description</th>
-                </tr>
-                <tr>
-                  <td>Speech content</td>
-                  <td rowspan="2" class="text-center vertical-center">Mic-in or Audio file</td>
-                  <td rowspan="2" class="text-center vertical-center">Any</td>
-                  <td rowspan="2" class="text-center vertical-center">Real-time, batch</td>
-                </tr>
-                <tr>
-                  <td>Singing content</td>
-                </tr>
-                <tr class="active">
-                  <th scope="row" colspan="4">Pitch and Time change</th>
-                </tr>
-                <tr>
-                  <td>Speech content</td>
-                  <td rowspan="3" class="text-center vertical-center">Audio file</td>
-                  <td rowspan="3" class="text-center vertical-center">Any</td>
-                  <td rowspan="3" class="text-center vertical-center">Real-time, batch</td>
-                </tr>
-                <tr>
-                  <td>Singing content</td>
-                </tr>
-                <tr>
-                  <td>Audio content</td>
-                </tr>
-              </tbody>
-            </table>
-            </div>
+            <p> Recent advances in the area of Machine Learning and Artificial Intelligence can be applied to the generation of a human-like voice signals. Given a set of recordings of a speaker or singer of several minutes, we can create a voice model that captures its main treats, including singing expression. Once this voice model is loaded, Voiceful can generate new content. You can refer to the technical details in this research publication. </p>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    <div id="software-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div id="votrans-modal" class="modal fade" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Software integration table</h4>
+            <h4 class="modal-title">VoTrans</h4>
           </div>
           <div class="modal-body">
-            <div class="table-responsive no-border">
-              <table class="table table-hide-empty-cells table-center-content">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th colspan="3" class="active left-border">Supported SDK clients</th>
-                  <th colspan="2" class="active left-border">Audio DSP Architecture</th>
-                </tr>
-                <tr>
-                  <th></th>
-                  <th class="left-border">Web</th>
-                  <th>Mobile</th>
-                  <th>Desktop <br>Server</th>
-                  <th class="left-border">Mobile <br><small>(on device)</small></th>
-                  <th>Cloud API <br><small>(on server)</small></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Available on Voiceful</th>
-                  <td class="left-border">JS/PHP*</td>
-                  <td>iOS <br>Android</td>
-                  <td>Linux <br>OSX <br>Windows</td>
-                  <td class="text-center left-border"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                  <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                </tr>
-                <tr>
-                  <th scope="row">Custom built</th>
-                  <td class="left-border">JS/PHP*</td>
-                  <td>iOS <br>Android</td>
-                  <td>Linux <br>OSX <br>Windows</td>
-                  <td class="text-center left-border"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                  <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <td colspan="6">
-                    <em>*Clients also available for Python and Ruby.</em>
-                  </td>
-                </tr>
-              </tfoot>
-            </table>
-            </div>
+             <p> Manipulating voice recordings have several applications in the creative media industries. Voiceful offers a patented voice transformation technology [Patent Nr.]   that can be integrated in real-time (e.g. a plugin for a Unity videogame, audio FX in a DAW) or as batch processing tool in a post-production workflow (e.g. for film, games, animation, TV, music). </p>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    <div id="features-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div id="voalign-modal" class="modal fade" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Features table</h4>
+            <h4 class="modal-title">VoAlign</h4>
           </div>
           <div class="modal-body">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Features</th>
-                  <th class="text-center">Available on Voiceful</th>
-                  <th class="text-center">Custom built</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="active">
-                  <th scope="row" colspan="3">Synthetic voices</th>
-                </tr>
-                <tr>
-                  <td>Catalogue: <br>male pop, female pop</td>
-                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Custom: <br>celebrities, artists, personal...</td>
-                  <td></td>
-                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                </tr>
-                <tr class="active">
-                  <th scope="row" colspan="3">Transformed voices</th>
-                </tr>
-                <tr>
-                  <td>Human: <br>male, female, child, elder</td>
-                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Fiction: <br>robot, alien, cartoon, monster</td>
-                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Custom: <br>game character, ...</td>
-                  <td></td>
-                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                </tr>
-                <tr class="active">
-                  <th scope="row" colspan="3">Pitch and Time change</th>
-                </tr>
-                <tr>
-                  <td>Time-scaling, Pitch-shifting, <br>Auto-tune, Time Alignment</td>
-                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                  <td></td>
-                </tr>
-                <tr class="active">
-                  <th scope="row" colspan="3">Voice Description</th>
-                </tr>
-                <tr>
-                  <td>Voice data analysis</td>
-                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Graphics and design</td>
-                  <td></td>
-                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                </tr>
-              </tbody>
-      </table>
+          <p> Editing a voice recording without altering the original voice quality has been extensively used in music and film productions with tools such as auto-tune and dialogue synchronization. 
+           Voiceful provides a tool that analyzes and automatically corrects a voice recording. In film applications, Voiceful can synchronize two voice recordings in the ADR workflow (Automatic Dialogue Replacement). We can use onset and phonetic alignment to generate lip-synched animations. In music, VoAlign allows to automatically estimate the musical key of an a capella recording and applying autotune. </p>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+
+
+    <div id="vodesc-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">VoDesc</h4>
+          </div>
+          <div class="modal-body">
+          <p>A voice recording conveys an incredible amount of information. For speech, it can be information about the words, about the person, about the emotion; while for singing voice it can bring also information about notes, intonation, the key and tempo of a song. To make clear, Voiceful is not a speech recognition solution. Besides the world of creative media, the analysis algorithms in Voiceful can be further extended for Medical or forensic applications. Check in this example the analysis output and the formta of exported data.</p>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    <div id="voscale-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">VoScale</h4>
+          </div>
+          <div class="modal-body">
+          <p>Be it a commercial music downmix, be it a field-recording for a film, Voiceful can change the duration and key while preserving the quality of the original recording. Playback speed and transposition controls can be passed dynamically in real-time. For example, the tempo of a song can be changed on the fly synched by a runner's pace, or a gesture movement on a mobile phone. This is a validated professional audio tool, and we are happy when clients with trained ears choose Voiceful over other solutions in the market. Check our demo <a href="#"> here [LINK VOSCALE VIDEO].
+          </a> </p>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    <div id="vomix-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">VoMix</h4>
+          </div>
+          <div class="modal-body">
+          <p>
+This is a utility to automatically mix the contents generated by Voiceful with existing musical or FX background tracks. All parameters are configurable and design through our VoMix-Designer GUI tool [see screenshot].  All parameters are configurable through our VoMix-Designer GUI tool <a href="./vomixGUI.jpg"> [see screenshot]. </a>  VoMix is usually place as tha last stage in a multi-stage workflow. </p>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
 
     <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
       <div class="container-fluid">
@@ -309,18 +188,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="./index.html">
             <img alt="voiceful" src="img/voicefulx2.png">
           </a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#how">HOW DOES IT WORK?</a></li>
-            <li><a href="#clients">WHO USES IT?</a></li>
-            <li><a href="#people">WHO'S BEHIND VOICEFUL?</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-            <li><a href="https://www.voctrolabs.com/cloud-demos/index_votrans_live.html" target="_blank"
-                   class="btn btn-default navbar-btn">DEMOS</a></li>
+            <li><a href="./index.html" 
+                   class="btn btn-default navbar-btn">BACK TO MAIN</a></li>
+          </ul>
+                    <ul class="nav navbar-nav">
+            <li><a href="#" target="_blank"
+                   >DEVELOPERS PAGE</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -333,7 +212,7 @@
         </div>
         <div class="col-xs-12">
           <p class="subtitle">
-          We aim to put Voiceful available to those creative minds and companies around the globe that are bringing new digital experiences and services to the society.
+          We aim to put Voiceful available to creative minds and companies around the globe that bring new digital voice experiences and services to the society.
           Check out our tools, documentation and example code, and request a free evaluation account.
           </p>
         </div>
@@ -352,7 +231,7 @@
               </div>
               <div class="col-xs-12 col-sm-offset-3 col-sm-6">
           <p>
-          Voiceful consists of a set of audio tools (e.g. time-scaling, voice analysis, voice transformation, voice generation, audio mixing, etc.).  Voiceful offers a RESTful API and it can be also integrated in standalone mobile, desktop or server applications as a native library using our SDK. Please find examples of both options below:
+          Voiceful offers a set of voice and audio processing <a href="#tools">tools </a> through a RESTful API for a SaaS access, and through a SDK with native libraries for integration in standalone mobile, desktop or server applications.
           </p>
         </div>
             </div>
@@ -386,39 +265,35 @@
 
         <div id="how" class="row section text-center">
           <div class="col-xs-12 col-sm-offset-3 col-sm-6">
-            <h2>FEATURED TOOLS</h2>
-<p>            Voiceful combines +15 years of R&D expertise in audio and music technologies with latest artificial intelligence for voice generation. 
-Our patented technology portfolio originate from academic research carried out by Voctro Labs’ cofounders at MTG-UPF[link]. 
-</p>
+            <h2>Toolkit features</h2>
+                          
             <div class="vertical-block">
               <img class="icon-img" src="img/icon3.png">
-              <h4>Voice generation - VoSyn</h4>
-              <p> Our expressive voice generation approach is based on Deep Learning, and it was initially developed to generate artificial singing voice with high realism. <br>
-                Recent advances in the area of Machine Learning and Artificial Intelligence can be applied to the generation of a human-like voice signals. Given a set of recordings of a speaker or singer of several minutes, we can create a voice model that captures its main treats, including singing expression. Once this voice model is loaded, Voiceful can generate new content. You can refer to the technical details in this research publication.
+              <h4>Voice generation | VoSyn</h4>
+              <p> Our expressive voice generation approach, based on Deep Learning research, was initially developed to generate artificial singing voice with high realism. It can learn a model from existing recordings of any individual and generate new speech or singing content.
                 <strong><a data-toggle="modal" href="#vosyn-modal">+More info</a></strong>
               </p>
             </div>
             <div class="vertical-block">
               
-              <h4>Voice Transformation - VoTrans</h4>
+              <h4>Voice Transformation | VoTrans</h4>
               <p>
-                Manipulating voice recordings have several applications in the creative media industries. For example, we can transform the voice of an actor in a monster sound for a film, change a male voice into a kid voice for a social app, among others. <br>
-                 Voiceful offers a patented voice transformation technology [Patent Nr.]   that can be integrated in real-time (e.g. a plugin for a Unity videogame, audio FX in a DAW) or as batch processing tool in a post-production workflow (e.g. for film, games, animation, TV, music). 
+               We can transform an actor's voice into a monster vocalization for a film, change a male voice into a kid or elder voice, and integrate it in real-time in games, social apps, or music applications.                   
                 <strong><a data-toggle="modal" href="#votrans-modal">+More info</a></strong>
               </p>
             </div>
             <div class="vertical-block">              
               <h4>Voice Alignment and Auto-tuning | VoAlign</h4>
               <p>
-                Editing a voice recording without altering the original voice quality has been extensively used in music and film productions with tools such as auto-tune and dialogue synchronization. Voiceful provides a tool that analyzes and automatically corrects a voice recording. We can align it to a reference recording for lip-syncing or ADR, or apply auto-tuning automatically to an estimated musical key.
+              VoAlign analyzes and automatically corrects a voice recording without losing quality. We can align it to a reference recording for lip-syncing or ADR, or apply auto-tuning automatically to an estimated musical key. <br>
+                
                 <strong><a data-toggle="modal" href="#voalign-modal">+More info</a></strong>
               </p>
             </div>
             <div class="vertical-block">              
               <h4>Voice Description | VoDesc</h4>
               <p>
-              It is a voice analysis tool that extracts acoustic and musical information from a voice recording. Data can be sent in real-time, or exported in a readable format to be used in for example visualization applications or singing rating videogame.   <br>
-                A voice recording conveys an incredible amount of information. For speech, it can be information about the words, about the person, about the emotion; while for singing voice it can bring also information about notes, intonation, the key and tempo of a song. To make clear, Voiceful is not a speech recognition solution. Besides the world of creative media, the analysis algorithms in Voiceful can be further extended for Medical or forensic applications. Check in this example the analysis and exported data. 
+              This voice analysis tool extracts acoustic and musical information from a voice recording. Data can be sent in real-time, or exported in a readable format to be used in applications such as  visualization, classification, monitoring or singing rating.   
                  <strong><a data-toggle="modal" href="#vodesc-modal">+More info</a></strong>
               </p>
             </div>
@@ -426,15 +301,15 @@ Our patented technology portfolio originate from academic research carried out b
             <div class="vertical-block">              
               <h4>Time-scaling and Pitch-shifting | VoScale</h4>
               <p>
-              Beyond voice signals, Voiceful can also apply high-quality time-scaling and pitch-shifting to any audio recording. Be it a commercial music downmix, be it a field-recording for a film, Voiceful can change the duration and key while preserving the quality of the original recording. We are happy when clients with trained ears choose Voiceful over other solutions in the market. You can check some demo examples <a> here [LINK VOSCALE VIDEO]. 
+              Beyond voice signals, Voiceful includes also a high-quality time-scaling and pitch-shifting to process any audio content (music, field recordings, dialogues, etc).  
                  <strong><a data-toggle="modal" href="#voscale-modal">+More info</a></strong>
               </p>
             </div>
             <div class="vertical-block">              
               <h4>Mixing and FX | VoMix</h4>
               <p>
-              This is a utility to automatically mix the contents generated by Voiceful with existing musical or FX background tracks. <br> 
-              VoMix works as a virtual DAW, including all necessary audio effects such as autogain, compression, EQ, reverb, mastering to deliver the final audio files in a professional-like quality. All parameters are configurable and design through our VoMix-Designer GUI tool [see screenshot]. 
+              
+                VoMix works as a virtual DAW with all standard audio effects (autogain, compression, EQ, reverb, delay, panning, mixing, etc.) to deliver audio in a professional-like quality. 
                  <strong><a data-toggle="modal" href="#vomix-modal">+More info</a></strong>
               </p>
             </div>
@@ -444,13 +319,13 @@ Our patented technology portfolio originate from academic research carried out b
 
         <div id="customize" class="row section grey-bg text-center">
           <div class="col-xs-12">
-            <h2>CUSTOM DEVELOPMENTS</h2>
+            <h2>Custom developments</h2>
           </div>
           <div class="col-xs-offset-1 col-xs-10">
             <div class="row">
               <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
                                
-                <p class="subtitle">We can extend and customize our technologies for the specific needs of your project idea. Talk to us!</p>
+                <p class="subtitle">We can extend and customize our technologies for the specific needs of your project idea. <br>Talk to us!</p>
               </div>
               
             </div>
@@ -462,8 +337,8 @@ Our patented technology portfolio originate from academic research carried out b
             <h2>EVALUATION ACCOUNT</h2>
           </div>
           <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
-            <p>We provide a 1-month access to Voiceful Cloud API for evaluation purposes.</p>
-<p>Request us a free Evaluation Account and obtain the Terms of Use and Pricing information (only available for professionals: companies, business individuals or research institutions).</p>
+            <p class="subtitle">1-month access to Voiceful Cloud API for evaluation</p>
+<p>Request us a free evaluation account and obtain the Terms of Use and Pricing information. <em>(Account limited to evaluation purposes and only for professionals: companies, business individuals or research institutions).</em></p>
             <form action="https://formspree.io/info@voctrolabs.com" method="POST">
               <div class="form-group">
                 <input name="name" type="text" class="form-control" placeholder="Name">
@@ -474,13 +349,36 @@ Our patented technology portfolio originate from academic research carried out b
               <div class="form-group">
                 <input name="company" type="text" class="form-control" placeholder="Company">
               </div>
+              
               <div class="form-group">
-                <input name="sector" class="form-control" rows="2" placeholder="Sector: advertising, videogames, app developer, music, film, VR, brands, artist, research, education, other.">
+                <div class="dropdown">
+                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sector
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li>Advertising and Brands</li>
+                    <li>Apps and Game developer</li>
+                    <li>Music industry</li>
+                    <li>Film/VR industry</li>
+                    <li>Research & Development</li>
+                    <li>Education</li>
+                    <li>Other</li>
+                  </ul>
+                </div>
               </div>
 
               <div class="form-group">
-                <input name="integration" class="form-control" rows="2" placeholder="Integration: Cloud API, Standalone SDK (Mobile), Standalone SDK (Server/Desktop)">
+                <div class="dropdown">
+                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Integration
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li>Cloud API</li>
+                    <li>Standalone SDK (Mobile)</li>
+                    <li>Standalone SDK (Server/Desktop)</li>
+                    <li>All</li>
+                  </ul>
+                </div>
               </div>
+              
               <div class="form-group">
                 <textarea name="purpose" class="form-control" rows="3" placeholder="Purpose of use"></textarea>
               </div>
@@ -490,6 +388,24 @@ Our patented technology portfolio originate from academic research carried out b
             <div class="clearfix"></div>            
           </div>
         </div>
+
+        <div id="customize" class="row section grey-bg text-center">
+          <div class="col-xs-12">
+            <h2>Technology background</h2>
+          </div>
+          <div class="col-xs-offset-1 col-xs-10">
+            <div class="row">
+              <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                <p>Voiceful combines +15 years of R&D expertise in audio and music technologies with latest artificial intelligence for voice generation. 
+              Our patented technologies originate from academic research carried out by Voctro Labs’ cofounders at <a href="http://www.mtg.upf.edu"> MTG-UPF</a>, and since 2011 they have been  integrated in award-wining applications worldwide. Our technology portfolio is being continuously extended with recent research in the field. 
+              </p>               
+                
+              </div>
+              
+            </div>
+          </div>
+        </div> 
+
       </div>
     </div>
 
