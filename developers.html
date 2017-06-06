@@ -341,36 +341,27 @@
               <div class="form-group">
                 <input name="company" type="text" class="form-control" placeholder="Company">
               </div>
-              
               <div class="form-group">
-                <div class="dropdown">
-                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sector
-                  <span class="caret"></span></button>
-                  <ul class="dropdown-menu">
-                    <li>Advertising and Brands</li>
-                    <li>Apps and Game developer</li>
-                    <li>Music industry</li>
-                    <li>Film/VR industry</li>
-                    <li>Research & Development</li>
-                    <li>Education</li>
-                    <li>Other</li>
-                  </ul>
-                </div>
+                <select name="Sector" class="form-control">
+                  <option value="Sector" disabled selected>Sector</option>
+                  <option value="Advertising and Brands">Advertising and Brands</option>
+                  <option value="Apps and Game developer">Apps and Game developer</option>
+                  <option value="Music industry">Music industry</option>
+                  <option value="Film/VR industry">Film/VR industry</option>
+                  <option value="Research & Development">Research & Development</option>
+                  <option value="Education">Education</option>
+                  <option value="Other">Other</option>
+                </select>
               </div>
-
               <div class="form-group">
-                <div class="dropdown">
-                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Integration
-                  <span class="caret"></span></button>
-                  <ul class="dropdown-menu">
-                    <li>Cloud API</li>
-                    <li>Standalone SDK (Mobile)</li>
-                    <li>Standalone SDK (Server/Desktop)</li>
-                    <li>All</li>
-                  </ul>
-                </div>
+                <select name="Integration" class="form-control">
+                  <option value="Integration" disabled selected>Integration</option>
+                  <option value="Cloud API">Cloud API</option>
+                  <option value="Standalone SDK (Mobile)">Standalone SDK (Mobile)</option>
+                  <option value="Standalone SDK (Server/Desktop)">Standalone SDK (Server/Desktop)</option>
+                  <option value="All">All</option>
+                </select>
               </div>
-              
               <div class="form-group">
                 <textarea name="purpose" class="form-control" rows="3" placeholder="Purpose of use"></textarea>
               </div>
