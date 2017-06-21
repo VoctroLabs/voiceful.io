@@ -260,21 +260,122 @@ class SomeClass:
                     </div>
                     <div role="tabpanel" class="tab-pane" id="cloud-code-php">
                       <pre class="pre-scrollable">
-                        <code class="lang-php">PHP_FUNCTION(hackers_function) {
-  /* your accepted arguments here */
-  long number;
+                        <code class="lang-php">
+  // PHP example that interacts with VOICEFUL VoScale API
+  // It creates a new task, starts it and waits until 
+  // processing have been finished
 
-  /* accepting arguments */
-  if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "l", &number) != SUCCESS) {
-      return;
+  $url_vocloud = "https://cloud.voctrolabs.com";
+
+  //set user credential
+  $user = "user@domain.com";
+  $password = "yourpassword";
+
+  // CREATE TASK //////////////////////////////////////////
+  
+  //set parameters passed to URL by client request (data to send to the API)
+  $timestretch = $_REQUEST['time_stretch_ratio'];
+  $pitchshift = $_REQUEST['pitch_shift'];
+
+  $postDataCreate = array(
+    'time_stretch_ratio' => $timestretch,
+    'pitch_shift' => $pitchshift,
+    'audio_upload_parts' => 1
+  );
+
+  // Setup cURL
+  $chCreate = curl_init($url_vocloud.'/api/voscale/tasks');
+  curl_setopt_array($chCreate, array(
+    CURLOPT_POST => TRUE,
+    CURLOPT_RETURNTRANSFER => TRUE,
+    CURLOPT_HTTPHEADER => array(
+        'Content-Type: application/json'
+    ),
+
+    CURLOPT_POSTFIELDS => json_encode($postDataCreate)
+  ));
+
+  curl_setopt($chCreate, CURLOPT_USERPWD, $user . ":" . $password);
+
+  // Send the request
+  $responseCreate = curl_exec($chCreate);
+
+  curl_close($chCreate);
+
+  // Check for errors
+  if($responseCreate === FALSE){
+      die(curl_error($chCreate));
   }
 
-  /* do some work on the input */
-  number *= 2;
+  $responseCreate_obj = json_decode($responseCreate,true);
+  //Then upload (PUT) audio file to S3 url address returned in $responseCreate_obj["audio_upload_urls"][0]
 
-  /* set return value */
-  RETURN_LONG(number);
-}</code>
+
+
+  // START TASK ///////////////////////////////////////////
+  $task_id = $responseCreate_obj["id"]
+  $task_url = $url_vocloud."/api/voscale/tasks/".$task_id;
+
+  // The data to send to the API
+  $postDataStart = array(
+    'task_url' => $task_url
+  );
+
+  // Setup cURL
+  $chStart = curl_init($task_url."/start");
+  curl_setopt_array($chStart, array(
+    CURLOPT_POST => TRUE,
+    CURLOPT_RETURNTRANSFER => TRUE,
+    CURLOPT_HTTPHEADER => array(
+        'Content-Type: application/json'
+    ),
+
+    CURLOPT_POSTFIELDS => json_encode($postDataStart)
+  ));
+
+  curl_setopt($chStart, CURLOPT_USERPWD, $user . ":" . $password);
+    
+  // Send the request
+  $responseStart = curl_exec($chStart);
+
+  curl_close($chStart);
+
+  // Check for errors
+  if($responseStart === FALSE){
+      die(curl_error($chStart));
+  }
+
+  $responseStart_obj = json_decode($responseStart,true);
+
+  //echo $response;
+
+  while (($responseStart_obj['status'] != 'failed') and ($responseStart_obj['status'] != 'finished') )
+  {
+    sleep(1);
+
+    // Setup cURL
+    $chStart = curl_init($task_url);
+    curl_setopt($chStart,CURLOPT_RETURNTRANSFER,true);
+    curl_setopt($chStart, CURLOPT_USERPWD, $user . ":" . $password);
+    // Send the request
+    $responseStart = curl_exec($chStart);
+    curl_close($chStart);
+
+    $responseStart_obj = json_decode($responseStart,true);
+  }
+
+  // Check for errors
+  if($responseStart === FALSE){
+      die(curl_error($chStart));
+  }
+
+  //Decode the response
+  $responseData_obj = json_decode($responseStart, TRUE);
+
+  //Print output audio generated
+  echo $responseData_obj["audio_url"];
+
+</code>
                       </pre>
                     </div>
                   </div>
