@@ -244,18 +244,94 @@
                   <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="cloud-code-python">
                       <pre class="pre-scrollable">
-                        <code class="lang-python">@requires_authorization
-def somefunc(param1='', param2=0):
-    r'''A docstring'''
-    if param1 > param2: # interesting
-        print 'Gre\'ater'
-    return (param2 - param1 + 1 + 0b10l) or None
+                        <code class="lang-python">
+  import time
+  import requests # sudo pip install requests
 
-class SomeClass:
-    pass
+  #set user credentials
+  user = 'user@domain.com'
+  password = 'yourpassword'
 
->>> message = '''interpreter
-... prompt'''</code>
+  # Python example that interacts with VOICEFUL VoScale API
+  # It creates a new task, starts it and waits until 
+  # processing have been finished
+
+  url_vocloud = 'https://cloud.voctrolabs.com'
+
+  if __name__ == '__main__':
+
+    # CREATE TASK //////////////////////////////////////////
+
+    print '*** CREATE TASK ***'
+
+    #set parameters for transformation
+    timestretch = 0.8;
+    pitchshift = 3.0;
+
+    payload = {
+      "time_stretch_ratio": timestretch,
+      "pitch_shift": pitchshift,
+      "audio_upload_parts": 1
+    }
+
+    # Post request
+    response_create = requests.post(url_vocloud + "/api/voscale/tasks",
+                                    json=payload,
+                                    auth=(user, password))
+
+    print(response_create.json())
+
+    # Then upload (PUT) audio file to S3 url address returned in 
+    #response_create.json()["audio_upload_urls"][0]
+    print "\n*** UPLOAD FILES ***"
+
+    filepath = "test.wav"
+    fh = open(filepath)
+    audio_data_binary = fh.read()
+    response_upload = requests.put(response_create.json()["audio_upload_urls"][0], data=audio_data_binary)
+
+    print("returned ok?:" + str(response_upload.ok) + 
+          " reason:" + response_upload.reason + 
+          " status_code:" + str(response_upload.status_code))
+
+    # START TASK ///////////////////////////////////////////
+    print "\n*** START TASK ***"
+    task_url = url_vocloud + "/api/voscale/tasks/" + 
+               response_create.json()["id"].encode('utf-8')
+
+    response_start = requests.post(task_url + "/start",
+                                   auth=(user, password))
+
+    print("returned ok?:" + str(response_start.ok) + 
+          " reason:" + response_start.reason + 
+          " status_code:" + str(response_start.status_code))
+
+    # Check if task finished
+    print "\n*** TASK PROCESSED? ***"
+
+    print "Processing...";
+    while True:
+      time.sleep(1)  # delays for 1 seconds
+      response_status = requests.get(task_url,
+                                     auth=(user, password))
+
+      if response_status.json()["status"] == 'finished' or 
+         response_status.json()["status"] == 'failed':
+        break
+      else:
+        print '.'
+
+    print "** Output URL: " + response_status.json()['audio_url']
+
+    # Download file
+    response_download = requests.get(response_status.json()['audio_url'], 
+                                     stream=True)
+    if response_download.status_code == 200:
+      with open("output.wav", 'wb') as f:
+        for chunk in response_download.iter_content(1024):
+          f.write(chunk)
+
+</code>
                       </pre>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="cloud-code-php">
@@ -301,7 +377,7 @@ class SomeClass:
 
   curl_close($chCreate);
 
-  echo "** Response from create task: **************************************\n".$responseCreate."\n";
+  echo "** Response from create task: ********\n".$responseCreate."\n";
 
   // Check for errors
   if($responseCreate === FALSE){
@@ -310,7 +386,8 @@ class SomeClass:
 
   $responseCreate_obj = json_decode($responseCreate,true);
 
-  //Then upload (PUT) audio file to S3 url address returned in $responseCreate_obj["audio_upload_urls"][0]
+  // Then upload (PUT) audio file to S3 url address returned 
+  // in $responseCreate_obj["audio_upload_urls"][0]
   
   $audio_fn = "test.wav";
   $audio = fopen($audio_fn, "rb");
@@ -329,7 +406,7 @@ class SomeClass:
   $responseUpload = curl_exec($chUpload);
   curl_close($chUpload);
 
-  echo "\n** Response from upload audio to S3: *******************************\n".$responseUpload."\n";
+  echo "\n** Response from upload audio to S3: *****\n".$responseUpload."\n";
 
   // START TASK ///////////////////////////////////////////
   $task_id = $responseCreate_obj["id"];
@@ -358,7 +435,7 @@ class SomeClass:
   $responseStart = curl_exec($chStart);
   curl_close($chStart);
 
-  echo "\n** Response from start task: ***************************************\n".$responseStart."\n";
+  echo "\n** Response from start task: ******\n".$responseStart."\n";
 
   // Check for errors
   if($responseStart === FALSE){
@@ -369,7 +446,8 @@ class SomeClass:
 
   echo "\nProcessing...";
 
-  while (($responseStatus_obj['status'] != 'failed') and ($responseStatus_obj['status'] != 'finished') )
+  while ( ($responseStatus_obj['status'] != 'failed') and 
+          ($responseStatus_obj['status'] != 'finished') )
   {
     sleep(1);
 
@@ -385,7 +463,7 @@ class SomeClass:
     echo ".";
   }
 
-  echo "\n\n** Response from status task: **************************************\n".$responseStatus."\n";
+  echo "\n\n** Response from status task: ******\n".$responseStatus."\n";
 
   // Check for errors
   if($responseStatus === FALSE){
