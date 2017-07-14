@@ -14,6 +14,9 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Highlight.js styles -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css">
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
@@ -31,19 +34,6 @@
   </head>
 
   <body data-spy="scroll" data-target="#navbar">
-
-    <div id="video-modal" class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <div class="video-wrapper">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/91ZCL-4WWTw?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
 
     <div id="legal-modal" class="modal fade" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
@@ -238,13 +228,259 @@
 
             <div class="row">
               <div class="col-xs-12 col-sm-offset-3 col-sm-6">
-              <img class="icon-img" src="img/icon3.png">
+                <img class="icon-img" src="img/icon3.png">
                 <h3>Cloud API</h3>
                 <p>
                   You can check the full documentation here: <a href="https://cloud.voctrolabs.com/docs/api"> https://cloud.voctrolabs.com/docs/api</a> .
                 </p>
-                <p> Python example code: [in preparation] <br> PHP example code:  [in preparation]
-                </p>
+                <div id="cloud-code" class="code-tabs">
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#cloud-code-python" aria-controls="home" role="tab" data-toggle="tab">Python</a></li>
+                    <li role="presentation"><a href="#cloud-code-php" aria-controls="profile" role="tab" data-toggle="tab">PHP</a></li>
+                  </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="cloud-code-python">
+                      <pre class="pre-scrollable">
+                        <code class="lang-python">
+  import time
+  import requests # sudo pip install requests
+
+  #set user credentials
+  user = 'user@domain.com'
+  password = 'yourpassword'
+
+  # Python example that interacts with VOICEFUL VoScale API
+  # It creates a new task, starts it and waits until 
+  # processing have been finished
+
+  url_vocloud = 'https://cloud.voctrolabs.com'
+
+  if __name__ == '__main__':
+
+    # CREATE TASK //////////////////////////////////////////
+
+    print '*** CREATE TASK ***'
+
+    #set parameters for transformation
+    timestretch = 0.8;
+    pitchshift = 3.0;
+
+    payload = {
+      "time_stretch_ratio": timestretch,
+      "pitch_shift": pitchshift,
+      "audio_upload_parts": 1
+    }
+
+    # Post request
+    response_create = requests.post(url_vocloud + "/api/voscale/tasks",
+                                    json=payload,
+                                    auth=(user, password))
+
+    print(response_create.json())
+
+    # Then upload (PUT) audio file to S3 url address returned in 
+    #response_create.json()["audio_upload_urls"][0]
+    print "\n*** UPLOAD FILES ***"
+
+    filepath = "test.wav"
+    fh = open(filepath)
+    audio_data_binary = fh.read()
+    response_upload = requests.put(response_create.json()["audio_upload_urls"][0], data=audio_data_binary)
+
+    print("returned ok?:" + str(response_upload.ok) + 
+          " reason:" + response_upload.reason + 
+          " status_code:" + str(response_upload.status_code))
+
+    # START TASK ///////////////////////////////////////////
+    print "\n*** START TASK ***"
+    task_url = url_vocloud + "/api/voscale/tasks/" + 
+               response_create.json()["id"].encode('utf-8')
+
+    response_start = requests.post(task_url + "/start",
+                                   auth=(user, password))
+
+    print("returned ok?:" + str(response_start.ok) + 
+          " reason:" + response_start.reason + 
+          " status_code:" + str(response_start.status_code))
+
+    # Check if task finished
+    print "\n*** TASK PROCESSED? ***"
+
+    print "Processing...";
+    while True:
+      time.sleep(1)  # delays for 1 seconds
+      response_status = requests.get(task_url,
+                                     auth=(user, password))
+
+      if response_status.json()["status"] == 'finished' or 
+         response_status.json()["status"] == 'failed':
+        break
+      else:
+        print '.'
+
+    print "** Output URL: " + response_status.json()['audio_url']
+
+    # Download file
+    response_download = requests.get(response_status.json()['audio_url'], 
+                                     stream=True)
+    if response_download.status_code == 200:
+      with open("output.wav", 'wb') as f:
+        for chunk in response_download.iter_content(1024):
+          f.write(chunk)
+
+</code>
+                      </pre>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="cloud-code-php">
+                      <pre class="pre-scrollable">
+                        <code class="lang-php">
+  // PHP example that interacts with VOICEFUL VoScale API
+  // It creates a new task, starts it and waits until 
+  // processing have been finished
+
+  //set user credentials
+  $user = "user@domain.com";
+  $password = "yourpassword";
+
+  $url_vocloud = "https://cloud.voctrolabs.com";
+
+  // CREATE TASK //////////////////////////////////////////
+  //set parameters for transformation
+  $timestretch = 0.8;
+  $pitchshift = 3.0;
+
+  $postDataCreate = array(
+    'time_stretch_ratio' => $timestretch,
+    'pitch_shift' => $pitchshift,
+    'audio_upload_parts' => 1
+  );
+
+  // Setup cURL
+  $chCreate = curl_init($url_vocloud.'/api/voscale/tasks');
+  curl_setopt_array($chCreate, array(
+    CURLOPT_POST => TRUE,
+    CURLOPT_RETURNTRANSFER => TRUE,
+    CURLOPT_HTTPHEADER => array(
+        'Content-Type: application/json'
+    ),
+
+    CURLOPT_POSTFIELDS => json_encode($postDataCreate)
+  ));
+
+  curl_setopt($chCreate, CURLOPT_USERPWD, $user . ":" . $password);
+
+  // Send the request
+  $responseCreate = curl_exec($chCreate);
+
+  curl_close($chCreate);
+
+  echo "** Response from create task: ********\n".$responseCreate."\n";
+
+  // Check for errors
+  if($responseCreate === FALSE){
+      die(curl_error($chCreate));
+  }
+
+  $responseCreate_obj = json_decode($responseCreate,true);
+
+  // Then upload (PUT) audio file to S3 url address returned 
+  // in $responseCreate_obj["audio_upload_urls"][0]
+  
+  $audio_fn = "test.wav";
+  $audio = fopen($audio_fn, "rb");
+
+  $chUpload = curl_init();
+  curl_setopt($chUpload, CURLOPT_CONNECTTIMEOUT, 2);
+  curl_setopt($chUpload, CURLOPT_HEADER, false);
+  curl_setopt($chUpload, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($chUpload, CURLOPT_BINARYTRANSFER, 1);
+  curl_setopt($chUpload, CURLOPT_URL, $responseCreate_obj["audio_upload_urls"][0]);
+
+  curl_setopt($chUpload, CURLOPT_PUT, 1);
+  curl_setopt($chUpload, CURLOPT_INFILE, $audio);
+  curl_setopt($chUpload, CURLOPT_INFILESIZE, filesize($audio_fn));
+
+  $responseUpload = curl_exec($chUpload);
+  curl_close($chUpload);
+
+  echo "\n** Response from upload audio to S3: *****\n".$responseUpload."\n";
+
+  // START TASK ///////////////////////////////////////////
+  $task_id = $responseCreate_obj["id"];
+  $task_url = $url_vocloud."/api/voscale/tasks/".$task_id;
+
+  // The data to send to the API
+  $postDataStart = array(
+    'task_url' => $task_url
+  );
+
+  // Setup cURL
+  $chStart = curl_init($task_url."/start");
+  curl_setopt_array($chStart, array(
+    CURLOPT_POST => TRUE,
+    CURLOPT_RETURNTRANSFER => TRUE,
+    CURLOPT_HTTPHEADER => array(
+        'Content-Type: application/json'
+    ),
+
+    CURLOPT_POSTFIELDS => json_encode($postDataStart)
+  ));
+
+  curl_setopt($chStart, CURLOPT_USERPWD, $user . ":" . $password);
+    
+  // Send the request
+  $responseStart = curl_exec($chStart);
+  curl_close($chStart);
+
+  echo "\n** Response from start task: ******\n".$responseStart."\n";
+
+  // Check for errors
+  if($responseStart === FALSE){
+      die(curl_error($chStart));
+  }
+
+  $responseStart_obj = json_decode($responseStart,true);
+
+  echo "\nProcessing...";
+
+  while ( ($responseStatus_obj['status'] != 'failed') and 
+          ($responseStatus_obj['status'] != 'finished') )
+  {
+    sleep(1);
+
+    // Setup cURL
+    $chStatus = curl_init($task_url);
+    curl_setopt($chStatus,CURLOPT_RETURNTRANSFER,true);
+    curl_setopt($chStatus, CURLOPT_USERPWD, $user . ":" . $password);
+    // Send the request
+    $responseStatus = curl_exec($chStatus);
+    curl_close($chStatus);
+
+    $responseStatus_obj = json_decode($responseStatus,true);
+    echo ".";
+  }
+
+  echo "\n\n** Response from status task: ******\n".$responseStatus."\n";
+
+  // Check for errors
+  if($responseStatus === FALSE){
+      die(curl_error($chStatus));
+  }
+
+  //Decode the response
+  $responseData_obj = json_decode($responseStatus, TRUE);
+
+  //Print output audio generated
+  echo "\n** Output URL: ".$responseData_obj["audio_url"]."\n";
+
+</code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -254,9 +490,98 @@
                 <p>
                   All tools available in the Voiceful API are also available as a Standalone SDK, which can be integrated as cross-platform C++ libraries. (SDK clients available upon request).
                 </p>
-                                <p> C++ example code: [in preparation]
-                </p>
+                <div id="standalone-code" class="code-tabs">
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#standalone-code-c++" aria-controls="home" role="tab" data-toggle="tab">C++</a></li>
+                  </ul>
 
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="standalone-code-c++">
+                      <pre class="pre-scrollable">
+                        <code class="lang-c++">
+  #include "VoTransLib_api.h"
+
+  /***************************************************************
+    C++ usage example for VOICEFUL VoTrans Stand Alone SDK
+    The below code is incomplete, it lacks audio in/out that will
+    be implemented using standard audio driver libraries or
+    reading from audio files on disk
+  ****************************************************************/
+
+  //VoTrans object
+  void* mVoTrans = NULL;
+
+  //parameters
+  float gain_val = 0.9f;
+  float pitch_val = 3.f;
+  float mTimbreParameters[5] = { 0.5f, 0.6f, 0.7f, 0.55f, 0.5f };
+  float vibratodepth_val = 0.2f;
+  float vibratofreq_val = 0.3f;
+  float robot_val = 0.0f;
+  float alien_val = 0.0f;
+  float autotune_val = 0.0f;
+  float harmonizer_val = 0.0f;
+
+  //INITIALIZATION OF THE LIBRARY
+  int init()
+  {
+    int mnCh = 2; //number of channels
+    float mSampleRate = 44100.f; 
+    int mBlockSize = 256;
+    
+    mVoTrans = VT_Create();
+          
+    //CONFIGURATION
+    int highQuality = 1;
+    int noisy = 0;
+    int bypass = 0;
+    VT_Configure(mnCh, mSampleRate, mBlockSize, 
+                 highQuality, noisy, bypass, mVoTrans);
+    VT_SetPreAnalysis(NULL, mVoTrans);
+    VT_BeginProcess(mVoTrans);
+  }
+
+  //PROCESS (in loop)
+  //This function will be the audio driver callback if used in realtime or 
+  //called in a loop while reading from a disk file or memory buffer if 
+  //transforming offline samples
+  void ProcessCallback(float* inbuffer, float* outbuffer)
+  {
+    //set parameters (e.g. from gui)
+    VT_SetGainParameter(gain_val, mVoTrans);
+
+    VT_SetPitchTranspositionInSemitonesParameter(pitch_val, mVoTrans);
+        
+    VT_SetTimbreParameters(mTimbreParameters, mVoTrans);
+
+    VT_SetVibratoDepthParameter(vibratodepth_val, mVoTrans);
+    VT_SetVibratoFreqParameter(vibratofreq_val, mVoTrans);
+
+    VT_SetRobotParameter(robot_val, mVoTrans);
+    VT_SetAlienParameter(alien_val, mVoTrans);
+    VT_SetAutoTuneParameter(autotune_val, mVoTrans);
+    VT_SetHarmonizerParameter(harmonizer_val, mVoTrans);
+    
+    //inbuffer & outbuffer memory is allocated by the user, 
+    //DoProcessFloat fills the outbuffer with a maximum of 
+    //configured blocksize (e.g. mBlockSize=256)
+    int n = VT_DoProcessFloat(inbuffer, outbuffer, mVoTrans);
+  }  
+    
+  //DESTROY
+  void end()
+  {
+    VT_EndProcess(mVoTrans);
+    VT_Destroy(mVoTrans);
+  }
+
+</code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -354,36 +679,27 @@
               <div class="form-group">
                 <input name="company" type="text" class="form-control" placeholder="Company">
               </div>
-              
               <div class="form-group">
-                <div class="dropdown">
-                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sector
-                  <span class="caret"></span></button>
-                  <ul class="dropdown-menu">
-                    <li>Advertising and Brands</li>
-                    <li>Apps and Game developer</li>
-                    <li>Music industry</li>
-                    <li>Film/VR industry</li>
-                    <li>Research & Development</li>
-                    <li>Education</li>
-                    <li>Other</li>
-                  </ul>
-                </div>
+                <select name="Sector" class="form-control">
+                  <option value="Sector" disabled selected>Sector</option>
+                  <option value="Advertising and Brands">Advertising and Brands</option>
+                  <option value="Apps and Game developer">Apps and Game developer</option>
+                  <option value="Music industry">Music industry</option>
+                  <option value="Film/VR industry">Film/VR industry</option>
+                  <option value="Research & Development">Research & Development</option>
+                  <option value="Education">Education</option>
+                  <option value="Other">Other</option>
+                </select>
               </div>
-
               <div class="form-group">
-                <div class="dropdown">
-                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Integration
-                  <span class="caret"></span></button>
-                  <ul class="dropdown-menu">
-                    <li>Cloud API</li>
-                    <li>Standalone SDK (Mobile)</li>
-                    <li>Standalone SDK (Server/Desktop)</li>
-                    <li>All</li>
-                  </ul>
-                </div>
+                <select name="Integration" class="form-control">
+                  <option value="Integration" disabled selected>Integration</option>
+                  <option value="Cloud API">Cloud API</option>
+                  <option value="Standalone SDK (Mobile)">Standalone SDK (Mobile)</option>
+                  <option value="Standalone SDK (Server/Desktop)">Standalone SDK (Server/Desktop)</option>
+                  <option value="All">All</option>
+                </select>
               </div>
-              
               <div class="form-group">
                 <textarea name="purpose" class="form-control" rows="3" placeholder="Purpose of use"></textarea>
               </div>
@@ -442,8 +758,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/developers.js"></script>
   </body>
 </html>
