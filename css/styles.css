@@ -320,26 +320,33 @@ footer #social img {
 #footer-logo {
     padding-bottom: 20px;
 }
-#video-modal .modal-dialog {
+.video-modal .modal-dialog {
     border-radius: 0;
 }
-#video-modal .modal-body {
+.video-modal .modal-body {
     background-color: rgb(60,60,59);
     padding: 50px;
 }
-#video-modal .modal-body .close {
+.video-modal .modal-body .close {
     position: absolute;
     top: 0;
     right: 14px;
     color: #FFFFFF;
     font-size: 42px;
 }
-#video-modal .modal-body .close:hover {
+.video-modal .modal-body .close:hover {
     cursor: pointer;
     cursor: hand;
 }
-#video-modal .modal-body .close:focus {
+.video-modal .modal-body .close:focus {
     outline: none;
+}
+.video-modal .modal-title {
+    color: #FFFFFF;
+    position: absolute;
+    top: -40px;
+    width: 100%;
+    text-align: center;
 }
 .video-wrapper {
     position: relative;

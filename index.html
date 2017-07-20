@@ -32,13 +32,27 @@
 
   <body data-spy="scroll" data-target="#navbar">
 
-    <div id="video-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div id="video-modal" class="modal fade video-modal" tabindex="-1" role="dialog">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-body">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <div class="video-wrapper">
               <iframe width="560" height="315" src="https://www.youtube.com/embed/91ZCL-4WWTw?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="audio-modal" class="modal fade video-modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="video-wrapper">
+              <h4 class="modal-title">Title</h4>
+              <iframe src="" width="160" height="120"></iframe>
             </div>
           </div>
         </div><!-- /.modal-content -->
@@ -353,7 +367,8 @@
                 <h4>Say it with a song</h4>
                 <p>You write the lyrics, and an incredibly expressive voice sings it.</p>
                 <a class="btn btn-default btn-lg btn-play-demo visible-xs-inline-block"
-                   href="https://drive.google.com/open?id=0B1VsSgcFDRGKYmtkYjVPNzAtMUk" target="_blank">
+                   data-toggle="modal" href="#audio-modal" data-title="Say it with a song"
+                   data-audio="https://drive.google.com/file/d/0B1VsSgcFDRGKYmtkYjVPNzAtMUk/preview">
                   PLAY DEMO!
                 </a>
               </div>
@@ -362,7 +377,8 @@
                 <h4>Make a celebrity sing</h4>
                 <p>Commission us your own voice model, be it a famous or non-famous, dead or alive, real or virtual character. Then use it through the Voiceful API.</p>
                 <a class="btn btn-default btn-lg btn-play-demo visible-xs-inline-block"
-                   href="https://drive.google.com/open?id=0B1VsSgcFDRGKdXNtNERKeDhCZzA" target="_blank">
+                   data-toggle="modal" href="#audio-modal" data-title="Make a celebrity sing"
+                   data-audio="https://drive.google.com/file/d/0B1VsSgcFDRGKdXNtNERKeDhCZzA/preview">
                   PLAY DEMO!
                 </a>
               </div>
@@ -370,13 +386,15 @@
             <div class="row hidden-xs">
               <div class="col-xs-12 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
                 <a class="btn btn-default btn-lg btn-play-demo"
-                   href="https://drive.google.com/open?id=0B1VsSgcFDRGKYmtkYjVPNzAtMUk" target="_blank">
+                   data-toggle="modal" href="#audio-modal" data-title="Say it with a song"
+                   data-audio="https://drive.google.com/file/d/0B1VsSgcFDRGKYmtkYjVPNzAtMUk/preview">
                   PLAY DEMO!
                 </a>
               </div>
               <div class="col-xs-12 col-sm-4 col-md-3">
                 <a class="btn btn-default btn-lg btn-play-demo"
-                   href="https://drive.google.com/open?id=0B1VsSgcFDRGKdXNtNERKeDhCZzA" target="_blank">
+                   data-toggle="modal" href="#audio-modal" data-title="Make a celebrity sing"
+                   data-audio="https://drive.google.com/file/d/0B1VsSgcFDRGKdXNtNERKeDhCZzA/preview">
                   PLAY DEMO!
                 </a>
               </div>
@@ -387,7 +405,8 @@
                 <h4>Transform your voice</h4>
                 <p>Sound like a robot. Sound like your son. Sound faster, or chilled. Sound like you can sing.</p>
                 <a class="btn btn-default btn-lg btn-play-demo visible-xs-inline-block"
-                   href="https://drive.google.com/open?id=0B1VsSgcFDRGKQlBTSEh6M2pudlU" target="_blank">
+                   data-toggle="modal" href="#audio-modal" data-title="Transform your voice"
+                   data-audio="https://drive.google.com/file/d/0B1VsSgcFDRGKQlBTSEh6M2pudlU/preview">
                   PLAY DEMO!
                 </a>
               </div>
@@ -396,7 +415,8 @@
                 <h4>Pretend you can sing</h4>
                 <p>You write the lyrics, and an incredibly expressive voice sings it.</p>
                 <a class="btn btn-default btn-lg btn-play-demo visible-xs-inline-block"
-                   href="https://drive.google.com/open?id=0B1VsSgcFDRGKQU5hLXpxSS1HdUk" target="_blank">
+                   data-toggle="modal" href="#audio-modal" data-title="Pretend you can sing"
+                   data-audio="https://drive.google.com/file/d/0B1VsSgcFDRGKQU5hLXpxSS1HdUk/preview">
                   PLAY DEMO!
                 </a>
               </div>
@@ -404,13 +424,15 @@
             <div class="row hidden-xs">
               <div class="col-xs-12 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
                 <a class="btn btn-default btn-lg btn-play-demo"
-                   href="https://drive.google.com/open?id=0B1VsSgcFDRGKQlBTSEh6M2pudlU" target="_blank">
+                   data-toggle="modal" href="#audio-modal" data-title="Transform your voice"
+                   data-audio="https://drive.google.com/file/d/0B1VsSgcFDRGKQlBTSEh6M2pudlU/preview">
                   PLAY DEMO!
                 </a>
               </div>
               <div class="col-xs-12 col-sm-4 col-md-3">
                 <a class="btn btn-default btn-lg btn-play-demo"
-                   href="https://drive.google.com/open?id=0B1VsSgcFDRGKQU5hLXpxSS1HdUk" target="_blank">
+                   data-toggle="modal" href="#audio-modal" data-title="Pretend you can sing"
+                   data-audio="https://drive.google.com/file/d/0B1VsSgcFDRGKQU5hLXpxSS1HdUk/preview">
                   PLAY DEMO!
                 </a>
               </div>
