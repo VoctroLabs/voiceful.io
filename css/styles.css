@@ -2,6 +2,9 @@ body {
     padding-top: 50px;
     position: relative;
 }
+:focus, a:focus {
+    outline: none; /* remove typical bootstrap blue outline when focused */
+}
 .navbar {
     border-color: transparent;
     background-color: #FFFFFF;
@@ -173,8 +176,18 @@ hr {
     padding-top: 60px;
     padding-bottom: 30px;
     height: 183px;
+    width: 100px;
     width: auto;
     object-fit: none;
+}
+.icon-img-hover {
+    display: none;
+}
+.icon-link:hover .icon-img-hover {
+    display: inline;
+}
+.icon-link:hover .icon-img-default {
+    display: none;
 }
 .btn-play-demo, .btn-play-demo:focus, .btn-play-demo:active, .btn-play-demo:active:focus {
     background-color: #FFFFFF;
