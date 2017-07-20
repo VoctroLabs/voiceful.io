@@ -176,6 +176,25 @@ hr {
     width: auto;
     object-fit: none;
 }
+.btn-play-demo, .btn-play-demo:focus, .btn-play-demo:active, .btn-play-demo:active:focus {
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 30px;
+    color: #575756;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 10px 40px;
+    text-decoration: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    outline: none;
+}
+.btn-play-demo:hover {
+    background-color: #575756;
+    border-color: #575756;
+    color: rgb(247,247,247);
+}
 .btn-demos {
     background-color: rgb(247,247,247);
     border: 2px #575756 solid;
