@@ -32,13 +32,27 @@
 
   <body data-spy="scroll" data-target="#navbar">
 
-    <div id="video-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div id="video-modal" class="modal fade video-modal" tabindex="-1" role="dialog">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-body">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <div class="video-wrapper">
               <iframe width="560" height="315" src="https://www.youtube.com/embed/91ZCL-4WWTw?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="audio-modal" class="modal fade video-modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="video-wrapper">
+              <h4 class="modal-title">Title</h4>
+              <iframe src="" width="160" height="120"></iframe>
             </div>
           </div>
         </div><!-- /.modal-content -->
@@ -342,33 +356,101 @@
       <div id="rubric-inner">
         <div id="what" class="row section grey-bg text-center">
           <div class="col-xs-12">
-            <div class="row">
+            <div class="row" src="img/icon1.png">
               <div class="col-xs-12">
                 <h2>WHAT CAN YOU DO<br> WITH VOICEFUL?</h2>
               </div>
             </div>
             <div class="row">
               <div class="col-xs-12 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
-                <img class="icon-img" src="img/icon1.png">
+                <a class="icon-link" data-toggle="modal" href="#audio-modal" data-title="Say it with a song"
+                   data-audio="https://drive.google.com/file/d/0B1VsSgcFDRGKYmtkYjVPNzAtMUk/preview">
+                  <img class="icon-img icon-img-default" src="img/icon1.png">
+                  <img class="icon-img icon-img-hover" src="img/demos_play.png">
+                </a>
                 <h4>Say it with a song</h4>
                 <p>You write the lyrics, and an incredibly expressive voice sings it.</p>
+                <a class="btn btn-default btn-lg btn-play-demo visible-xs-inline-block"
+                   data-toggle="modal" href="#audio-modal" data-title="Say it with a song"
+                   data-audio="https://drive.google.com/file/d/0B1VsSgcFDRGKYmtkYjVPNzAtMUk/preview">
+                  PLAY DEMO!
+                </a>
               </div>
               <div class="col-xs-12 col-sm-4 col-md-3">
-                <img class="icon-img" src="img/icon2.png">
+                <a class="icon-link" data-toggle="modal" href="#audio-modal" data-title="Make a celebrity sing"
+                   data-audio="https://drive.google.com/file/d/0B1VsSgcFDRGKdXNtNERKeDhCZzA/preview">
+                  <img class="icon-img icon-img-default" src="img/icon2.png">
+                  <img class="icon-img icon-img-hover" src="img/demos_play.png">
+                </a>
                 <h4>Make a celebrity sing</h4>
                 <p>Commission us your own voice model, be it a famous or non-famous, dead or alive, real or virtual character. Then use it through the Voiceful API.</p>
+                <a class="btn btn-default btn-lg btn-play-demo visible-xs-inline-block"
+                   data-toggle="modal" href="#audio-modal" data-title="Make a celebrity sing"
+                   data-audio="https://drive.google.com/file/d/0B1VsSgcFDRGKdXNtNERKeDhCZzA/preview">
+                  PLAY DEMO!
+                </a>
+              </div>
+            </div>
+            <div class="row hidden-xs">
+              <div class="col-xs-12 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
+                <a class="btn btn-default btn-lg btn-play-demo"
+                   data-toggle="modal" href="#audio-modal" data-title="Say it with a song"
+                   data-audio="https://drive.google.com/file/d/0B1VsSgcFDRGKYmtkYjVPNzAtMUk/preview">
+                  PLAY DEMO!
+                </a>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-3">
+                <a class="btn btn-default btn-lg btn-play-demo"
+                   data-toggle="modal" href="#audio-modal" data-title="Make a celebrity sing"
+                   data-audio="https://drive.google.com/file/d/0B1VsSgcFDRGKdXNtNERKeDhCZzA/preview">
+                  PLAY DEMO!
+                </a>
               </div>
             </div>
             <div class="row">
               <div class="col-xs-12 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
-                <img class="icon-img" src="img/icon3.png">
+                <a class="icon-link" data-toggle="modal" href="#audio-modal" data-title="Transform your voice"
+                   data-audio="https://drive.google.com/file/d/0B1VsSgcFDRGKQlBTSEh6M2pudlU/preview">
+                  <img class="icon-img icon-img-default" src="img/icon3.png">
+                  <img class="icon-img icon-img-hover" src="img/demos_play.png">
+                </a>
                 <h4>Transform your voice</h4>
                 <p>Sound like a robot. Sound like your son. Sound faster, or chilled. Sound like you can sing.</p>
+                <a class="btn btn-default btn-lg btn-play-demo visible-xs-inline-block"
+                   data-toggle="modal" href="#audio-modal" data-title="Transform your voice"
+                   data-audio="https://drive.google.com/file/d/0B1VsSgcFDRGKQlBTSEh6M2pudlU/preview">
+                  PLAY DEMO!
+                </a>
               </div>
               <div class="col-xs-12 col-sm-4 col-md-3">
-                <img class="icon-img" src="img/icon4.png">
+                <a class="icon-link" data-toggle="modal" href="#audio-modal" data-title="Pretend you can sing"
+                   data-audio="https://drive.google.com/file/d/0B1VsSgcFDRGKQU5hLXpxSS1HdUk/preview">
+                  <img class="icon-img icon-img-default" src="img/icon4.png">
+                  <img class="icon-img icon-img-hover" src="img/demos_play.png">
+                </a>
                 <h4>Pretend you can sing</h4>
                 <p>You write the lyrics, and an incredibly expressive voice sings it.</p>
+                <a class="btn btn-default btn-lg btn-play-demo visible-xs-inline-block"
+                   data-toggle="modal" href="#audio-modal" data-title="Pretend you can sing"
+                   data-audio="https://drive.google.com/file/d/0B1VsSgcFDRGKQU5hLXpxSS1HdUk/preview">
+                  PLAY DEMO!
+                </a>
+              </div>
+            </div>
+            <div class="row hidden-xs">
+              <div class="col-xs-12 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
+                <a class="btn btn-default btn-lg btn-play-demo"
+                   data-toggle="modal" href="#audio-modal" data-title="Transform your voice"
+                   data-audio="https://drive.google.com/file/d/0B1VsSgcFDRGKQlBTSEh6M2pudlU/preview">
+                  PLAY DEMO!
+                </a>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-3">
+                <a class="btn btn-default btn-lg btn-play-demo"
+                   data-toggle="modal" href="#audio-modal" data-title="Pretend you can sing"
+                   data-audio="https://drive.google.com/file/d/0B1VsSgcFDRGKQU5hLXpxSS1HdUk/preview">
+                  PLAY DEMO!
+                </a>
               </div>
             </div>
             <div class="row">

@@ -2,6 +2,9 @@ body {
     padding-top: 50px;
     position: relative;
 }
+:focus, a:focus {
+    outline: none; /* remove typical bootstrap blue outline when focused */
+}
 .navbar {
     border-color: transparent;
     background-color: #FFFFFF;
@@ -173,8 +176,37 @@ hr {
     padding-top: 60px;
     padding-bottom: 30px;
     height: 183px;
+    width: 100px;
     width: auto;
     object-fit: none;
+}
+.icon-img-hover {
+    display: none;
+}
+.icon-link:hover .icon-img-hover {
+    display: inline;
+}
+.icon-link:hover .icon-img-default {
+    display: none;
+}
+.btn-play-demo, .btn-play-demo:focus, .btn-play-demo:active, .btn-play-demo:active:focus {
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 30px;
+    color: #575756;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 10px 40px;
+    text-decoration: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    outline: none;
+}
+.btn-play-demo:hover {
+    background-color: #575756;
+    border-color: #575756;
+    color: rgb(247,247,247);
 }
 .btn-demos {
     background-color: rgb(247,247,247);
@@ -301,26 +333,33 @@ footer #social img {
 #footer-logo {
     padding-bottom: 20px;
 }
-#video-modal .modal-dialog {
+.video-modal .modal-dialog {
     border-radius: 0;
 }
-#video-modal .modal-body {
+.video-modal .modal-body {
     background-color: rgb(60,60,59);
     padding: 50px;
 }
-#video-modal .modal-body .close {
+.video-modal .modal-body .close {
     position: absolute;
     top: 0;
     right: 14px;
     color: #FFFFFF;
     font-size: 42px;
 }
-#video-modal .modal-body .close:hover {
+.video-modal .modal-body .close:hover {
     cursor: pointer;
     cursor: hand;
 }
-#video-modal .modal-body .close:focus {
+.video-modal .modal-body .close:focus {
     outline: none;
+}
+.video-modal .modal-title {
+    color: #FFFFFF;
+    position: absolute;
+    top: -40px;
+    width: 100%;
+    text-align: center;
 }
 .video-wrapper {
     position: relative;
