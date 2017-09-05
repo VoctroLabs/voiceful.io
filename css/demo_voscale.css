@@ -1,0 +1,78 @@
+body {
+    background: url("../img/bg_demo_voscale.png") repeat -50px 0;
+}
+.step-number {
+    color: #28aa91;
+}
+.btn-default, .btn-default:focus,
+.btn-group .dropdown-menu .btn-default {
+    background-color: #28aa91;
+}
+.btn-default:hover, .btn-default:active,
+.btn-default:hover:focus, .btn-default:active:focus,
+.btn-default.selected,
+.btn-default.selected:focus, .btn-default.selected:active,
+.btn-default.selected:hover:focus, .btn-default.selected:active:focus,
+.btn-group .dropdown-menu .btn-default:hover, .btn-group .dropdown-menu .btn-default:active,
+.btn-group .dropdown-menu .btn-default:hover:focus, .btn-group .dropdown-menu .btn-default:active:focus,
+.btn-group .dropdown-menu .btn-default.selected,
+.btn-group .dropdown-menu .btn-default.selected:focus,
+.btn-group .dropdown-menu .btn-default.selected:active,
+.btn-group .dropdown-menu .btn-default.selected:hover:focus,
+.btn-group .dropdown-menu .btn-default.selected:active:focus {
+    color: #28aa91;
+}
+.btn-group .dropdown-menu .btn-default:hover, .btn-group .dropdown-menu .btn-default:active,
+.btn-group .dropdown-menu .btn-default:hover:focus, .btn-group .dropdown-menu .btn-default:active:focus,
+.btn-group .dropdown-menu .btn-default.selected,
+.btn-group .dropdown-menu .btn-default.selected:focus,
+.btn-group .dropdown-menu .btn-default.selected:active,
+.btn-group .dropdown-menu .btn-default.selected:hover:focus,
+.btn-group .dropdown-menu .btn-default.selected:active:focus {
+    border-color: #28aa91;
+}
+a.btn-circle:hover .btn {
+    color: #28aa91;
+}
+#select-track-group {
+    width: 100%;
+}
+/* SLIDER */
+.slider.slider-horizontal {
+    margin: 25px 0;
+    min-width: 300px;
+}
+.slider.slider-horizontal .slider-track {
+    height: 5px;
+    top: 12px;
+    background-color: #ffffff;
+    background-image: none;
+    box-shadow: none;
+}
+.slider.slider-horizontal .slider-selection {
+    display: none;
+}
+.slider.slider-horizontal .slider-handle {
+    background-image: none;
+    background-color: #28aa91;
+    border-color: #ffffff;
+    border-width: 4px;
+}
+.slider.slider-horizontal .slider-tick-container {
+    left: 7px;
+}
+.slider.slider-horizontal .slider-tick {
+    border-radius: 25%;
+    width: 5px;
+    height: 10px;
+    top: 2px;
+    background-image: none;
+    background-color: #ffffff;
+    opacity: 1;
+    box-shadow: none;
+}
+.slider.slider-horizontal .slider-tick.in-selection {
+    background-image: none;
+    background-color: #ffffff;
+}
+/* END SLIDER */

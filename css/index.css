@@ -1,0 +1,114 @@
+#slider {
+    background: url("../img/slider.jpg") 60%;
+    background-size: cover;
+    height: 545px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+#slider a {
+    outline: none;
+}
+#slider img#player {
+    display: block;
+    margin: auto;
+    width: 142px;
+    padding-top: 201px;
+}
+#first-row {
+    margin-top: 545px;
+    padding-top: 0;
+}
+.btn-play-demo, .btn-play-demo:focus, .btn-play-demo:active, .btn-play-demo:active:focus {
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 30px;
+    color: #575756;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 10px 40px;
+    text-decoration: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    outline: none;
+}
+.btn-play-demo:hover {
+    background-color: #575756;
+    border-color: #575756;
+    color: rgb(247,247,247);
+}
+.btn-demos {
+    background-color: rgb(247,247,247);
+    border: 2px #575756 solid;
+    color: #575756;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 6px 30px;
+    text-decoration: none;
+}
+.btn-demos:focus, .btn-demos:hover {
+    background-color: #575756;
+    border-color: #575756;
+    color: rgb(247,247,247);
+}
+#how h2 {
+    padding-bottom: 40px;
+}
+#how .vertical-block {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+#clients h2 {
+    padding-bottom: 60px;
+}
+#clients h4 {
+    padding-top: 20px;
+}
+#clients .client-box {
+    padding-bottom: 40px;
+}
+#people h2 {
+    padding-bottom: 40px;
+}
+#people .subtitle {
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-top: 40px;
+}
+#contact {
+    background-color: rgb(87,87,86);
+    color: #B1B1B1;
+    padding-top: 50px;
+}
+#contact h2 {
+    color: #B1B1B1;
+    padding-bottom: 50px;
+}
+#contact p {
+    color: #B1B1B1;
+}
+#contact #send {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    color: #FFFFFF;
+    padding-right: 40px;
+    padding-left: 40px;
+    background-color: rgb(202,85,93);
+    border-color: rgb(202,85,93);
+}
+.contact-boxes {
+    padding-top: 50px;
+}
+.contact-box {
+    padding-top: 30px;
+}
+.contact-box img {
+    padding-bottom: 20px;
+    max-height: 70px;
+    max-width: 70px;
+    width: auto;
+    height: auto;
+}

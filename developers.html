@@ -7,9 +7,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../Downloads/bootstrap-3.3.7/docs/favicon.ico">
+    <link rel="icon" href="img/favicon.ico">
 
-    <title>Voiceful</title>
+    <title>Voiceful - Developers</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -21,10 +21,12 @@
     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:300,600" rel="stylesheet">
+    <link href="fonts/fonts.css" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:300,600" rel="stylesheet">-->
 
     <!-- Custom styles for this template -->
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/developers.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -119,7 +121,6 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-
     <div id="vodesc-modal" class="modal fade" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -133,7 +134,6 @@
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-
 
     <div id="voscale-modal" class="modal fade" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
@@ -150,7 +150,6 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-
     <div id="vomix-modal" class="modal fade" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -166,7 +165,6 @@
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-   
 
     <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
       <div class="container-fluid">
@@ -184,19 +182,15 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="./index.html" 
-                   class="btn btn-default navbar-btn">BACK TO MAIN</a></li>
-          </ul>
-                    <ul class="nav navbar-nav">
-            <li><a href="#" target="_blank"
-                   >DEVELOPERS PAGE</a></li>
+            <li><a href="index.html" class="btn btn-default navbar-btn">BACK TO MAIN</a></li>
+            <li><a>DEVELOPERS PAGE</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container-fluid">
-      <div id="first-row-devel" class="row section text-center">
+      <div id="first-row" class="row section text-center">
         <div class="col-xs-12">
           <h1>Developers</h1>
         </div>
@@ -207,9 +201,7 @@
           </p>
         </div>
       </div>
-
     </div>
-
 
     <div id="rubric" class="container-fluid">
       <div id="rubric-inner">
@@ -220,10 +212,10 @@
                 <h2>DOCUMENTATION</h2>
               </div>
               <div class="col-xs-12 col-sm-offset-3 col-sm-6">
-          <p>
-          Voiceful offers a set of voice and audio processing <a href="#tools">tools</a> through a RESTful API for a SaaS access, and a SDK with native libraries for integration in standalone mobile, desktop or server applications.
-          </p>
-        </div>
+                <p>
+                  Voiceful offers a set of voice and audio processing <a href="#tools">tools</a> through a RESTful API for a SaaS access, and a SDK with native libraries for integration in standalone mobile, desktop or server applications.
+                </p>
+              </div>
             </div>
 
             <div class="row">
@@ -239,7 +231,6 @@
                     <li role="presentation" class="active"><a href="#cloud-code-python" aria-controls="home" role="tab" data-toggle="tab">Python</a></li>
                     <li role="presentation"><a href="#cloud-code-php" aria-controls="profile" role="tab" data-toggle="tab">PHP</a></li>
                   </ul>
-
                   <!-- Tab panes -->
                   <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="cloud-code-python">
@@ -745,8 +736,22 @@
               </strong>
             </p>
             <p><a data-toggle="modal" href="#legal-modal">LEGAL NOTICE</a></p>
+            <p><a data-toggle="modal" href="#privacy-modal">PRIVACY</a></p>
           </div>
-          
+          <div class="col-xs-12 col-sm-offset-6 col-sm-3 col-lg-offset-7 col-lg-2">
+            <div id="social">
+              <h5>FOLLOW US ON</h5>
+              <a href="https://www.facebook.com/VoctroLabs/" target="_blank">
+                <img src="img/facebook.png">
+              </a>
+              <a href="https://twitter.com/VoctroLabs" target="_blank">
+                <img src="img/twitter.png">
+              </a>
+              <a href="https://www.youtube.com/user/voctrolabs" target="_blank">
+                <img src="img/youtube.png">
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
@@ -755,8 +760,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

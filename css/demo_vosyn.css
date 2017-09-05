@@ -1,0 +1,92 @@
+body {
+    background: url("../img/bg_demo_vosyn.png") repeat -50px 0;
+}
+.step-number {
+    color: #f7a906;
+}
+.btn-default, .btn-default:focus,
+.btn-group .dropdown-menu .btn-default {
+    background-color: #f7a906;
+}
+.btn-default:hover, .btn-default:active,
+.btn-default:hover:focus, .btn-default:active:focus,
+.btn-default.selected,
+.btn-default.selected:focus, .btn-default.selected:active,
+.btn-default.selected:hover:focus, .btn-default.selected:active:focus,
+.btn-group .dropdown-menu .btn-default:hover, .btn-group .dropdown-menu .btn-default:active,
+.btn-group .dropdown-menu .btn-default:hover:focus, .btn-group .dropdown-menu .btn-default:active:focus,
+.btn-group .dropdown-menu .btn-default.selected,
+.btn-group .dropdown-menu .btn-default.selected:focus,
+.btn-group .dropdown-menu .btn-default.selected:active,
+.btn-group .dropdown-menu .btn-default.selected:hover:focus,
+.btn-group .dropdown-menu .btn-default.selected:active:focus {
+    color: #f7a906;
+}
+.btn-group .dropdown-menu .btn-default:hover, .btn-group .dropdown-menu .btn-default:active,
+.btn-group .dropdown-menu .btn-default:hover:focus, .btn-group .dropdown-menu .btn-default:active:focus,
+.btn-group .dropdown-menu .btn-default.selected,
+.btn-group .dropdown-menu .btn-default.selected:focus,
+.btn-group .dropdown-menu .btn-default.selected:active,
+.btn-group .dropdown-menu .btn-default.selected:hover:focus,
+.btn-group .dropdown-menu .btn-default.selected:active:focus {
+    border-color: #f7a906;
+}
+a.btn-circle:hover .btn {
+    color: #f7a906;
+}
+input.vosyn-sentence {
+    background-color: transparent;
+    border-color: #ffffff;
+    border-bottom-width: 2px;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-radius: 0;
+    box-shadow: none;
+    color: #ffffff;
+    min-width:  550px;
+    text-align: center;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding-right: 34px;
+}
+input.vosyn-sentence:focus {
+    box-shadow: none;
+    border-color: #ffffff;
+}
+input.vosyn-sentence::placeholder {
+    color: #ffffff;
+}
+input.vosyn-sentence::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #ffffff;
+}
+input.vosyn-sentence::-moz-placeholder { /* Firefox 19+ */
+    color: #ffffff;
+}
+input.vosyn-sentence:-ms-input-placeholder { /* IE 10+ */
+    color: #ffffff;
+}
+input.vosyn-sentence:-moz-placeholder { /* Firefox 18- */
+    color: #ffffff;
+}
+.form-group.disabled input.vosyn-sentence,
+.form-group.disabled .num-syllabes {
+    opacity: 0.6;
+}
+.form-group {
+    position: relative;
+}
+.num-syllabes {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0px, -8px);
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+}
+.num-syllabes .glyphicon-ok {
+    color: #28AA91;
+}

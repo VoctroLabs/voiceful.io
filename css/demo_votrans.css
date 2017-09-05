@@ -1,0 +1,36 @@
+body {
+    background: url("../img/bg_demo_votrans.png") repeat -50px 0;
+}
+.step-number {
+    color: #e9545c;
+}
+.btn-default, .btn-default:focus,
+.btn-group .dropdown-menu .btn-default {
+    background-color: #e9545c;
+}
+.btn-default:hover, .btn-default:active,
+.btn-default:hover:focus, .btn-default:active:focus,
+.btn-default.selected,
+.btn-default.selected:focus, .btn-default.selected:active,
+.btn-default.selected:hover:focus, .btn-default.selected:active:focus,
+.btn-group .dropdown-menu .btn-default:hover, .btn-group .dropdown-menu .btn-default:active,
+.btn-group .dropdown-menu .btn-default:hover:focus, .btn-group .dropdown-menu .btn-default:active:focus,
+.btn-group .dropdown-menu .btn-default.selected,
+.btn-group .dropdown-menu .btn-default.selected:focus,
+.btn-group .dropdown-menu .btn-default.selected:active,
+.btn-group .dropdown-menu .btn-default.selected:hover:focus,
+.btn-group .dropdown-menu .btn-default.selected:active:focus {
+    color: #e9545c;
+}
+.btn-group .dropdown-menu .btn-default:hover, .btn-group .dropdown-menu .btn-default:active,
+.btn-group .dropdown-menu .btn-default:hover:focus, .btn-group .dropdown-menu .btn-default:active:focus,
+.btn-group .dropdown-menu .btn-default.selected,
+.btn-group .dropdown-menu .btn-default.selected:focus,
+.btn-group .dropdown-menu .btn-default.selected:active,
+.btn-group .dropdown-menu .btn-default.selected:hover:focus,
+.btn-group .dropdown-menu .btn-default.selected:active:focus {
+    border-color: #e9545c;
+}
+a.btn-circle:hover .btn {
+    color: #e9545c;
+}

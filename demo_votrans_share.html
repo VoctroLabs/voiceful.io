@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="img/favicon.ico">
+
+  <title>Voiceful - Voice Transformation Demo</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="fonts/fonts.css" rel="stylesheet">
+  <link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!--<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:300,600" rel="stylesheet">-->
+
+  <!-- Custom styles for this template -->
+  <link href="css/common.css" rel="stylesheet">
+  <link href="css/demo_common.css" rel="stylesheet">
+  <link href="css/demo_votrans.css" rel="stylesheet">
+  <link href="css/demo_share.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+<div id="header" class="container-fluid">
+  <a href="index.html">
+    <img class="logo" alt="logo" src="img/logo-white.png" srcset="img/logo-white-big.png 2x">
+  </a>
+  <a class="close-demo" href="demos.html">
+    <span class="close-text">CLOSE</span>
+    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+  </a>
+</div>
+
+<div class="center-box">
+  <div class="container-fluid">
+    <div id="top-text">
+      <div class="row step-text">
+        VOICE TRANSFORMATION
+      </div>
+      <div class="row">
+        <h3>Change your</h3>
+        <h1>voice</h1>
+      </div>
+      <div class="row">
+        <p>Record your voice and make it sound like<br>a child, a monster, a robot or any other person.</p>
+      </div>
+    </div>
+    <div id="player" class="row">
+      <span id="spinner" class="glyphicon glyphicon-refresh spinning" aria-hidden="true"></span>
+      <a id="play-btn" href="#">
+        <img id="play-btn-bg" src="img/player-bg.png" alt="player" />
+        <span id="play-btn-fg" class="glyphicon glyphicon-play" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="row btns-circle">
+      <a id='facebook-btn' class="btn-circle">
+        <div class="btn btn-default btn-lg">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </div>
+        <div class="btn-circle-text">FACEBOOK</div>
+      </a>
+      <a id="twitter-btn" class="btn-circle">
+        <div class="btn btn-default btn-lg">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+        <div class="btn-circle-text">TWITTER</div>
+      </a>
+      <a id="email-btn" class="btn-circle">
+        <div class="btn btn-default btn-lg">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+        </div>
+        <div class="btn-circle-text">EMAIL</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-3">
+        <img id="footer-logo" src="img/footer_logo.png" srcset="img/footer_logox2.png 2x">
+        <p>
+          Voiceful is a product of <strong>Voctro Labs</strong><br>
+          <strong>
+            info @ voctrolabs . com<br>
+            +34 931 412 636<br>
+            C/ Pujades 74-80 08005<br>
+            Barcelona<br>
+          </strong>
+        </p>
+        <p><a data-toggle="modal" href="#legal-modal">LEGAL NOTICE</a></p>
+        <p><a data-toggle="modal" href="#privacy-modal">PRIVACY</a></p>
+      </div>
+      <div class="col-xs-12 col-sm-offset-6 col-sm-3 col-lg-offset-7 col-lg-2">
+        <div id="social">
+          <h5>FOLLOW US ON</h5>
+          <a href="https://www.facebook.com/VoctroLabs/" target="_blank">
+            <img src="img/facebook.png">
+          </a>
+          <a href="https://twitter.com/VoctroLabs" target="_blank">
+            <img src="img/twitter.png">
+          </a>
+          <a href="https://www.youtube.com/user/voctrolabs" target="_blank">
+            <img src="img/youtube.png">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="js/ie10-viewport-bug-workaround.js"></script>
+<script src="js/howler.core.min.js"></script>
+<script src="js/url.min.js"></script>
+<script src="js/demo_share.js"></script>
+</body>
+</html>
