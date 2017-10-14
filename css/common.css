@@ -129,6 +129,9 @@ a {
     color: #575756;
     text-decoration: underline;
 }
+a:hover {
+    color: #322e2d;
+}
 p {
     font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 18px;
@@ -194,6 +197,9 @@ footer h6 {
 }
 footer a {
     color: #B1B1B1;
+}
+footer a:hover {
+    color: #ffffff;
 }
 footer #social {
     margin-top: 15px;
