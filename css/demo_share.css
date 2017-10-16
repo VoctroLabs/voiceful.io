@@ -32,6 +32,7 @@ a.btn-circle {
 }
 #lyrics {
     margin-top: 40px;
+    white-space: pre;
     font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-weight: lighter;
