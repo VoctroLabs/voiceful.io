@@ -3,6 +3,7 @@ var spinner = $('#spinner'),
     playBtnFg = playBtn.find('#play-btn-fg'),
     playBtnBg = playBtn.find('#play-btn-bg'),
     audio_url = url('?audio_url'),
+    lyrics = url('?lyrics'),
     sound,
     btnsCircle = $('.btns-circle').find('a'),
     facebookBtn = $('#facebook-btn'),
@@ -132,6 +133,7 @@ $(document).ready(function () {
         !devMode() && alert('Ups! There is no audio to play. Did you get here by mistake? Anyway, we will play you another thing then :)');
         audio_url = 'https://s3-eu-west-1.amazonaws.com/media.voctrolabs/vocloud/votrans_tasks/5e2f90c9-4760-4117-a560-973ffbc870fc/outputs/original/output.wav'
     }
+    $('#lyrics').text('\"'+decodeURIComponent(lyrics)+'\"');
 
     createAudio(audio_url);
 });

@@ -30,3 +30,11 @@ a.btn-circle {
     top: 12px;
     left: 14px;
 }
+#lyrics {
+    margin-top: 40px;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: lighter;
+    color: #eeeeee;
+    font-style: italic;
+}

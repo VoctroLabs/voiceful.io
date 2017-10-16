@@ -119,6 +119,9 @@ function vosyn() {
 }
 
 $('#share-btn').click(function () {
-    var url = 'demo_vosyn_share.html?audio_url=' + encodeURIComponent(shareAudioUrl);
+    var lyrics = $.map(inputs, function (input) { return input.value });
+    var lyrics_join = lyrics[0]+'\n'+lyrics[1]+'\n'+lyrics[2]+'\n'+lyrics[3];
+    var url = 'demo_vosyn_share.html?audio_url=' + encodeURIComponent(shareAudioUrl) + '?lyrics=' + encodeURIComponent(lyrics_join);
+    
     window.open(url, '_self');
 });
