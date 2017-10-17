@@ -14,13 +14,7 @@ var inputs = step1Container.find('input'),
     btnConfirm1 = btnsCircle1.filter('.btn-confirm'),
     btnCancel1 = btnsCircle1.filter('.btn-cancel');
 
-// Returns if the content of the input is empty
-// It will also be considered empty if there are only whitespaces
-function inputIsEmpty(inputValue) {
-    return !inputValue || !inputValue.trim()
-}
-
-function renderBtnsCircle() {
+function renderStep1() {
     var allInputsCorrect = true;
     inputs.each(function (i, input) {
         input = $(input);
@@ -41,8 +35,8 @@ function renderBtnsCircle() {
     else btnsCircle1.addClass('disabled');
 }
 
-inputs.on('change', renderBtnsCircle);
-inputs.on('keyup', renderBtnsCircle);
+inputs.on('change', renderStep1);
+inputs.on('keyup', renderStep1);
 
 // On confirm go to next step
 btnConfirm1.click(function () {
@@ -53,10 +47,11 @@ btnConfirm1.click(function () {
 btnCancel1.click(function () {
     inputs.val(''); // clear inputs
     btnsCircle1.addClass('disabled');
+    renderStep1();
 });
 
 // Analyse pre-existing text
-renderBtnsCircle();
+renderStep1();
 
 /* *** STEP 2 *** */
 
