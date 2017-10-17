@@ -38,6 +38,12 @@ function renderStep1() {
 inputs.on('change', renderStep1);
 inputs.on('keyup', renderStep1);
 
+inputs.on('keydown', function (e) {
+    // Allow only to input letters
+    var key = e.keyCode;
+    if (e.ctrlKey || e.altKey || !((key >= 65 && key <= 90)  || [8, 32, 44, 46].includes(key))) e.preventDefault();
+});
+
 // On confirm go to next step
 btnConfirm1.click(function () {
     stepTransition(step1Container, step3Container);
