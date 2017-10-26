@@ -31,6 +31,26 @@ body {
 .btn-group .dropdown-menu .btn-default.selected:active:focus {
     border-color: #28aa91;
 }
+
+.dropdown-menu {
+    background-color: rgba(255,255,255,0.15);
+    border: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    width: 100%;
+    top: 29px;
+    /*z-index: -1;*/
+    padding-top: 36px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+}
+
+
 a.btn-circle:hover .btn {
     color: #28aa91;
 }

@@ -77,7 +77,7 @@ h1, h3, h4, p {
     margin-bottom: 40px;
 }
 .btn-default, .btn-default:focus,
-.btn-group .dropdown-menu .btn-default {
+.btn-group .dropdown-menu .btn-default, .dropdown-menu .btn-default {
     border-color: #FFFFFF;
     border-width: 2px;
     border-radius: 30px;
