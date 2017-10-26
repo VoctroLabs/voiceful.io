@@ -69,7 +69,13 @@ audioInput.change(function () {
     renderStep1();
 });
 
-tracks.click(function () {
+//tracks.click(function () {
+//    tracks.removeClass('selected');
+//    $(this).addClass('selected');
+//    renderStep1();
+//});
+
+tracks.on('click touchstart', function() {
     tracks.removeClass('selected');
     $(this).addClass('selected');
     renderStep1();
