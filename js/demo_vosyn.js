@@ -46,8 +46,7 @@ inputs.on('keydown', function (e) {
 
 // On confirm go to next step
 btnConfirm1.click(function () {
-    stepTransition(step1Container, step3Container);
-    vosyn();
+    stepTransition(step1Container, step2Container);
 });
 
 btnCancel1.click(function () {
@@ -95,6 +94,7 @@ function vosyn() {
     var vosynTask = new VocloudTask('vosyn'),
         vosynParams = {
             preset_name: 'demo_glum',
+            voice: getSelectedVoice().data('voice'),
             input_text_upload_parts: 1
         },
         vosynUploads = {
