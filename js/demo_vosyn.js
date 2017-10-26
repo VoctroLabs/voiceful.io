@@ -39,9 +39,9 @@ inputs.on('change', renderStep1);
 inputs.on('keyup', renderStep1);
 
 inputs.on('keydown', function (e) {
-    // Allow only to input letters and ' (222)
+    // Allow only to input letters and ' (222) . , 
     var key = e.keyCode;
-    if (e.ctrlKey || e.altKey || !((key >= 65 && key <= 90) || key==222 || [8, 32, 44, 46].includes(key))) e.preventDefault();
+    if (e.ctrlKey || e.altKey || !((key >= 65 && key <= 90) || key==222 || key==37 || key==39 || key==188 || key==190 || [8, 32, 44, 46].includes(key))) e.preventDefault();
 });
 
 // On confirm go to next step
@@ -116,7 +116,7 @@ function vosyn() {
             shareAudioUrl = vomixTask.audio_url;
 
             var lyrics = $.map(inputs, function (input) { return input.value });
-            var lyrics_join = lyrics[0]+'\n'+lyrics[1]+'\n'+lyrics[2]+'\n'+lyrics[3];
+            var lyrics_join = lyrics[0]+'<br>'+lyrics[1]+'<br>'+lyrics[2]+'<br>'+lyrics[3];
             $('#lyrics').text('\"'+lyrics_join+'\"');
 
             createAudio(shareAudioUrl);
