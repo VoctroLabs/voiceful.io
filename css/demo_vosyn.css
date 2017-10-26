@@ -90,3 +90,12 @@ input.vosyn-sentence:-moz-placeholder { /* Firefox 18- */
 .num-syllabes .glyphicon-ok {
     color: #28AA91;
 }
+
+#lyrics {
+    margin-top: 40px;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: lighter;
+    color: #eeeeee;
+    font-style: italic;
+}
