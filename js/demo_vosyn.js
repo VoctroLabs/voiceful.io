@@ -116,7 +116,7 @@ function vosyn() {
             shareAudioUrl = vomixTask.audio_url;
 
             var lyrics = $.map(inputs, function (input) { return input.value });
-            var lyrics_join = lyrics[0]+'<br>'+lyrics[1]+'<br>'+lyrics[2]+'<br>'+lyrics[3];
+            var lyrics_join = lyrics[0]+'\n'+lyrics[1]+'\n'+lyrics[2]+'\n'+lyrics[3];
             $('#lyrics').text('\"'+lyrics_join+'\"');
 
             createAudio(shareAudioUrl);
