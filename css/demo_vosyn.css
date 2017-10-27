@@ -34,7 +34,8 @@ body {
 a.btn-circle:hover .btn {
     color: #f7a906;
 }
-input.vosyn-sentence {
+
+input.vosyn-sentence { /*big devices*/
     background-color: transparent;
     border-color: #ffffff;
     border-bottom-width: 2px;
@@ -52,6 +53,50 @@ input.vosyn-sentence {
     margin-top: 20px;
     padding-right: 34px;
 }
+
+
+@media screen and (min-width: 420px) and (max-width: 640px) { /* medium devices */
+  input.vosyn-sentence {
+    background-color: transparent;
+    border-color: #ffffff;
+    border-bottom-width: 2px;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-radius: 0;
+    box-shadow: none;
+    color: #ffffff;
+    min-width:  400px;
+    text-align: center;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding-right: 14px;
+  }
+}
+
+@media screen and (max-width: 420px) { /* smaller devices */
+  input.vosyn-sentence {
+    background-color: transparent;
+    border-color: #ffffff;
+    border-bottom-width: 2px;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-radius: 0;
+    box-shadow: none;
+    color: #ffffff;
+    min-width:  320px;
+    text-align: center;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding-right: 14px;
+  }
+}
+
 input.vosyn-sentence:focus {
     box-shadow: none;
     border-color: #ffffff;

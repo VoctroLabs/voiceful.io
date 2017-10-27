@@ -39,3 +39,28 @@ a.btn-circle {
     color: #eeeeee;
     font-style: italic;
 }
+
+.logo-share {
+    background-color: transparent;
+    margin-top: 0px;
+    margin-left: 5px;
+    height: 40px;
+}
+
+@media screen and (min-width: 410px) and (max-width: 600px) { /* medium devices */
+  .logo-share {
+    background-color: transparent;
+    margin-top: 0px;
+    margin-left: 5px;
+    height: 32px;
+  }
+}
+
+@media screen and (max-width: 410px) { /* smaller devices */
+  .logo-share {
+    background-color: transparent;
+    margin-top: 0px;
+    margin-left: 0px;
+    height: 25px;
+  }
+}

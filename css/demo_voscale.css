@@ -5,7 +5,8 @@ body {
     color: #28aa91;
 }
 .btn-default, .btn-default:focus,
-.btn-group .dropdown-menu .btn-default {
+.btn-group .dropdown-menu .btn-default,
+.dropdown-menu .btn-default {
     background-color: #28aa91;
 }
 .btn-default:hover, .btn-default:active,
@@ -13,6 +14,13 @@ body {
 .btn-default.selected,
 .btn-default.selected:focus, .btn-default.selected:active,
 .btn-default.selected:hover:focus, .btn-default.selected:active:focus,
+.dropdown-menu .btn-default:hover, .dropdown-menu .btn-default:active,
+.dropdown-menu .btn-default:hover:focus, .dropdown-menu .btn-default:active:focus,
+.dropdown-menu .btn-default.selected,
+.dropdown-menu .btn-default.selected:focus,
+.dropdown-menu .btn-default.selected:active,
+.dropdown-menu .btn-default.selected:hover:focus,
+.dropdown-menu .btn-default.selected:active:focus,
 .btn-group .dropdown-menu .btn-default:hover, .btn-group .dropdown-menu .btn-default:active,
 .btn-group .dropdown-menu .btn-default:hover:focus, .btn-group .dropdown-menu .btn-default:active:focus,
 .btn-group .dropdown-menu .btn-default.selected,
@@ -28,9 +36,17 @@ body {
 .btn-group .dropdown-menu .btn-default.selected:focus,
 .btn-group .dropdown-menu .btn-default.selected:active,
 .btn-group .dropdown-menu .btn-default.selected:hover:focus,
-.btn-group .dropdown-menu .btn-default.selected:active:focus {
+.btn-group .dropdown-menu .btn-default.selected:active:focus,
+.dropdown-menu .btn-default:hover, .dropdown-menu .btn-default:active,
+.dropdown-menu .btn-default:hover:focus, .dropdown-menu .btn-default:active:focus,
+.dropdown-menu .btn-default.selected,
+.dropdown-menu .btn-default.selected:focus,
+.dropdown-menu .btn-default.selected:active,
+.dropdown-menu .btn-default.selected:hover:focus,
+.dropdown-menu .btn-default.selected:active:focus {
     border-color: #28aa91;
 }
+
 
 .dropdown-menu {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -41,7 +57,7 @@ body {
     -moz-box-shadow: none;
     width: 100%;
     top: 29px;
-    /*z-index: -1;*/
+    /*z-index: -1;*/ /* this does not work on mobile devices because then the click event is not detected */
     padding-top: 36px;
     padding-right: 10px;
     padding-left: 10px;
@@ -51,6 +67,26 @@ body {
     border-bottom-right-radius: 13px;
 }
 
+@media screen and (min-width: 700px) {
+  .dropdown-menu {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: rgba(255,255,255,0.10);
+    border: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    width: 100%;
+    top: 29px;
+    /*z-index: -1;*/ /* this does not work on mobile devices because then the click event is not detected */
+    padding-top: 36px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+  }
+}
 
 a.btn-circle:hover .btn {
     color: #28aa91;

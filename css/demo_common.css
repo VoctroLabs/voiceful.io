@@ -13,8 +13,8 @@ h1, h3, h4, p {
 }
 .logo {
     background-color: transparent;
-    margin-top: 15px;
-    margin-left: 15px;
+    margin-top: 5px;
+    margin-left: 5px;
     height: 53px;
 }
 .close-demo, .close-demo:focus {
@@ -108,7 +108,14 @@ h1, h3, h4, p {
 .btn-group .dropdown-menu .btn-default.selected:focus,
 .btn-group .dropdown-menu .btn-default.selected:active,
 .btn-group .dropdown-menu .btn-default.selected:hover:focus,
-.btn-group .dropdown-menu .btn-default.selected:active:focus {
+.btn-group .dropdown-menu .btn-default.selected:active:focus,
+.dropdown-menu .btn-default:hover, .dropdown-menu .btn-default:active,
+.dropdown-menu .btn-default:hover:focus, .dropdown-menu .btn-default:active:focus,
+.dropdown-menu .btn-default.selected,
+.dropdown-menu .btn-default.selected:focus,
+.dropdown-menu .btn-default.selected:active,
+.dropdown-menu .btn-default.selected:hover:focus,
+.dropdown-menu .btn-default.selected:active:focus {
     background-color: #FFFFFF;
     border-color: #FFFFFF;
     box-shadow: none;
