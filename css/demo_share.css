@@ -38,6 +38,7 @@ a.btn-circle {
     font-weight: lighter;
     color: #eeeeee;
     font-style: italic;
+    white-space: pre-wrap;
 }
 
 .logo-share {

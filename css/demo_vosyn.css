@@ -143,4 +143,5 @@ input.vosyn-sentence:-moz-placeholder { /* Firefox 18- */
     font-weight: lighter;
     color: #eeeeee;
     font-style: italic;
+    white-space: pre-wrap;
 }
