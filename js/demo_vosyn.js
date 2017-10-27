@@ -20,7 +20,7 @@ function renderStep1() {
         input = $(input);
         var formGroup = input.parent(),
             span = formGroup.find('.num-syllabes'),
-            syllables = syllable(input.val()),
+            syllables = syllable(input.val().replace("\'","")),
             totalSyllables = input.data('syllables'),
             inputCorrect = (syllables == totalSyllables);
         span.text(syllables + '/' + totalSyllables);
