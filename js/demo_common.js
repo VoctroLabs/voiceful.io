@@ -31,7 +31,7 @@ function VocloudTask(api) {
         } else if (jqXHR.status === 429) {
             alert('You have exceeded the maximum amount of requests allowed. Please wait some minutes and try later.');
         } else if (jqXHR.status === 403) {
-            alert('Access forbidden [403].');
+            alert('Access forbidden [403].\nYou have exceeded the maximum amount of requests allowed in the demo. Please wait some minutes and try later.');
         } else if (textStatus === 'parsererror') {
             alert('Requested JSON parse failed.');
         } else if (textStatus === 'timeout') {
