@@ -585,7 +585,8 @@ module.exports={
   "reappraise": 3,
   "reestablish": 4,
   "reimpose": 3,
-  "reuse": 2
+  "reuse": 2,
+  "somebody": 3
 }
 
 },{}],"syllable":[function(require,module,exports){
