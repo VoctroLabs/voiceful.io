@@ -247,91 +247,91 @@
                       <div role="tabpanel" class="tab-pane active" id="cloud-code-python">
                         <pre class="pre-scrollable">
                           <code class="lang-python">
-                            import time
-                            import requests # sudo pip install requests
+import time
+import requests # sudo pip install requests
 
-                            #set user credentials
-                            user = 'user@domain.com'
-                            password = 'yourpassword'
+#set user credentials
+user = 'user@domain.com'
+password = 'yourpassword'
 
-                            # Python example that interacts with VOICEFUL VoScale API
-                            # It creates a new task, starts it and waits until
-                            # processing have been finished
+# Python example that interacts with VOICEFUL VoScale API
+# It creates a new task, starts it and waits until
+# processing have been finished
 
-                            url_vocloud = 'https://cloud.voctrolabs.com'
+url_vocloud = 'https://cloud.voctrolabs.com'
 
-                            if __name__ == '__main__':
+if __name__ == '__main__':
 
-                            # CREATE TASK //////////////////////////////////////////
+# CREATE TASK //////////////////////////////////////////
 
-                            print '*** CREATE TASK ***'
+print '*** CREATE TASK ***'
 
-                            #set parameters for transformation
-                            timestretch = 0.8;
-                            pitchshift = 3.0;
+#set parameters for transformation
+timestretch = 0.8;
+pitchshift = 3.0;
 
-                            payload = {
-                              "time_stretch_ratio": timestretch,
-                              "pitch_shift": pitchshift,
-                              "audio_upload_parts": 1
-                            }
+payload = {
+  "time_stretch_ratio": timestretch,
+  "pitch_shift": pitchshift,
+  "audio_upload_parts": 1
+}
 
-                            # Post request
-                            response_create = requests.post(url_vocloud + "/api/voscale/tasks",
-                            json=payload,
-                            auth=(user, password))
+# Post request
+response_create = requests.post(url_vocloud + "/api/voscale/tasks",
+json=payload,
+auth=(user, password))
 
-                            print(response_create.json())
+print(response_create.json())
 
-                            # Then upload (PUT) audio file to S3 url address returned in
-                            #response_create.json()["audio_upload_urls"][0]
-                            print "\n*** UPLOAD FILES ***"
+# Then upload (PUT) audio file to S3 url address returned in
+#response_create.json()["audio_upload_urls"][0]
+print "\n*** UPLOAD FILES ***"
 
-                            filepath = "test.wav"
-                            fh = open(filepath)
-                            audio_data_binary = fh.read()
-                            response_upload = requests.put(response_create.json()["audio_upload_urls"][0], data=audio_data_binary)
+filepath = "test.wav"
+fh = open(filepath)
+audio_data_binary = fh.read()
+response_upload = requests.put(response_create.json()["audio_upload_urls"][0], data=audio_data_binary)
 
-                            print("returned ok?:" + str(response_upload.ok) +
-                            " reason:" + response_upload.reason +
-                            " status_code:" + str(response_upload.status_code))
+print("returned ok?:" + str(response_upload.ok) +
+" reason:" + response_upload.reason +
+" status_code:" + str(response_upload.status_code))
 
-                            # START TASK ///////////////////////////////////////////
-                            print "\n*** START TASK ***"
-                            task_url = url_vocloud + "/api/voscale/tasks/" +
-                            response_create.json()["id"].encode('utf-8')
+# START TASK ///////////////////////////////////////////
+print "\n*** START TASK ***"
+task_url = url_vocloud + "/api/voscale/tasks/" +
+response_create.json()["id"].encode('utf-8')
 
-                            response_start = requests.post(task_url + "/start",
-                            auth=(user, password))
+response_start = requests.post(task_url + "/start",
+auth=(user, password))
 
-                            print("returned ok?:" + str(response_start.ok) +
-                            " reason:" + response_start.reason +
-                            " status_code:" + str(response_start.status_code))
+print("returned ok?:" + str(response_start.ok) +
+" reason:" + response_start.reason +
+" status_code:" + str(response_start.status_code))
 
-                            # Check if task finished
-                            print "\n*** TASK PROCESSED? ***"
+# Check if task finished
+print "\n*** TASK PROCESSED? ***"
 
-                            print "Processing...";
-                            while True:
-                            time.sleep(1)  # delays for 1 seconds
-                            response_status = requests.get(task_url,
-                            auth=(user, password))
+print "Processing...";
+while True:
+time.sleep(1)  # delays for 1 seconds
+response_status = requests.get(task_url,
+auth=(user, password))
 
-                            if response_status.json()["status"] == 'finished' or
-                            response_status.json()["status"] == 'failed':
-                            break
-                            else:
-                            print '.'
+if response_status.json()["status"] == 'finished' or
+response_status.json()["status"] == 'failed':
+break
+else:
+print '.'
 
-                            print "** Output URL: " + response_status.json()['audio_url']
+print "** Output URL: " + response_status.json()['audio_url']
 
-                            # Download file
-                            response_download = requests.get(response_status.json()['audio_url'],
-                            stream=True)
-                            if response_download.status_code == 200:
-                            with open("output.wav", 'wb') as f:
-                            for chunk in response_download.iter_content(1024):
-                            f.write(chunk)
+# Download file
+response_download = requests.get(response_status.json()['audio_url'],
+stream=True)
+if response_download.status_code == 200:
+with open("output.wav", 'wb') as f:
+for chunk in response_download.iter_content(1024):
+f.write(chunk)
 
                           </code>
                         </pre>
@@ -339,144 +339,144 @@
                       <div role="tabpanel" class="tab-pane" id="cloud-code-php">
                         <pre class="pre-scrollable">
                           <code class="lang-php">
-                            // PHP example that interacts with VOICEFUL VoScale API
-                            // It creates a new task, starts it and waits until
-                            // processing have been finished
+// PHP example that interacts with VOICEFUL VoScale API
+// It creates a new task, starts it and waits until
+// processing have been finished
 
-                            //set user credentials
-                            $user = "user@domain.com";
-                            $password = "yourpassword";
+//set user credentials
+$user = "user@domain.com";
+$password = "yourpassword";
 
-                            $url_vocloud = "https://cloud.voctrolabs.com";
+$url_vocloud = "https://cloud.voctrolabs.com";
 
-                            // CREATE TASK //////////////////////////////////////////
-                            //set parameters for transformation
-                            $timestretch = 0.8;
-                            $pitchshift = 3.0;
+// CREATE TASK //////////////////////////////////////////
+//set parameters for transformation
+$timestretch = 0.8;
+$pitchshift = 3.0;
 
-                            $postDataCreate = array(
-                            'time_stretch_ratio' => $timestretch,
-                            'pitch_shift' => $pitchshift,
-                            'audio_upload_parts' => 1
-                            );
+$postDataCreate = array(
+'time_stretch_ratio' => $timestretch,
+'pitch_shift' => $pitchshift,
+'audio_upload_parts' => 1
+);
 
-                            // Setup cURL
-                            $chCreate = curl_init($url_vocloud.'/api/voscale/tasks');
-                            curl_setopt_array($chCreate, array(
-                            CURLOPT_POST => TRUE,
-                            CURLOPT_RETURNTRANSFER => TRUE,
-                            CURLOPT_HTTPHEADER => array(
-                            'Content-Type: application/json'
-                            ),
+// Setup cURL
+$chCreate = curl_init($url_vocloud.'/api/voscale/tasks');
+curl_setopt_array($chCreate, array(
+CURLOPT_POST => TRUE,
+CURLOPT_RETURNTRANSFER => TRUE,
+CURLOPT_HTTPHEADER => array(
+'Content-Type: application/json'
+),
 
-                            CURLOPT_POSTFIELDS => json_encode($postDataCreate)
-                            ));
+CURLOPT_POSTFIELDS => json_encode($postDataCreate)
+));
 
-                            curl_setopt($chCreate, CURLOPT_USERPWD, $user . ":" . $password);
+curl_setopt($chCreate, CURLOPT_USERPWD, $user . ":" . $password);
 
-                            // Send the request
-                            $responseCreate = curl_exec($chCreate);
+// Send the request
+$responseCreate = curl_exec($chCreate);
 
-                            curl_close($chCreate);
+curl_close($chCreate);
 
-                            echo "** Response from create task: ********\n".$responseCreate."\n";
+echo "** Response from create task: ********\n".$responseCreate."\n";
 
-                            // Check for errors
-                            if($responseCreate === FALSE){
-                              die(curl_error($chCreate));
-                            }
+// Check for errors
+if($responseCreate === FALSE){
+  die(curl_error($chCreate));
+}
 
-                            $responseCreate_obj = json_decode($responseCreate,true);
+$responseCreate_obj = json_decode($responseCreate,true);
 
-                            // Then upload (PUT) audio file to S3 url address returned
-                            // in $responseCreate_obj["audio_upload_urls"][0]
+// Then upload (PUT) audio file to S3 url address returned
+// in $responseCreate_obj["audio_upload_urls"][0]
 
-                            $audio_fn = "test.wav";
-                            $audio = fopen($audio_fn, "rb");
+$audio_fn = "test.wav";
+$audio = fopen($audio_fn, "rb");
 
-                            $chUpload = curl_init();
-                            curl_setopt($chUpload, CURLOPT_CONNECTTIMEOUT, 2);
-                            curl_setopt($chUpload, CURLOPT_HEADER, false);
-                            curl_setopt($chUpload, CURLOPT_RETURNTRANSFER, 1);
-                            curl_setopt($chUpload, CURLOPT_BINARYTRANSFER, 1);
-                            curl_setopt($chUpload, CURLOPT_URL, $responseCreate_obj["audio_upload_urls"][0]);
+$chUpload = curl_init();
+curl_setopt($chUpload, CURLOPT_CONNECTTIMEOUT, 2);
+curl_setopt($chUpload, CURLOPT_HEADER, false);
+curl_setopt($chUpload, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($chUpload, CURLOPT_BINARYTRANSFER, 1);
+curl_setopt($chUpload, CURLOPT_URL, $responseCreate_obj["audio_upload_urls"][0]);
 
-                            curl_setopt($chUpload, CURLOPT_PUT, 1);
-                            curl_setopt($chUpload, CURLOPT_INFILE, $audio);
-                            curl_setopt($chUpload, CURLOPT_INFILESIZE, filesize($audio_fn));
+curl_setopt($chUpload, CURLOPT_PUT, 1);
+curl_setopt($chUpload, CURLOPT_INFILE, $audio);
+curl_setopt($chUpload, CURLOPT_INFILESIZE, filesize($audio_fn));
 
-                            $responseUpload = curl_exec($chUpload);
-                            curl_close($chUpload);
+$responseUpload = curl_exec($chUpload);
+curl_close($chUpload);
 
-                            echo "\n** Response from upload audio to S3: *****\n".$responseUpload."\n";
+echo "\n** Response from upload audio to S3: *****\n".$responseUpload."\n";
 
-                            // START TASK ///////////////////////////////////////////
-                            $task_id = $responseCreate_obj["id"];
-                            $task_url = $url_vocloud."/api/voscale/tasks/".$task_id;
+// START TASK ///////////////////////////////////////////
+$task_id = $responseCreate_obj["id"];
+$task_url = $url_vocloud."/api/voscale/tasks/".$task_id;
 
-                            // The data to send to the API
-                            $postDataStart = array(
-                            'task_url' => $task_url
-                            );
+// The data to send to the API
+$postDataStart = array(
+'task_url' => $task_url
+);
 
-                            // Setup cURL
-                            $chStart = curl_init($task_url."/start");
-                            curl_setopt_array($chStart, array(
-                            CURLOPT_POST => TRUE,
-                            CURLOPT_RETURNTRANSFER => TRUE,
-                            CURLOPT_HTTPHEADER => array(
-                            'Content-Type: application/json'
-                            ),
+// Setup cURL
+$chStart = curl_init($task_url."/start");
+curl_setopt_array($chStart, array(
+CURLOPT_POST => TRUE,
+CURLOPT_RETURNTRANSFER => TRUE,
+CURLOPT_HTTPHEADER => array(
+'Content-Type: application/json'
+),
 
-                            CURLOPT_POSTFIELDS => json_encode($postDataStart)
-                            ));
+CURLOPT_POSTFIELDS => json_encode($postDataStart)
+));
 
-                            curl_setopt($chStart, CURLOPT_USERPWD, $user . ":" . $password);
+curl_setopt($chStart, CURLOPT_USERPWD, $user . ":" . $password);
 
-                            // Send the request
-                            $responseStart = curl_exec($chStart);
-                            curl_close($chStart);
+// Send the request
+$responseStart = curl_exec($chStart);
+curl_close($chStart);
 
-                            echo "\n** Response from start task: ******\n".$responseStart."\n";
+echo "\n** Response from start task: ******\n".$responseStart."\n";
 
-                            // Check for errors
-                            if($responseStart === FALSE){
-                              die(curl_error($chStart));
-                            }
+// Check for errors
+if($responseStart === FALSE){
+  die(curl_error($chStart));
+}
 
-                            $responseStart_obj = json_decode($responseStart,true);
+$responseStart_obj = json_decode($responseStart,true);
 
-                            echo "\nProcessing...";
+echo "\nProcessing...";
 
-                            while ( ($responseStatus_obj['status'] != 'failed') and
-                            ($responseStatus_obj['status'] != 'finished') )
-                            {
-                              sleep(1);
+while ( ($responseStatus_obj['status'] != 'failed') and
+($responseStatus_obj['status'] != 'finished') )
+{
+  sleep(1);
 
-                              // Setup cURL
-                              $chStatus = curl_init($task_url);
-                              curl_setopt($chStatus,CURLOPT_RETURNTRANSFER,true);
-                              curl_setopt($chStatus, CURLOPT_USERPWD, $user . ":" . $password);
-                              // Send the request
-                              $responseStatus = curl_exec($chStatus);
-                              curl_close($chStatus);
+  // Setup cURL
+  $chStatus = curl_init($task_url);
+  curl_setopt($chStatus,CURLOPT_RETURNTRANSFER,true);
+  curl_setopt($chStatus, CURLOPT_USERPWD, $user . ":" . $password);
+  // Send the request
+  $responseStatus = curl_exec($chStatus);
+  curl_close($chStatus);
 
-                              $responseStatus_obj = json_decode($responseStatus,true);
-                              echo ".";
-                            }
+  $responseStatus_obj = json_decode($responseStatus,true);
+  echo ".";
+}
 
-                            echo "\n\n** Response from status task: ******\n".$responseStatus."\n";
+echo "\n\n** Response from status task: ******\n".$responseStatus."\n";
 
-                            // Check for errors
-                            if($responseStatus === FALSE){
-                              die(curl_error($chStatus));
-                            }
+// Check for errors
+if($responseStatus === FALSE){
+  die(curl_error($chStatus));
+}
 
-                            //Decode the response
-                            $responseData_obj = json_decode($responseStatus, TRUE);
+//Decode the response
+$responseData_obj = json_decode($responseStatus, TRUE);
 
-                            //Print output audio generated
-                            echo "\n** Output URL: ".$responseData_obj["audio_url"]."\n";
+//Print output audio generated
+echo "\n** Output URL: ".$responseData_obj["audio_url"]."\n";
 
                           </code>
                         </pre>
@@ -495,7 +495,8 @@
 #include &lt;stdlib.h&gt;
 #include &lt;fstream&gt;
 
-#include &lt;curlpp/cURLpp.hpp&gt; // https://github.com/jpbarrette/curlpp
+// https://github.com/jpbarrette/curlpp
+#include &lt;curlpp/cURLpp.hpp&gt;
 #include &lt;curlpp/Easy.hpp&gt;
 #include &lt;curlpp/Options.hpp&gt;
 #include &lt;curlpp/Exception.hpp&gt;
