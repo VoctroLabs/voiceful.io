@@ -639,81 +639,81 @@ int main(int argc, const char * argv[]) {
                       <div role="tabpanel" class="tab-pane active" id="standalone-code-c++">
                         <pre class="pre-scrollable">
                           <code class="lang-c++">
-                            #include "VoTransLib_api.h"
+#include "VoTransLib_api.h"
 
-                            /***************************************************************
-                            C++ usage example for VOICEFUL VoTrans Stand Alone SDK
-                            The below code is incomplete, it lacks audio in/out that will
-                            be implemented using standard audio driver libraries or
-                            reading from audio files on disk
-                            ****************************************************************/
+/***************************************************************
+C++ usage example for VOICEFUL VoTrans Stand Alone SDK
+The below code is incomplete, it lacks audio in/out that will
+be implemented using standard audio driver libraries or
+reading from audio files on disk
+****************************************************************/
 
-                            //VoTrans object
-                            void* mVoTrans = NULL;
+//VoTrans object
+void* mVoTrans = NULL;
 
-                            //parameters
-                            float gain_val = 0.9f;
-                            float pitch_val = 3.f;
-                            float mTimbreParameters[5] = { 0.5f, 0.6f, 0.7f, 0.55f, 0.5f };
-                            float vibratodepth_val = 0.2f;
-                            float vibratofreq_val = 0.3f;
-                            float robot_val = 0.0f;
-                            float alien_val = 0.0f;
-                            float autotune_val = 0.0f;
-                            float harmonizer_val = 0.0f;
+//parameters
+float gain_val = 0.9f;
+float pitch_val = 3.f;
+float mTimbreParameters[5] = { 0.5f, 0.6f, 0.7f, 0.55f, 0.5f };
+float vibratodepth_val = 0.2f;
+float vibratofreq_val = 0.3f;
+float robot_val = 0.0f;
+float alien_val = 0.0f;
+float autotune_val = 0.0f;
+float harmonizer_val = 0.0f;
 
-                            //INITIALIZATION OF THE LIBRARY
-                            int init()
-                            {
-                              int mnCh = 2; //number of channels
-                              float mSampleRate = 44100.f;
-                              int mBlockSize = 256;
+//INITIALIZATION OF THE LIBRARY
+int init()
+{
+  int mnCh = 2; //number of channels
+  float mSampleRate = 44100.f;
+  int mBlockSize = 256;
 
-                              mVoTrans = VT_Create();
+  mVoTrans = VT_Create();
 
-                              //CONFIGURATION
-                              int highQuality = 1;
-                              int noisy = 0;
-                              int bypass = 0;
-                              VT_Configure(mnCh, mSampleRate, mBlockSize,
-                              highQuality, noisy, bypass, mVoTrans);
-                              VT_SetPreAnalysis(NULL, mVoTrans);
-                              VT_BeginProcess(mVoTrans);
-                            }
+  //CONFIGURATION
+  int highQuality = 1;
+  int noisy = 0;
+  int bypass = 0;
+  VT_Configure(mnCh, mSampleRate, mBlockSize,
+  highQuality, noisy, bypass, mVoTrans);
+  VT_SetPreAnalysis(NULL, mVoTrans);
+  VT_BeginProcess(mVoTrans);
+}
 
-                            //PROCESS (in loop)
-                            //This function will be the audio driver callback if used in realtime or
-                            //called in a loop while reading from a disk file or memory buffer if
-                            //transforming offline samples
-                            void ProcessCallback(float* inbuffer, float* outbuffer)
-                            {
-                              //set parameters (e.g. from gui)
-                              VT_SetGainParameter(gain_val, mVoTrans);
+//PROCESS (in loop)
+//This function will be the audio driver callback if used in realtime or
+//called in a loop while reading from a disk file or memory buffer if
+//transforming offline samples
+void ProcessCallback(float* inbuffer, float* outbuffer)
+{
+  //set parameters (e.g. from gui)
+  VT_SetGainParameter(gain_val, mVoTrans);
 
-                              VT_SetPitchTranspositionInSemitonesParameter(pitch_val, mVoTrans);
+  VT_SetPitchTranspositionInSemitonesParameter(pitch_val, mVoTrans);
 
-                              VT_SetTimbreParameters(mTimbreParameters, mVoTrans);
+  VT_SetTimbreParameters(mTimbreParameters, mVoTrans);
 
-                              VT_SetVibratoDepthParameter(vibratodepth_val, mVoTrans);
-                              VT_SetVibratoFreqParameter(vibratofreq_val, mVoTrans);
+  VT_SetVibratoDepthParameter(vibratodepth_val, mVoTrans);
+  VT_SetVibratoFreqParameter(vibratofreq_val, mVoTrans);
 
-                              VT_SetRobotParameter(robot_val, mVoTrans);
-                              VT_SetAlienParameter(alien_val, mVoTrans);
-                              VT_SetAutoTuneParameter(autotune_val, mVoTrans);
-                              VT_SetHarmonizerParameter(harmonizer_val, mVoTrans);
+  VT_SetRobotParameter(robot_val, mVoTrans);
+  VT_SetAlienParameter(alien_val, mVoTrans);
+  VT_SetAutoTuneParameter(autotune_val, mVoTrans);
+  VT_SetHarmonizerParameter(harmonizer_val, mVoTrans);
 
-                              //inbuffer & outbuffer memory is allocated by the user,
-                              //DoProcessFloat fills the outbuffer with a maximum of
-                              //configured blocksize (e.g. mBlockSize=256)
-                              int n = VT_DoProcessFloat(inbuffer, outbuffer, mVoTrans);
-                            }
+  //inbuffer & outbuffer memory is allocated by the user,
+  //DoProcessFloat fills the outbuffer with a maximum of
+  //configured blocksize (e.g. mBlockSize=256)
+  int n = VT_DoProcessFloat(inbuffer, outbuffer, mVoTrans);
+}
 
-                            //DESTROY
-                            void end()
-                            {
-                              VT_EndProcess(mVoTrans);
-                              VT_Destroy(mVoTrans);
-                            }
+//DESTROY
+void end()
+{
+  VT_EndProcess(mVoTrans);
+  VT_Destroy(mVoTrans);
+}
 
                           </code>
                         </pre>
