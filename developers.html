@@ -484,22 +484,22 @@
                       <div role="tabpanel" class="tab-pane" id="cloud-code-cpp">
                         <pre class="pre-scrollable">
                           <code class="lang-Cpp">
-                            // C++ example that interacts with VOICEFUL VoScale API
+// C++ example that interacts with VOICEFUL VoScale API
 // It creates a new task, starts it and waits until
 // processing have been finished, downloading the result
 
-#include <iostream>
+#include &lt;iostream&gt;
 #include "json.hpp" // https://github.com/nlohmann/json
-#include <chrono>
-#include <thread>
-#include <stdlib.h>
-#include <fstream>
+#include &lt;chrono&gt;
+#include &lt;thread&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;fstream&gt;
 
-#include <curlpp/cURLpp.hpp> // https://github.com/jpbarrette/curlpp
-#include <curlpp/Easy.hpp>
-#include <curlpp/Options.hpp>
-#include <curlpp/Exception.hpp>
-#include <curlpp/Infos.hpp>
+#include &lt;curlpp/cURLpp.hpp&gt; // https://github.com/jpbarrette/curlpp
+#include &lt;curlpp/Easy.hpp&gt;
+#include &lt;curlpp/Options.hpp&gt;
+#include &lt;curlpp/Exception.hpp&gt;
+#include &lt;curlpp/Infos.hpp&gt;
 
 using json = nlohmann::json;
 
@@ -523,7 +523,7 @@ int main(int argc, const char * argv[]) {
     };
 
     request.setOpt(new curlpp::options::Url(url_vocloud + "/api/voscale/tasks"));
-    std::list<std::string> header;
+    std::list&lt;std::string&gt; header;
     header.push_back("Content-Type: application/json");
     request.setOpt(new curlpp::options::HttpHeader(header));
     request.setOpt(new curlpp::options::PostFields(payload.dump()));
@@ -534,9 +534,9 @@ int main(int argc, const char * argv[]) {
 
     json response_create = json::parse(response.str());
 
-    std::cout << response.str() << std::endl;
+    std::cout &lt;&lt; response.str() &lt;&lt; std::endl;
 
-    std::cout << std::endl << "*** UPLOAD FILES ***" << std::endl;
+    std::cout &lt;&lt; std::endl &lt;&lt; "*** UPLOAD FILES ***" &lt;&lt; std::endl;
 
     // Audio 1
     std::string filepath = "test.wav";
@@ -555,9 +555,9 @@ int main(int argc, const char * argv[]) {
     request.setOpt(new curlpp::options::InfileSize(size));
     request.perform();
 
-    std::cout << "status_code:" << curlpp::infos::ResponseCode::get(request) << std::endl;
+    std::cout &lt;&lt; "status_code:" &lt;&lt; curlpp::infos::ResponseCode::get(request) &lt;&lt; std::endl;
 
-    std::cout << "\n*** START TASK ***" << std::endl;
+    std::cout &lt;&lt; "\n*** START TASK ***" &lt;&lt; std::endl;
     std::string id = response_create["id"];
     std::string task_url = url_vocloud + "/api/voscale/tasks/" + id;
     std::string start_url = task_url + "/start";
@@ -573,10 +573,10 @@ int main(int argc, const char * argv[]) {
     request.setOpt(new curlpp::options::WriteStream(&response));
     request.perform();
 
-    std::cout << response.str() << std::endl;
+    std::cout &lt;&lt; response.str() &lt;&lt; std::endl;
     json response_start = json::parse(response.str());
 
-    std::cout << "\n*** TASK PROCESSED? ***" << std::endl;
+    std::cout &lt;&lt; "\n*** TASK PROCESSED? ***" &lt;&lt; std::endl;
     json response_status;
     while (true) {
         std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -590,11 +590,11 @@ int main(int argc, const char * argv[]) {
         if (response_status["status"] == "finished" || response_status["status"] == "failed")
             break;
         else
-            std::cout << "-------" << std::endl;
+            std::cout &lt;&lt; "-------" &lt;&lt; std::endl;
     }
 
     std::string mixUrl = response_status["audio_url"];
-    std::cout << "** Output URL: " << mixUrl << std::endl;
+    std::cout &lt;&lt; "** Output URL: " &lt;&lt; mixUrl &lt;&lt; std::endl;
 
     request.reset();
     request.setOpt(new curlpp::options::Url(url));
@@ -603,9 +603,9 @@ int main(int argc, const char * argv[]) {
     request.perform();
     long responseCode = curlpp::infos::ResponseCode::get(request);
     if (responseCode == 200) {
-        std::cout << "File written to output.wav" << std::endl;
+        std::cout &lt;&lt; "File written to output.wav" &lt;&lt; std::endl;
     } else {
-        std::cout << "Error " << responseCode << " downloading file";
+        std::cout &lt;&lt; "Error " &lt;&lt; responseCode &lt;&lt; " downloading file";
         return -1;
     }
 
