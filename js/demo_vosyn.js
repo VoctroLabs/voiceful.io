@@ -39,9 +39,9 @@ inputs.on('change', renderStep1);
 inputs.on('keyup', renderStep1);
 
 inputs.on('keydown', function (e) {
-    // Allow only to input letters and ' (222) . , 
+    // Allow only to input letters and ' (222 & 219) . , 
     var key = e.keyCode;
-    if (e.ctrlKey || e.altKey || !((key >= 65 && key <= 90) || key==222 || key==37 || key==39 || key==188 || key==190 || [8, 32, 44, 46].includes(key))) e.preventDefault();
+    if (e.ctrlKey || e.altKey || !((key >= 65 && key <= 90) || [37, 39, 188, 190, 219, 222, 8, 32, 44, 46].includes(key))) e.preventDefault();
 });
 
 // On confirm go to next step
