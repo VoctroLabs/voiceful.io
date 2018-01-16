@@ -5,6 +5,7 @@ var step1Container = $('#step1-container'),
 
 var recordBtn = step1Container.find('#record-btn'),
     recordedSound,
+    recordingTimeout,
     audioPickBtn = step1Container.find('#audio-pick-btn'),
     audioInput = step1Container.find('#audio-input'),
     audioInputSound,
@@ -57,6 +58,14 @@ function captureMicrophone() {
             // UI actions
             recordBtn.status = 'recording';
             renderRecordBtn();
+
+            // Put a maximum recording time
+            recordingTimeout = setTimeout(function recordingTimeout() {
+                if (recordBtn.status === 'recording') {
+                    stopRecording();
+                    alert('Please, do not record more than 15 seconds.');
+                }
+            }, 15 * 1000); // 15 seconds
         },
         function(error) {
             console.error(error);
@@ -66,6 +75,7 @@ function captureMicrophone() {
 }
 
 function stopRecording() {
+    clearTimeout(recordingTimeout);
     recorder.stop();
     recordBtn.status = 'loading';
     renderStep1();
