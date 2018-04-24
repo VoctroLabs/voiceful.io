@@ -110,7 +110,7 @@ function vosyn() {
         var vomixTask = new VocloudTask('vomix'),
             vomixParams = {
                 preset_name: 'demo_glum',
-                audio2_upload_with_url: vosynTask.audio_url
+                audio2_upload_with_url: vosynTask.output_url
             };
         vomixTask.process(vomixParams).done(function () {
             shareAudioUrl = vomixTask.audio_url;
