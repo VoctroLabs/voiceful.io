@@ -9,6 +9,7 @@ body {
     background-color: #f7a906;
 }
 .btn-default:hover, .btn-default:active,
+.btn-default:active:hover,
 .btn-default:hover:focus, .btn-default:active:focus,
 .btn-default.selected,
 .btn-default.selected:focus, .btn-default.selected:active,
@@ -144,4 +145,20 @@ input.vosyn-sentence:-moz-placeholder { /* Firefox 18- */
     color: #eeeeee;
     font-style: italic;
     white-space: pre-wrap;
+}
+
+.Fade-enter {
+  opacity: 0.01;
+}
+.Fade-enter-active {
+  opacity: 1;
+  transition: all 1s ease-out;
+  transition-delay: 200ms;
+}
+.Fade-exit {
+  opacity: 1;
+}
+.Fade-exit-active {
+  opacity: 0.01;
+  transition: all 200ms ease-out;
 }

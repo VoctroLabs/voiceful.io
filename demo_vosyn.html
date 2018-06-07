@@ -44,146 +44,7 @@
 
 <body>
 
-<div id="header" class="container-fluid">
-  <a href="index.html">
-    <img class="logo" alt="logo" src="img/logo-white.png" srcset="img/logo-white-big.png 2x">
-  </a>
-    <a class="close-demo" href="demos.html">
-      <span class="close-text">CLOSE</span>
-      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-    </a>
-</div>
-
-<div class="center-box">
-  <div class="container-fluid">
-    <div id="step1-container">
-      <div class="row step-number">
-        <span class="center-block">1</span>
-      </div>
-      <div class="row step-text">
-        STEP ONE
-      </div>
-      <div class="row step-title">
-        <h1>Your words</h1>
-      </div>
-      <div class="row">
-        <div class="form-group disabled">
-          <input class="form-control vosyn-sentence" data-syllables="8" type="text" placeholder="Type here"
-                 value="input your own text and fill in"/>
-          <span class="num-syllabes" data-toggle="tooltip" data-placement="right" title="Syllables">0/8</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group disabled">
-          <input class="form-control vosyn-sentence" data-syllables="13" type="text" placeholder="Type here"
-                 value="the correct number of syllables your text will be"/>
-          <span class="num-syllabes" data-toggle="tooltip" data-placement="right" title="Syllables">0/13</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group disabled">
-          <input class="form-control vosyn-sentence" data-syllables="9" type="text" placeholder="Type here"
-                 value="turned into a song by voiceful tech"/>
-          <span class="num-syllabes" data-toggle="tooltip" data-placement="right" title="Syllables">0/9</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group disabled">
-          <input class="form-control vosyn-sentence" data-syllables="5" type="text" placeholder="Type here"
-                 value="enjoy and share it"/>
-          <span class="num-syllabes" data-toggle="tooltip" data-placement="right" title="Syllables">0/5</span>
-        </div>
-      </div>
-      <div class="row btns-circle">
-        <a class="btn-circle btn-cancel disabled">
-          <div class="btn btn-default btn-lg">
-            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-          </div>
-          <div class="btn-circle-text">CANCEL</div>
-        </a>
-        <a class="btn-circle btn-confirm disabled">
-          <div class="btn btn-default btn-lg">
-            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-          </div>
-          <div class="btn-circle-text">CONFIRM</div>
-        </a>
-      </div>
-    </div>
-    <div id="step2-container">
-      <div class="row step-number">
-        <span class="center-block">2</span>
-      </div>
-      <div class="row step-text">
-        STEP TWO
-      </div>
-      <div class="row step-title">
-        <h1>Your voice</h1>
-      </div>
-      <div id="voices">
-        <div class="row">
-          <a class="btn btn-default btn-lg" data-voice="randy" href="#">Male</a>
-        </div>
-        <div class="row">
-          <a class="btn btn-default btn-lg" data-voice="ayesha" href="#">Female</a>
-        </div>
-      </div>
-      <div class="row btns-circle">
-        <a class="btn-circle btn-cancel disabled">
-          <div class="btn btn-default btn-lg">
-            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-          </div>
-          <div class="btn-circle-text">CANCEL</div>
-        </a>
-        <a class="btn-circle btn-confirm disabled">
-          <div class="btn btn-default btn-lg">
-            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-          </div>
-          <div class="btn-circle-text">CONFIRM</div>
-        </a>
-      </div>
-    </div>
-    <div id="step3-container">
-      <div class="row step-number">
-        <span class="center-block">3</span>
-      </div>
-      <div class="row step-text">
-        STEP THREE
-      </div>
-      <div class="row step-title">
-        <h1>Processing...</h1>
-      </div>
-      <div class="row">
-        <span id="spinner" class="glyphicon glyphicon-refresh spinning" aria-hidden="true"></span>
-        <a id="play-btn" href="#">
-          <img id="play-btn-bg" src="img/player-bg.png" alt="player" />
-          <span id="play-btn-fg" class="glyphicon glyphicon-play" aria-hidden="true"></span>
-        </a>
-      </div>
-      <div id="lyrics">
-      </div>
-      <div class="row btns-circle">
-        <a class="btn-circle disabled" href="demo_vosyn.html">
-          <div class="btn btn-default btn-lg">
-            <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
-          </div>
-          <div class="btn-circle-text">REPEAT</div>
-        </a>
-        <a class="btn-circle disabled" href="demos.html">
-          <div class="btn btn-default btn-lg">
-            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-          </div>
-          <div class="btn-circle-text">CLOSE</div>
-        </a>
-        <a id="share-btn" class="btn-circle disabled">
-          <div class="btn btn-default btn-lg">
-            <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
-          </div>
-          <div class="btn-circle-text">SHARE</div>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+<div id="root"></div>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
@@ -194,7 +55,28 @@
 <script src="js/ie10-viewport-bug-workaround.js"></script>
 <script src="js/syllable.js"></script>
 <script src="js/howler.core.min.js"></script>
-<script src="js/demo_common.js"></script>
-<script src="js/demo_vosyn.js"></script>
+<script crossorigin src="https://unpkg.com/react@16.4.0/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/prop-types@15.6.1/prop-types.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-transition-group@2.3.1/dist/react-transition-group.min.js"></script>
+<script crossorigin src="https://unpkg.com/mobx@5.0.0/lib/mobx.umd.js"></script>
+<script crossorigin src="https://unpkg.com/mobx-react@5.2.0/index.js"></script>
+<script crossorigin src="https://unpkg.com/classnames@2.2.5/index.js"></script>
+<script src="js/vendor/core-decorators.min.js"></script>
+<script src="js/vendor/babel-standalone.min.js"></script>
+<script src="js/demo_vosyn/imports.js" type="text/babel" data-presets="react" data-plugins="transform-decorators-legacy,transform-class-properties"></script>
+<script src="js/demo_vosyn/VocloudTask.js" type="text/babel" data-presets="react" data-plugins="transform-decorators-legacy,transform-class-properties"></script>
+<script src="js/demo_vosyn/state.js" type="text/babel" data-presets="react" data-plugins="transform-decorators-legacy,transform-class-properties"></script>
+<script src="js/demo_vosyn/Header.js" type="text/babel" data-presets="react" data-plugins="transform-decorators-legacy,transform-class-properties"></script>
+<script src="js/demo_vosyn/StepHeader.js" type="text/babel" data-presets="react" data-plugins="transform-decorators-legacy,transform-class-properties"></script>
+<script src="js/demo_vosyn/StepButtons.js" type="text/babel" data-presets="react" data-plugins="transform-decorators-legacy,transform-class-properties"></script>
+<script src="js/demo_vosyn/StyleStep.js" type="text/babel" data-presets="react" data-plugins="transform-decorators-legacy,transform-class-properties"></script>
+<script src="js/demo_vosyn/SingingTextStep.js" type="text/babel" data-presets="react" data-plugins="transform-decorators-legacy,transform-class-properties"></script>
+<script src="js/demo_vosyn/SpeechTextStep.js" type="text/babel" data-presets="react" data-plugins="transform-decorators-legacy,transform-class-properties"></script>
+<script src="js/demo_vosyn/VoiceStep.js" type="text/babel" data-presets="react" data-plugins="transform-decorators-legacy,transform-class-properties"></script>
+<script src="js/demo_vosyn/EmotionStep.js" type="text/babel" data-presets="react" data-plugins="transform-decorators-legacy,transform-class-properties"></script>
+<script src="js/demo_vosyn/ListenStep.js" type="text/babel" data-presets="react" data-plugins="transform-decorators-legacy,transform-class-properties"></script>
+<script src="js/demo_vosyn/DemoVosyn.js" type="text/babel" data-presets="react" data-plugins="transform-decorators-legacy,transform-class-properties"></script>
+<script src="js/demo_vosyn/index.js" type="text/babel" data-presets="react" data-plugins="transform-decorators-legacy,transform-class-properties"></script>
 </body>
 </html>
