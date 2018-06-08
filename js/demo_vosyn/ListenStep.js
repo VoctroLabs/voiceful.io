@@ -4,8 +4,10 @@ class ListenStep extends React.Component {
   @observable audioUrl;
   @observable playerLoaded = false;
 
-  componentDidMount() {
-    this.processAudio();
+  async componentDidMount() {
+    const processFn = state.selectedStyle === 'singing' ? this.processSingingAudio : this.processSpeechAudio;
+    const audioUrl = await processFn();
+    runInAction(() => this.audioUrl = audioUrl);
   }
 
   @action
@@ -13,18 +15,19 @@ class ListenStep extends React.Component {
     this.playerLoaded = true;
   }
 
-  async processAudio() {
+  async processSingingAudio() {
     const vosynParams = {
       preset_name: 'demo_glum',
-      voice: state.voice,
+      voice: state.selectedVoice,
       input_text_upload_parts: 1
     };
     const vosynUploads = {
       input_text: {
         data: JSON.stringify({
-          phrases: state.textInputs.map((_, index) => index + 1),
-          lyrics: state.textInputs.map(input => input.text)
-        })
+          phrases: state.singingTexts.map((_, index) => index + 1),
+          lyrics: state.singingTexts.map(input => input.text)
+        }),
+        contentType: 'application/json'
       }
     };
     const vosynTask = new VocloudTask('vosyn');
@@ -35,18 +38,37 @@ class ListenStep extends React.Component {
       preset_name: 'demo_glum',
       audio2_upload_with_url: vosynTask.output_url
     });
-    runInAction(() => this.audioUrl = vomixTask.audio_url);
+    return vomixTask.audio_url;
+  }
+
+  async processSpeechAudio() {
+    const vosynTask = new VocloudTask('vosyn');
+    await vosynTask.process(
+      {
+        score_type: 'txt',
+        vocoder_mode: 1,
+        voice: state.selectedVoice,
+        voice_style: state.selectedEmotion,
+      },
+      {
+        score: {
+          data: state.speechText.text,
+          contentType: 'text/plain'
+        }
+      }
+    );
+    return vosynTask.output_url;
   }
 
   render () {
     const title = this.playerLoaded? 'Listen to it!' : 'Processing...';
     return (
-      <div id="listen-step">
-        <StepHeader number={3} text="STEP THREE" title={title}/>
+      <Step title={title}
+            buttons={<Buttons enabled={this.playerLoaded} shareAudioUrl={this.audioUrl}/>}
+      >
         <Player audioUrl={this.audioUrl} onLoaded={this.onPlayerLoaded} />
         <div id="lyrics">"{state.text}"</div>
-        <Buttons enabled={this.playerLoaded} shareAudioUrl={this.audioUrl}/>
-      </div>
+      </Step>
     );
   }
 
@@ -129,7 +151,7 @@ class Buttons extends React.Component {
   };
 
   onShare() {
-    const lyrics = encodeURIComponent(state.text);
+    const lyrics = encodeURIComponent(state.singingText);
     const shareAudioUrl = encodeURIComponent(this.props.shareAudioUrl);
     const url = `demo_vosyn_share.html?audio_url=${shareAudioUrl}&lyrics=${lyrics}`;
     window.open(url, '_self');

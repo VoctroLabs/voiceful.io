@@ -1,37 +1,22 @@
-const syllable = require('syllable');
-
 @autobind
 @observer
 class SingingTextStep extends React.Component {
-  @observable inputs = [];
-
-  @action
-  addInput(input) {
-    this.inputs.push(input);
-  }
 
   @computed
   get correct() {
-    return this.inputs.reduce((correct, input) => correct && input.correct, true);
+    return state.singingTexts.reduce((correct, text) => correct && text.correct, true);
   }
 
   @action
   onCancel() {
-    this.inputs.forEach(input => input.clearText());
-  }
-
-  @action
-  onConfirm() {
-    state.setStep(2);
+    state.singingTexts.forEach(text => text.clearText());
   }
 
   render () {
     return (
-      <div id="singing-text-step">
-        <StepHeader number={1} text="STEP ONE" title="Your words"/>
-        <div>{state.textInputs.map((_, i) => <SingingTextInput key={i} index={i} ref={this.addInput}/>)}</div>
-        <StepButtons enabled={this.correct} onConfirm={this.onConfirm} onCancel={this.onCancel} />
-      </div>
+      <Step title="Your words" complete={this.correct} onCancel={state.speechText.clearText}>
+        {state.singingTexts.map((_, i) => <SingingTextInput key={i} index={i} />)}
+      </Step>
     );
   }
 }
@@ -48,63 +33,25 @@ class SingingTextInput extends React.Component {
     if (component) $(component).tooltip();
   }
 
-  @action
-  clearText() {
-    this.text = '';
-  }
-
-  @computed
-  get correct() {
-    return this.syllables === this.totalSyllables;
-  }
-
   onChange(event) {
-    const text = event.target.value;
-    // Allow only to input letters and some symbols,
-    let char, key, cleanText = '';
-    for(let i=0; i < text.length; i++) {
-      char = text.slice(i, i + 1);
-      key = char.charCodeAt(0);
-      console.log(key);
-      if ((key >= 65 && key <= 90) || (key >= 97 && key <= 122) ||
-        [' ', ',', '.', "'", '-'].includes(char))
-        cleanText += char;
-    }
-    this.text = cleanText;
-  }
-
-  @computed
-  get syllables() {
-    return syllable(this.text);
+    this.text.setText(event.target.value);
   }
 
   get text() {
-    return this.textInput.text;
-  }
-
-  set text(value) {
-    this.textInput.text = value;
-  }
-
-  get textInput() {
-    return state.textInputs[this.props.index];
-  }
-
-  get totalSyllables() {
-    return this.textInput.totalSyllables;
+    return state.singingTexts[this.props.index];
   }
 
   render() {
     return (
       <div className="row">
-        <div className={classNames('form-group', {disabled: !this.correct})}>
+        <div className={classNames('form-group', {disabled: !this.text.correct})}>
           <input className="form-control vosyn-sentence" type="text"
-                 placeholder="Type here" value={this.text} onChange={this.onChange}/>
+                 placeholder="Type here" value={this.text.text} onChange={this.onChange}/>
           <span ref={this.addTooltip} className="num-syllabes"
                 data-toggle="tooltip" data-placement="right" title="Syllables">
-            {this.correct?
+            {this.text.correct?
               <span className="glyphicon glyphicon-ok"/> :
-              `${this.syllables}/${this.totalSyllables}`
+              `${this.text.syllables}/${this.text.totalSyllables}`
             }
           </span>
         </div>

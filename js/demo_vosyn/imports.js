@@ -7,6 +7,6 @@ const computed = mobx.computed;
 const observable = mobx.observable;
 const observer = mobxReact.observer;
 const runInAction = mobx.runInAction;
+const syllable = require('syllable');
 
 const CSSTransition = ReactTransitionGroup.CSSTransition;
-const TransitionGroup = ReactTransitionGroup.TransitionGroup;
