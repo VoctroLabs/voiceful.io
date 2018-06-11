@@ -1,6 +1,8 @@
 @autobind
 class State {
 
+  @observable selectedLanguage = 'en';
+
   styles = [
     {value: 'singing', text: 'Singing'},
     {value: 'speech', text: 'Speech'},
@@ -104,17 +106,47 @@ class State {
     this.step = this.step.next();
     this.stepNumber += 1;
   }
+
+  constructor() {
+    // Auto-update selected language on texts
+    autorun(() => {
+      this.singingTexts.forEach(singingText => singingText.setLanguage(this.selectedLanguage));
+      this.speechText.setLanguage(this.selectedLanguage);
+    });
+    // Auto-update selected style on texts
+    autorun(() => {
+      this.singingTexts.forEach(singingText => singingText.setStyle(this.selectedStyle));
+      this.speechText.setStyle(this.selectedStyle);
+    });
+  }
 }
 
 class Text {
+
+  static allowedChars = {
+    'en': {
+      'speech': "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ,.'-?!",
+      'singing': "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ,.'-",
+    },
+    'es': {
+      'singing': "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáéíóúÁÉÍÓÚ ,.'-",
+      'speech': "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáéíóúÁÉÍÓÚ ,.'-¿?¡!",
+    },
+  };
+
   @observable text;
   @observable maxChars;
   @observable totalSyllables;
 
-  constructor(text, {maxChars, totalSyllables} = {}) {
+  constructor(text, {language = 'en', maxChars, style = 'singing', totalSyllables} = {}) {
     this.text = text;
+    this.language = language;
     this.maxChars = maxChars;
     this.totalSyllables = totalSyllables;
+  }
+
+  @computed get allowedChars() {
+    return this.constructor.allowedChars[this.language][this.style]
   }
 
   clearText() {
@@ -128,15 +160,20 @@ class Text {
     return correct;
   }
 
+  @action setLanguage(language) {
+    this.language = language;
+  }
+
+  @action setStyle(style) {
+    this.style = style;
+  }
+
   @action setText(text) {
     // Allow only to input letters and some symbols
-    let char, key, cleanText = '';
+    let char, cleanText = '';
     for(let i=0; i < text.length; i++) {
       char = text.slice(i, i + 1);
-      key = char.charCodeAt(0);
-      if ((key >= 65 && key <= 90) || (key >= 97 && key <= 122) ||
-        [' ', ',', '.', "'", '-'].includes(char))
-        cleanText += char;
+      if (this.allowedChars.indexOf(char) > -1) cleanText += char;
     }
     this.text = cleanText;
   }
