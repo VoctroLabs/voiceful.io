@@ -1,7 +1,7 @@
+let state;
+
 @autobind
 class State {
-
-  @observable selectedLanguage = 'en';
 
   styles = [
     {value: 'singing', text: 'Singing'},
@@ -10,14 +10,50 @@ class State {
   @observable selectedStyle;
   @action setSelectedStyle(style) {
     this.selectedStyle = style;
+    if (style === 'speech') this.selectedLanguage = 'en';
+    else this.selectedLanguage = undefined;
   }
 
-  @observable singingTexts = [
-    new Text('input your own text and fill in', {totalSyllables: 8}),
-    new Text('the correct number of syllables your text will be', {totalSyllables: 13}),
-    new Text('turned into a song by voiceful tech', {totalSyllables: 9}),
-    new Text('enjoy and share it', {totalSyllables: 5}),
+  languages = [
+    {value: 'en', text: 'English'},
+    {value: 'es', text: 'Spanish'},
   ];
+  @observable selectedLanguage;
+  @action setSelectedLanguage(language) {
+    this.selectedLanguage = language;
+  }
+
+  availableAllowedChars = {
+    'singing': {
+      'en': "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ,.'-",
+      'es': "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáéíóúÁÉÍÓÚ ,.'-",
+    },
+    'speech': {
+      'en': "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ,.'-?!",
+      'es': "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáéíóúÁÉÍÓÚ ,.'-¿?¡!",
+    },
+  };
+  @computed get allowedChars() {
+    return this.availableAllowedChars[this.selectedStyle][this.selectedLanguage];
+  }
+
+  availableSingingTexts = {
+    'en': [
+      new Text('input your own text and fill in', {totalSyllables: 8}),
+      new Text('the correct number of syllables your text will be', {totalSyllables: 13}),
+      new Text('turned into a song by voiceful tech', {totalSyllables: 9}),
+      new Text('enjoy and share it', {totalSyllables: 5}),
+    ],
+    'es': [
+      new Text('ya esta bruno cantando', {totalSyllables: 8}),
+      new Text('por fin podemos escuchar su preciosa voz', {totalSyllables: 13}),
+      new Text('me fascina y me alucina', {totalSyllables: 9}),
+      new Text('me gusta si si', {totalSyllables: 5}),
+    ],
+  };
+  @computed get singingTexts() {
+    return this.availableSingingTexts[this.selectedLanguage];
+  }
   @computed get singingText() {
     return this.singingTexts.map(i => i.text).join('\n');
   }
@@ -27,21 +63,29 @@ class State {
   }
 
   availableVoices = {
-    'singing': [
-      {value: 'randy', text: 'Male'},
-      {value: 'ayesha', text: 'Female'},
-    ],
-    'speech': [
-      {value: 'daniel', text: 'Male'},
-      {value: 'ayesha', text: 'Female'},
-    ]
+    'singing': {
+      'en': [
+        {value: 'ayesha', text: 'Female'},
+        {value: 'randy', text: 'Male'},
+      ],
+      'es': [
+        {value: 'maika', text: 'Female'},
+        {value: 'bruno', text: 'Male'},
+      ],
+    },
+    'speech': {
+      'en': [
+        {value: 'ayesha', text: 'Female'},
+        {value: 'daniel', text: 'Male'},
+      ],
+    }
   };
   @observable selectedVoice;
   @action setSelectedVoice(voice) {
     this.selectedVoice = voice;
   }
   @computed get voices() {
-    return this.availableVoices[this.selectedStyle]
+    return this.availableVoices[this.selectedStyle][this.selectedLanguage]
   }
 
   availableEmotions = {
@@ -69,6 +113,7 @@ class State {
 
   availableSteps = {
     style: <StyleStep/>,
+    language: <LanguageStep/>,
     singingText: <SingingTextStep/>,
     speechText: <SpeechTextStep/>,
     voice: <VoiceStep/>,
@@ -79,11 +124,14 @@ class State {
     step: this.availableSteps['style'],
     next: () => (this.selectedStyle === 'singing' ?
       {
-        step: this.availableSteps['singingText'],
+        step: this.availableSteps['language'],
         next: () => ({
-          step: this.availableSteps['voice'],
+          step: this.availableSteps['singingText'],
           next: () => ({
-            step: this.availableSteps['listen']
+            step: this.availableSteps['voice'],
+            next: () => ({
+              step: this.availableSteps['listen']
+            })
           })
         })
       } :
@@ -107,46 +155,17 @@ class State {
     this.stepNumber += 1;
   }
 
-  constructor() {
-    // Auto-update selected language on texts
-    autorun(() => {
-      this.singingTexts.forEach(singingText => singingText.setLanguage(this.selectedLanguage));
-      this.speechText.setLanguage(this.selectedLanguage);
-    });
-    // Auto-update selected style on texts
-    autorun(() => {
-      this.singingTexts.forEach(singingText => singingText.setStyle(this.selectedStyle));
-      this.speechText.setStyle(this.selectedStyle);
-    });
-  }
 }
 
 class Text {
-
-  static allowedChars = {
-    'en': {
-      'speech': "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ,.'-?!",
-      'singing': "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ,.'-",
-    },
-    'es': {
-      'singing': "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáéíóúÁÉÍÓÚ ,.'-",
-      'speech': "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáéíóúÁÉÍÓÚ ,.'-¿?¡!",
-    },
-  };
-
   @observable text;
   @observable maxChars;
   @observable totalSyllables;
 
-  constructor(text, {language = 'en', maxChars, style = 'singing', totalSyllables} = {}) {
+  constructor(text, {maxChars, totalSyllables} = {}) {
     this.text = text;
-    this.language = language;
     this.maxChars = maxChars;
     this.totalSyllables = totalSyllables;
-  }
-
-  @computed get allowedChars() {
-    return this.constructor.allowedChars[this.language][this.style]
   }
 
   clearText() {
@@ -160,28 +179,21 @@ class Text {
     return correct;
   }
 
-  @action setLanguage(language) {
-    this.language = language;
-  }
-
-  @action setStyle(style) {
-    this.style = style;
-  }
-
   @action setText(text) {
     // Allow only to input letters and some symbols
     let char, cleanText = '';
     for(let i=0; i < text.length; i++) {
       char = text.slice(i, i + 1);
-      if (this.allowedChars.indexOf(char) > -1) cleanText += char;
+      if (state.allowedChars.indexOf(char) > -1) cleanText += char;
     }
     this.text = cleanText;
   }
 
   @computed get syllables() {
+    if (state.selectedLanguage === 'es') return new Syllables(this.text).get().length;
     return syllable(this.text);
   }
 
 }
 
-const state = new State();
+state = new State();

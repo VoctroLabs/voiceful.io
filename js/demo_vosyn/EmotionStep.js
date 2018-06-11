@@ -12,7 +12,7 @@ class EmotionStep extends React.Component {
 
   render () {
     return (
-      <Step number={1} title="Your emotion" complete={!!state.selectedEmotion} onCancel={this.onCancel}>
+      <Step title="Your emotion" complete={!!state.selectedEmotion} onCancel={this.onCancel}>
         {state.emotions.map(({value, text}) => {
           const selected = value === state.selectedEmotion;
           const disabled = state.selectedEmotion && value !== state.selectedEmotion;
