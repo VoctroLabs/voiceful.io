@@ -45,10 +45,10 @@ class State {
       new Text('enjoy and share it', {totalSyllables: 5}),
     ],
     'es': [
-      new Text('ya esta bruno cantando', {totalSyllables: 8}),
-      new Text('por fin podemos escuchar su preciosa voz', {totalSyllables: 13}),
-      new Text('me fascina y me alucina', {totalSyllables: 9}),
-      new Text('me gusta si si', {totalSyllables: 5}),
+      new Text('Tú mismo puedes componer', {totalSyllables: 8}),
+      new Text('la letra de cualquier canción sólo tienes que', {totalSyllables: 13}),
+      new Text('escribirla aquí y ya podrás', {totalSyllables: 9}),
+      new Text('escuchaarla', {totalSyllables: 5}),
     ],
   };
   @computed get singingTexts() {
