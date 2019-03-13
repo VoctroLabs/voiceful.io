@@ -7,9 +7,13 @@ th, td {
 
 tr:nth-child(even) {background-color: #f2f2f2;}
 
+th:first-child, td:first-child {
+    border-right: 1px solid #000000;
+}
+
 .img-center {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 75%;
 }
