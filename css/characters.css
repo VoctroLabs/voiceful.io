@@ -1,0 +1,15 @@
+th, td {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+.img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}

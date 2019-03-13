@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NXV9SPS');</script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106536482-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)};
+    gtag('js', new Date());
+
+    gtag('config', 'UA-106536482-1');
+    gtag('config', 'AW-798342114');
+  </script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="img/favicon.ico">
+
+  <title>Voiceful - Characters</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Highlight.js styles -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css">
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="fonts/fonts.css" rel="stylesheet">
+  <!--<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:300,600" rel="stylesheet">-->
+
+  <!-- Custom styles for this template -->
+  <link href="css/common.css" rel="stylesheet">
+  <link href="css/developers.css" rel="stylesheet">
+  <link href="css/characters.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#navbar">
+
+  <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXV9SPS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <div id="legal-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Legal notice</h4>
+        </div>
+        <div class="modal-body">
+          <p>
+            For the purposes of complying with Spanish Law 34/2002 on information society services
+            and electronic commerce, the following information on Voctro Labs, S.L. is provided:
+          </p>
+          <table class="table">
+            <tbody>
+              <tr>
+                <th scope="row">Corporate Name</th>
+                <td>Voctro Labs, S.L.</td>
+              </tr>
+              <tr>
+                <th scope="row">Address</th>
+                <td>Carrer Pujades 74-80, 08005 Barcelona</td>
+              </tr>
+              <tr>
+                <th scope="row">E-mail address</th>
+                <td>info@voctrolabs.com</td>
+              </tr>
+              <tr>
+                <th scope="row">Entry data in the Companies Registry of Barcelona</th>
+                <td>Volume 42942, Folio 161, Page number B 420239</td>
+              </tr>
+              <tr>
+                <th scope="row">Tax Code</th>
+                <td>B65699662</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <div id="vosyn-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">VoSyn</h4>
+        </div>
+        <div class="modal-body">
+          <p> Recent advances in the area of Machine Learning and Artificial Intelligence can be applied to the generation of a human-like voice signals. Given a set of recordings of a speaker or singer of several minutes, we can create a voice model that captures its main treats, including singing expression. Once this voice model is loaded, Voiceful can generate new content. You can refer to the technical details in this research publication. </p>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <div id="votrans-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">VoTrans</h4>
+        </div>
+        <div class="modal-body">
+          <p> Manipulating voice recordings have several applications in the creative media industries. Voiceful offers a patented voice transformation technology [Patent Nr.]   that can be integrated in real-time (e.g. a plugin for a Unity videogame, audio FX in a DAW) or as batch processing tool in a post-production workflow (e.g. for film, games, animation, TV, music). </p>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <div id="voalign-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">VoAlign</h4>
+        </div>
+        <div class="modal-body">
+          <p> Editing a voice recording without altering the original voice quality has been extensively used in music and film productions with tools such as auto-tune and dialogue synchronization.
+            Voiceful provides a tool that analyzes and automatically corrects a voice recording. In film applications, Voiceful can synchronize two voice recordings in the ADR workflow (Automatic Dialogue Replacement). We can use onset and phonetic alignment to generate lip-synched animations. In music, VoAlign allows to automatically estimate the musical key of an a capella recording and applying autotune. </p>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="vodesc-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">VoDesc</h4>
+          </div>
+          <div class="modal-body">
+            <p>A voice recording conveys an incredible amount of information. For speech, it can be information about the words, about the person, about the emotion; while for singing voice it can bring also information about notes, intonation, the key and tempo of a song. To make clear, Voiceful is not a speech recognition solution. Besides the world of creative media, the analysis algorithms in Voiceful can be further extended for Medical or forensic applications. Check in this example the analysis output and the formta of exported data.</p>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="voscale-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">VoScale</h4>
+          </div>
+          <div class="modal-body">
+            <p>Be it a commercial music downmix, be it a field-recording for a film, Voiceful can change the duration and key while preserving the quality of the original recording. Playback speed and transposition controls can be passed dynamically in real-time. For example, the tempo of a song can be changed on the fly synched by a runner's pace, or a gesture movement on a mobile phone. This is a validated professional audio tool, and we are happy when clients with trained ears choose Voiceful over other solutions in the market. Check our demo <a href="#"> here [LINK VOSCALE VIDEO].
+            </a> </p>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="vomix-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">VoMix</h4>
+          </div>
+          <div class="modal-body">
+            <p>
+              This is a utility to automatically mix the contents generated by Voiceful with existing musical or FX background tracks. All parameters are configurable and can be adjusted through our VoMix Editor GUI tool  <a target="_blank" href="img/vomix_UI.png"> [see screenshot]. </a>  VoMix is usually place as tha last process in a multi-stage workflow. </p>
+
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="./index.html">
+              <img alt="voiceful" src="img/voicefulx2.png">
+            </a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html" class="btn btn-default navbar-btn">BACK TO MAIN</a></li>
+              <li><a>VOICEFUL CHARACTERS PAGE</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        <div id="first-row" class="row section text-center">
+          <div class="col-xs-12">
+            <h1>Voiceful Characters</h1>
+          </div>
+          <div class="col-xs-12">
+            <p class="subtitle">
+              Expressive voice generation for virtual characters in Unity applications and games.
+            </p>
+            <img src="img/characters_icon1.png">
+            <img src="img/characters_icon2.png">
+            <img src="img/characters_icon3.png">
+            <img src="img/characters_icon4.png">
+          </div>
+        </div>
+      </div>
+
+      <div id="tools" class="row section text-center">
+        <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+          <h2>FEATURES</h2>
+
+          <div class="vertical-block">
+            <img src="img/simbol1.jpg">
+            <h4>State of the art Voice generation</h4>
+            <p> Our expressive voice generation approach, based on Deep Learning, was initially developed to generate artificial singing voice with high realism. It can learn a model from existing recordings of any individual and generate new speech or singing content.
+            </p>
+          </div>
+          <div class="vertical-block">
+            <img src="img/simbol2.jpg">
+            <h4>Easy integration into Unity projects</h4>
+            <p>
+              We provide Unity packages with a plug-in and sample scenes so you can import them into your project without fuss and get started quickly.
+            </p>
+          </div>
+          <div class="vertical-block">
+            <img src="img/simbol3.jpg">
+            <h4>Complete and standalone solution</h4>
+            <p>
+              The plug-in doesn't require internet connection or external dependencies, as all of the synthesis is done inside of your application or game. Audio clips can be generated and played back on demand.
+            </p>
+          </div>
+          <div class="vertical-block">
+            <img src="img/simbol4.jpg">
+            <h4>Flexible and customizable</h4>
+            <p>
+              We offer built-in factory voice presets and the possibility to design your own (PRO version only). Also, you can either apply standard Unity audio effects to the synthesized voice or use your own custom processing.
+            </p>
+          </div>
+
+          <div class="vertical-block">
+            <img src="img/simbol1.jpg">
+            <h4>Cross-platform</h4>
+            <p>
+              Windows and OSX plug-ins available, with more platforms to come in the future!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="customize" class="row section grey-bg text-center">
+        <div class="col-xs-12">
+          <h2>PRODUCT VERSIONS</h2>
+        </div>
+        <div class="col-xs-offset-1 col-xs-10">
+          <div class="row">
+            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+              <p class="subtitle">Three different options available to suit your needs.</p>
+            </div>
+            <table align="center" style="width:75%" class="h5">
+              <tr>
+                <th>Version feature</th>
+                <th>Characters Free</th> 
+                <th>Characters Lite</th>
+                <th>Characters PRO</th>
+              </tr>
+              <tr>
+                <td>Sentence render limit</td>
+                <td>5 words</td> 
+                <td>Unlimited</td>
+                <td>Unlimited</td>                
+              </tr>
+              <tr>
+                <td>Voice presets</td>
+                <td>3</td> 
+                <td>10</td>
+                <td>10 + custom</td>
+              </tr>
+              <tr>
+                <td>Support for custom and library voices</td>
+                <td>No</td> 
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Voice designer</td>
+                <td>No</td> 
+                <td>No</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Voice cloning service and voice catalogue</td>
+                <td>No</td> 
+                <td>No</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>License price</td>
+                <td>Free</td> 
+                <td>350 €</td>
+                <td>3500 €</td>   
+              </tr>
+              <tr>
+                <td>Support and updates</td>
+                <td>Free</td> 
+                <td>150 € / year</td>
+                <td>1000 € / year</td>   
+              </tr>
+              <tr>
+                <td>Support type</td>
+                <td>F.A.Q. and docs</td> 
+                <td>F.A.Q. and docs</td>
+                <td>Email / Call</td>   
+              </tr>
+              <tr>
+                <td>Financial eligibility</td>
+                <td>Commercial use for annual revenues or raised funds less than $100k</td> 
+                <td>Commercial use for annual revenues or raised funds less than $200k</td>
+                <td>Commercial use with no limits in revenue or funding</td>   
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div id="rubric" class="container-fluid">
+        <div id="rubric-inner">
+          <div id="what" class="row section grey-bg text-center">
+            <div class="col-xs-12">
+              <div class="row">
+                <div class="col-xs-12">
+                  <h2>TRY IT!</h2>
+                </div>
+                <img src="img/characters_pro_capture.png" class="img-center">
+                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                  <img class="icon-img" src="img/icon3.png">
+                  <p class="subtitle">
+                    <br>Download a trial of the Characters PRO version for <a href="https://voiceful.io/downloads/VoicefulCharactersPROTrial.zip">Windows</a> or <a href="https://voiceful.io/downloads/VoicefulCharactersPROTrial.zip">OSX</a>.
+                    This trial is limited to 15 days with up to 15 words per sentence and 30 synthesized sentences per hour.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="customize" class="row section grey-bg text-center">
+            <div class="col-xs-12">
+              <h2>DOCUMENTATION</h2>
+            </div>
+            <div class="col-xs-offset-1 col-xs-10">
+              <div class="row">
+                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                  <img class="icon-img" src="img/icon5.png">
+                  <p class="subtitle">If you want to get an idea of how the plug-in and the Unity integration works (as well as the available API), please <a href="https://voiceful.io/downloads/VoicefulCharactersDocumentation.pdf">download the documentation</a>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="request" class="row section text-center">
+            <div class="col-xs-12">
+              <h2>WANT TO KNOW MORE?</h2>
+            </div>
+            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+              <p class="subtitle">Subscribe to our mailing list for updates and availability dates.</p>
+              <form action="https://formspree.io/info@voctrolabs.com" method="POST">
+                <div class="form-group">
+                  <input name="name" type="text" class="form-control" placeholder="Name">
+                </div>
+                <div class="form-group">
+                  <input name="email" type="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <input name="company" type="text" class="form-control" placeholder="Company">
+                </div>
+                <input type="hidden" name="_subject" value="Voiceful Characters subscription to mailing list" />
+                <button id="send" type="submit" class="btn btn-danger pull-right">SEND</button>
+              </form>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div id="customize" class="row section grey-bg text-center">
+            <div class="col-xs-12">
+              <h2>TECHNOLOGY BACKGROUND</h2>
+            </div>
+            <div class="col-xs-offset-1 col-xs-10">
+              <div class="row">
+                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                  <p>Voiceful combines +15 years of R&D expertise in audio and music technologies with latest artificial intelligence for voice generation.
+                    Our patented technologies originate from academic research carried out by Voctro Labs’ cofounders at <a href="http://www.mtg.upf.edu"> MTG-UPF</a>, and since 2011 they have been  integrated in award-wining applications worldwide. Our technology portfolio is being continuously extended with recent research in the field.
+                  </p>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12 col-sm-3">
+              <img id="footer-logo" src="img/footer_logo.png" srcset="img/footer_logox2.png 2x">
+              <p>
+                Voiceful is a product of <strong>Voctro Labs</strong><br>
+                <strong>
+                  info @ voctrolabs . com<br>
+                  +34 931 412 636<br>
+                  C/ Pujades 74-80 08005<br>
+                  Barcelona<br>
+                </strong>
+              </p>
+              <p><a data-toggle="modal" href="#legal-modal">LEGAL NOTICE</a></p>
+              <p><a data-toggle="modal" href="#privacy-modal">PRIVACY</a></p>
+            </div>
+            <div class="col-xs-12 col-sm-offset-6 col-sm-3 col-lg-offset-7 col-lg-2">
+              <div id="social">
+                <h5>FOLLOW US ON</h5>
+                <a href="https://www.facebook.com/VoctroLabs/" target="_blank">
+                  <img src="img/facebook.png">
+                </a>
+                <a href="https://twitter.com/VoctroLabs" target="_blank">
+                  <img src="img/twitter.png">
+                </a>
+                <a href="https://www.youtube.com/user/voctrolabs" target="_blank">
+                  <img src="img/youtube.png">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="js/vendor/jquery.min.js"></script>
+      <script src="js/vendor/bootstrap.min.js"></script>
+      <script src="js/vendor/highlight.js@9.12.0/highlight.min.js"></script>
+      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+      <script src="js/vendor/ie10-viewport-bug-workaround.js"></script>
+      <script src="js/developers.js"></script>
+    </body>
+    </html>
