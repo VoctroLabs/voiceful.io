@@ -137,8 +137,8 @@
           <h4 class="modal-title">VoAlign</h4>
         </div>
         <div class="modal-body">
-          <p> Editing a voice recording without altering the original voice quality has been extensively used in music and film productions with tools such as auto-tune and dialogue synchronization.
-            Voiceful provides a tool that analyzes and automatically corrects a voice recording. In film applications, Voiceful can synchronize two voice recordings in the ADR workflow (Automatic Dialogue Replacement). We can use onset and phonetic alignment to generate lip-synched animations. In music, VoAlign allows to automatically estimate the musical key of an a capella recording and applying autotune. </p>
+          <p> Editing a voice recording without altering the original voice quality has been extensively used in music and film productions with tools such as pitch correction and dialogue synchronization.
+            Voiceful provides a tool that analyzes and automatically corrects a voice recording. In film applications, Voiceful can synchronize two voice recordings in the ADR workflow (Automatic Dialogue Replacement). We can use onset and phonetic alignment to generate lip-synched animations. In music, VoAlign allows to automatically estimate the musical key of an a capella recording and applying pitch correction to achieve perfect tuning. </p>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
@@ -672,7 +672,7 @@ float vibratodepth_val = 0.2f;
 float vibratofreq_val = 0.3f;
 float robot_val = 0.0f;
 float alien_val = 0.0f;
-float autotune_val = 0.0f;
+float pitchcorrection_val = 0.0f;
 float harmonizer_val = 0.0f;
 
 //INITIALIZATION OF THE LIBRARY
@@ -712,7 +712,7 @@ void ProcessCallback(float* inbuffer, float* outbuffer)
 
   VT_SetRobotParameter(robot_val, mVoTrans);
   VT_SetAlienParameter(alien_val, mVoTrans);
-  VT_SetAutoTuneParameter(autotune_val, mVoTrans);
+  VT_SetPitchCorrectionParameter(pitchcorrection_val, mVoTrans);
   VT_SetHarmonizerParameter(harmonizer_val, mVoTrans);
 
   //inbuffer & outbuffer memory is allocated by the user,
