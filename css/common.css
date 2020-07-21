@@ -12,6 +12,7 @@ html {
 body {
     padding-top: 50px;
     position: relative;
+    overflow-x: hidden;
 }
 div {
     z-index: 1;
@@ -924,6 +925,7 @@ textarea.form-control {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     padding: 20px;
     background-color: #FFFFFF;
+    margin-left: 15px;
   }
   .product-content:first-child {
     margin-top: 0;
