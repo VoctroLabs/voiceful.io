@@ -11,7 +11,7 @@
       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      'https://www.googletagmanager.com/gtm.js?id="+i"dl;f.parentNode.insertBefore(j,f)';
       })(window,document,'script','dataLayer','GTM-NXV9SPS');</script>
     <!-- End Google Tag Manager -->
     
@@ -28,6 +28,7 @@
         "contactType": "customer service"  
       }]
     }
+    
     </script>
     
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
@@ -41,7 +42,7 @@
     </script>
     
     <link rel="icon" href="img/favicon.ico">
-    <link rel=”image_src” href=”img/voiceful_claim.png” />
+    <link rel="image_src" href="img/voiceful_claim.png" />
 
     <title>Voiceful - Give voice to your ideas</title>
 
@@ -74,6 +75,12 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Bootstrap Hover Over Animations -->
+    <link href="css/bootstrap-dropdownhover.min.css" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link href="css/animate.min.css" rel="stylesheet">
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
@@ -83,6 +90,10 @@
 
     <!-- Custom styles for this template -->
     <link href="css/common.css" rel="stylesheet">
+
+    <!-- Slick Slider styles -->
+    <link href="css/slick.css" rel="stylesheet">
+
     <link href="css/index.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -92,1017 +103,737 @@
     <![endif]-->
   </head>
 
-  <body data-spy="scroll" data-target="#navbar">
+  <body>
     
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXV9SPS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    
-    <div id="video-modal" class="modal fade video-modal" tabindex="-1" role="dialog">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <div class="video-wrapper">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/91ZCL-4WWTw?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+
+    <div id="modals">
+      <div id="legal-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Legal notice</h4>
             </div>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div id="audio-modal" class="modal fade video-modal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <div class="video-wrapper">
-              <h4 class="modal-title">Title</h4>
-              <iframe src="" width="160" height="120"></iframe>
-            </div>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div id="legal-modal" class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Legal notice</h4>
-          </div>
-          <div class="modal-body">
-
-              <p>
-                The company Voctro Labs,S.L., with registered offices in C/ Pujades 74-80, 08005 - Barcelona (Spain), with Tax Identification Number B-65.699.662, registered in  the Companies Registry of Barcelona, Volume 42942, Folio 161, Page number B 42023  (hereinafter referred to as “VOCTRO LABS”) is the owner of the web site <a href="http://www.voiceful.io"> http://www.voiceful.io </a> (hereinafter referred to as “Web Site”).
-              </p>
-              <p> Address: C/ Pujades 74-80, 08005 – Barcelona (Spain).<br>
-                  Telephone:  +34 931 587 637.
-                  Email: info@voctrolabs.com   </p>
-
-              <table class="table">
-                <tbody>
-                  <tr>
-                    <td scope="row"><b> 1.- General Terms of Use </b></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <ul>The user voluntarily accesses this Web Site, which implies that the user shall use it pursuant to this legal notice, the law, morality, good faith and/or proper conduct;</ul>
-                      <ul>The use of this Web Site implies the acceptance of this legal notice;</ul>
-                      <ul>The web pages of this Web Site may be freely visited by users;</ul>
-                      <ul>VOCTRO LABS reserves the right to modify, with no prior notice, the contents of this legal notice so that, for a correct use of the Web Site, we recommend you to periodically visit this section.</ul>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td scope="row"><b>2.- Intellectual and industrial property </b></td>
-                  </tr>
-                  <tr>
-                    <td>
-                    <ul>© 2017, VOCTRO LABS, S.L., <a href="http://www.voiceful.io"> http://www.voiceful.io </a>  All rights reserved. </ul>
-                    <ul>The intellectual property rights on the contents of the Web Site, including, but without being limited thereto, its text, graphic design, trade dress (trademarks and commercial names), underlying computer programs (including the source codes) and databases, as well as the different elements that comprise the Web Site and allow its operation, are owned by VOCTRO LABS or, if applicable, VOCTRO LABS has the license or right of use thereof from the holders. All contents of the Web Site are duly protected by the intellectual and/or industrial property rights regulations in force.</ul>
-                    <ul>The use of the Web Site by the user shall not imply the assignment of any intellectual and/or industrial property rights on the different elements or contents of the Web Site. Regardless of the purpose for which they may be used, total or partial reproduction, use, exploitation, distribution, public communication, transformation, availability, extraction and/or marketing of the elements and contents of the Web Site shall require the prior written authorisation of VOCTRO LABS. Any use not previously authorised by VOCTRO LABS shall imply a serious infringement of the intellectual and/or industrial property rights of their holders. The reproduction or any use of elements or contents of the Web Site for profit-making or commercial purposes is hereby expressly and absolutely forbidden.</ul>
-                    <ul>You may send us any remark on possible infringements of the intellectual and/or industrial property rights or any of the contents of the Web Site to our contact e-mail info@voctrolabs.com </ul>
-                  </td>
-                  </tr>
-
-                  <tr>
-                    <td scope="row"><b>3.- Limitation of Liability </b></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <ul>VOCTRO LABS reserves the right to disrupt the access to the Web Site, as well as the provision of any service through the Web Site from time to time with no prior notice, either on technical, security, maintenance or any other grounds; </ul>
-                      <ul>VOCTRO LABS shall not be liable for any disruption of the service, delay or malfunction or other drawbacks that may result from reasons beyond the control of VOCTRO LABS and/or which may be due to any fraudulent or negligent action of the user and/or force majeur events;</ul>
-                      <ul>The information contained on this Web Site may not be correct despite the efforts made for its accuracy and updating. Therefore, VOTRO LABS shall not be liable for any errors in its contents or any damages resulting from its use; </ul>
-                      <ul>This Web Site may contain links to other web sites for whose consents, usefulness or accuracy VOCTRO LABS shall not be liable. The incorporation of any link into this Web Site may not be considered as a recommendation for users to use them, which decision shall be the users’ liability;</ul>
-                      <ul>VOCTRO LABS shall not liable for any damages arisen from the use of this Web Site or its contents, thus not guaranteeing the absence of virus or the impossibility to cause damages to the computer system of the user;</ul>
-                      <ul>VOCTROLABS does not assume any liability for any improper use of this Web Site.
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td scope="row"><b>4.- Governing law and competent courts </b></td>
-                  </tr>
-                  <tr>
-                  <tr>
-                    <td>
-                      <ul>The conditions of this Web Site and the relations between the user and VOCTRO LABS shall be governed by the Spanish law. </ul>
-                      <ul>For the settlement of any discrepancy that may arise between the user and VOCTRO LABS, the parties submit to the competent Courts and Tribunals pursuant to the applicable law.</ul>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <p>Updated in July 2017</p>
-
-          </div> <!-- /.modal-body -->
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div id="privacy-modal" class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Privacy policy</h4>
-          </div>
-          <div class="modal-body">
-            <table class="table">
-              <tbody>
-                <tr>
-                  <td>
-                    <ul>Unless otherwise specifically provided, no personal data is requested or required from Users and no registration processes by the incorporation of mandatory forms are established on the web site http://www.voiceful.io  (hereinafter referred to as the “Web Site”).;</ul>
-                    <ul>In the event that any personal data is requested, so that the omission of any of it may cause the impossibility to provide you our services and/or attend your requests, in compliance with provisions set forth in Act 15/1.999, of 13th December, on Protection of Personal Data (hereinafter referred to as the “LOPD”) and its developing regulations, we hereby inform you that: </ul>
-                    <ul>Any personal data you provide us under a registration online form on the Web Site, included but not limited to your CV or project in terms of our professional collaboration, as well as the information collected  by virtue of the commercial relation and/or provision of services acquired through the Web Site, shall be incorporated into a file duly registered before the General Registry of the Spanish Data Protection Agency, under the responsibility of VOCTRO LABS, S.L., C/ Pujades 74-80, 08005 - Barcelona (Spain), with Tax Identification Number B-65.699.662 (hereinafter referred to as the “VOCTRO LABS”). The purpose of the data processing is the provision of the services offered by VOCTRO LABS on the Web Site, including the Customer Service, enquiry assistance and information requests, job applicants evaluating processes and projects as well as claim management. </ul>
+            <div class="modal-body">
+  
+                <p>
+                  The company Voctro Labs,S.L., with registered offices in C/ Pujades 74-80, 08005 - Barcelona (Spain), with Tax Identification Number B-65.699.662, registered in  the Companies Registry of Barcelona, Volume 42942, Folio 161, Page number B 42023  (hereinafter referred to as “VOCTRO LABS”) is the owner of the web site <a href="http://www.voiceful.io"> http://www.voiceful.io </a> (hereinafter referred to as “Web Site”).
+                </p>
+                <p> Address: C/ Pujades 74-80, 08005 – Barcelona (Spain).<br>
+                    Telephone:  +34 931 587 637.
+                    Email: info@voctrolabs.com   </p>
+  
+                <table class="table">
+                  <tbody>
                     <tr>
-                      <td>
-                    <ul>You may exercise the right of access, rectification, cancellation and opposition and revoke your consent for the processing of your personal data. For this purpose, the you may:
-                    <ul>Send a written communication to VOCTRO LABS, S.L., C/ Pujades 74-80, 08005, Barcelona (Spain), attaching a photocopy of your ID or official document that certifies your identity.</ul>
-                    <ul>Send an email to info@voctrolabs.com stating his/her Name, Surnames, contact telephone and a photocopy of your ID document or official document that certifies your identity. </ul>
-                    </ul>
-                  </td>
+                      <td scope="row"><b> 1.- General Terms of Use </b></td>
                     </tr>
                     <tr>
                       <td>
-                    <ul>VOCTRO LABS uses Google Analytics cookies, whose settings are pre-determined by the service offered by the company Google, reason why we suggest you to consult the privacy page of Google Analytics, <a href="http://www.google.es/intl/es_ALL/analytics/learn/privacy.html">http://www.google.es/intl/es_ALL/analytics/learn/privacy.html</a> to obtain more information on the cookies used and how to disable them (it being understood that we are not liable for the contents or veracity of the third-party web sites).</ul>
-                  </td>
-                </tr>
+                        <ul>The user voluntarily accesses this Web Site, which implies that the user shall use it pursuant to this legal notice, the law, morality, good faith and/or proper conduct;</ul>
+                        <ul>The use of this Web Site implies the acceptance of this legal notice;</ul>
+                        <ul>The web pages of this Web Site may be freely visited by users;</ul>
+                        <ul>VOCTRO LABS reserves the right to modify, with no prior notice, the contents of this legal notice so that, for a correct use of the Web Site, we recommend you to periodically visit this section.</ul>
+                      </td>
+                    </tr>
+  
+                    <tr>
+                      <td scope="row"><b>2.- Intellectual and industrial property </b></td>
+                    </tr>
                     <tr>
                       <td>
-                    <ul>Finally, we inform you that VOCTRO LABS, S.L. shall process your data absolutely confidential and keeping the mandatory secrecy in respect thereof, pursuant to provisions set forth in the applicable regulations in force at any time, adopting therefor any necessary technical and organizational measures that guarantee the security of your data and avoid their alteration, loss, non-authorised processing or access, considering the estate of technology, the nature of the data stored and the risks at which they may be exposed.</ul>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <p>Updated in July 2017</p>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div id="usage-modal" class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Usage table</h4>
-          </div>
-          <div class="modal-body">
-            <div class="table-responsive no-border">
-              <table class="table">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th class="text-center">User input is...</th>
-                  <th class="text-center">What languages?</th>
-                  <th class="text-center">Processing</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="active">
-                  <th scope="row" colspan="4">Synthetic voices</th>
-                </tr>
-                <tr>
-                  <td>Speech content</td>
-                  <td class="text-center vertical-center">Text</td>
-                  <td rowspan="2" class="text-center vertical-center">ENG, SPA <br><small>(other languages upon request)</small></td>
-                  <td rowspan="2" class="text-center vertical-center">Batch</td>
-                </tr>
-                <tr>
-                  <td>Singing content</td>
-                  <td class="text-center vertical-center" style="max-width: 150px">Text and/or MIDI, MusicXML</td>
-                </tr>
-                <tr class="active">
-                  <th scope="row" colspan="4">Transformed voices</th>
-                </tr>
-                <tr>
-                  <td>Speech content</td>
-                  <td rowspan="2" class="text-center vertical-center">Mic-in or Audio file</td>
-                  <td rowspan="2" class="text-center vertical-center">Any</td>
-                  <td rowspan="2" class="text-center vertical-center">Real-time, batch</td>
-                </tr>
-                <tr>
-                  <td>Singing content</td>
-                </tr>
-                <tr class="active">
-                  <th scope="row" colspan="4">Voice Description</th>
-                </tr>
-                <tr>
-                  <td>Speech content</td>
-                  <td rowspan="2" class="text-center vertical-center">Mic-in or Audio file</td>
-                  <td rowspan="2" class="text-center vertical-center">Any</td>
-                  <td rowspan="2" class="text-center vertical-center">Real-time, batch</td>
-                </tr>
-                <tr>
-                  <td>Singing content</td>
-                </tr>
-                <tr class="active">
-                  <th scope="row" colspan="4">Pitch and Time change</th>
-                </tr>
-                <tr>
-                  <td>Speech content</td>
-                  <td rowspan="3" class="text-center vertical-center">Audio file</td>
-                  <td rowspan="3" class="text-center vertical-center">Any</td>
-                  <td rowspan="3" class="text-center vertical-center">Real-time, batch</td>
-                </tr>
-                <tr>
-                  <td>Singing content</td>
-                </tr>
-                <tr>
-                  <td>Audio content</td>
-                </tr>
-              </tbody>
-            </table>
+                        <ul>© 2020, VOCTRO LABS, S.L., <a href="http://www.voiceful.io"> http://www.voiceful.io </a>  All rights reserved. </ul>
+                        <ul>The intellectual property rights on the contents of the Web Site, including, but without being limited thereto, its text, graphic design, trade dress (trademarks and commercial names), underlying computer programs (including the source codes) and databases, as well as the different elements that comprise the Web Site and allow its operation, are owned by VOCTRO LABS or, if applicable, VOCTRO LABS has the license or right of use thereof from the holders. All contents of the Web Site are duly protected by the intellectual and/or industrial property rights regulations in force.</ul>
+                        <ul>The use of the Web Site by the user shall not imply the assignment of any intellectual and/or industrial property rights on the different elements or contents of the Web Site. Regardless of the purpose for which they may be used, total or partial reproduction, use, exploitation, distribution, public communication, transformation, availability, extraction and/or marketing of the elements and contents of the Web Site shall require the prior written authorisation of VOCTRO LABS. Any use not previously authorised by VOCTRO LABS shall imply a serious infringement of the intellectual and/or industrial property rights of their holders. The reproduction or any use of elements or contents of the Web Site for profit-making or commercial purposes is hereby expressly and absolutely forbidden.</ul>
+                        <ul>You may send us any remark on possible infringements of the intellectual and/or industrial property rights or any of the contents of the Web Site to our contact e-mail info@voctrolabs.com </ul>
+                      </td>
+                    </tr>
+  
+                    <tr>
+                      <td scope="row"><b>3.- Limitation of Liability </b></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <ul>VOCTRO LABS reserves the right to disrupt the access to the Web Site, as well as the provision of any service through the Web Site from time to time with no prior notice, either on technical, security, maintenance or any other grounds; </ul>
+                        <ul>VOCTRO LABS shall not be liable for any disruption of the service, delay or malfunction or other drawbacks that may result from reasons beyond the control of VOCTRO LABS and/or which may be due to any fraudulent or negligent action of the user and/or force majeur events;</ul>
+                        <ul>The information contained on this Web Site may not be correct despite the efforts made for its accuracy and updating. Therefore, VOTRO LABS shall not be liable for any errors in its contents or any damages resulting from its use; </ul>
+                        <ul>This Web Site may contain links to other web sites for whose consents, usefulness or accuracy VOCTRO LABS shall not be liable. The incorporation of any link into this Web Site may not be considered as a recommendation for users to use them, which decision shall be the users’ liability;</ul>
+                        <ul>VOCTRO LABS shall not liable for any damages arisen from the use of this Web Site or its contents, thus not guaranteeing the absence of virus or the impossibility to cause damages to the computer system of the user;</ul>
+                        <ul>VOCTROLABS does not assume any liability for any improper use of this Web Site.</ul>
+                      </td>
+                    </tr>
+  
+                    <tr>
+                      <td scope="row"><b>4.- Governing law and competent courts </b></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <ul>The conditions of this Web Site and the relations between the user and VOCTRO LABS shall be governed by the Spanish law. </ul>
+                        <ul>For the settlement of any discrepancy that may arise between the user and VOCTRO LABS, the parties submit to the competent Courts and Tribunals pursuant to the applicable law.</ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Updated in February 2020</p>
+  
+            </div> <!-- /.modal-body -->
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /#legal-modal -->
+  
+      <div id="privacy-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Privacy policy</h4>
             </div>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div id="software-modal" class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Software integration table</h4>
-          </div>
-          <div class="modal-body">
-            <div class="table-responsive no-border">
-              <table class="table table-hide-empty-cells table-center-content">
-              <thead>
-                <tr>
-                  <th colspan="3" class="active">Supported SDK clients</th>
-                  <th colspan="2" class="active left-border">Architecture</th>
-                </tr>
-                <tr>
-                  <th>Web</th>
-                  <th>Mobile</th>
-                  <th>Desktop <br>Server</th>
-                  <th class="left-border">Standalone <br><small>(on device)</small></th>
-                  <th>Cloud API <br><small>(on server)</small></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>JS/PHP*</td>
-                  <td>iOS <br>Android</td>
-                  <td>Linux <br>OSX <br>Windows</td>
-                  <td class="text-center left-border"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                  <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <td colspan="6">
-                    <em>*Clients also available for Python and Ruby.</em>
-                  </td>
-                </tr>
-              </tfoot>
-            </table>
-            </div>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div id="features-modal" class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Features table</h4>
-          </div>
-          <div class="modal-body">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Features</th>
-                  <th class="text-center">Available on Voiceful</th>
-                  <th class="text-center">Custom built</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="active">
-                  <th scope="row" colspan="3">Synthetic voices</th>
-                </tr>
-                <tr>
-                  <td>Catalogue: <br>male pop, female pop</td>
-                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Custom: <br>celebrities, artists, personal...</td>
-                  <td></td>
-                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                </tr>
-                <tr class="active">
-                  <th scope="row" colspan="3">Transformed voices</th>
-                </tr>
-                <tr>
-                  <td>Human: <br>male, female, child, elder</td>
-                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Fiction: <br>robot, alien, cartoon, monster</td>
-                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Custom: <br>game character, ...</td>
-                  <td></td>
-                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                </tr>
-                <tr class="active">
-                  <th scope="row" colspan="3">Pitch and Time change</th>
-                </tr>
-                <tr>
-                  <td>Time-scaling, Pitch-shifting, <br>Pitch Correction, Time Alignment</td>
-                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                  <td></td>
-                </tr>
-                <tr class="active">
-                  <th scope="row" colspan="3">Voice Description</th>
-                </tr>
-                <tr>
-                  <td>Voice data analysis</td>
-                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Graphics and design</td>
-                  <td></td>
-                  <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                </tr>
-              </tbody>
-      </table>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div id="success-modal" class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Success Stories - Advertising</h4>
-          </div>
-          <div class="modal-body">
+            <div class="modal-body">
               <table class="table">
                 <tbody>
                   <tr>
-                    <td scope="row"><b> Plan B Ballantine's - Pernod Ricard </b></td>
-                  </tr>
-                  <tr>
                     <td>
-                      <!-- START  HERE -->
-                      <div class="row" align="center">
-                        <div class="large-12 columns">
-
-
-                      <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
-
-                      <div id="ytapiplayer2" align="middle" style="display:none;">
-                      <object >
-                      <param name="movie" value="https://www.youtube.com/embed/BHThxBKG_4o?controls=0&rel=0&showinfo=0&autoplay=0"></param>
-                      <param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param>
-                      <iframe src="https://www.youtube.com/embed/BHThxBKG_4o?controls=0&rel=0&showinfo=0&autoplay=0"  allowscriptaccess="always" allowfullscreen="true" ></iframe>
-                      </object>
-                      </div>
-
-                      <img src="img/planb2.png" align="middle" id="imageID" />
-                      <script type="text/javascript">
-                      $('#imageID').click(function() {
-                      $('#ytapiplayer2').show();
-                      $('#imageID').hide();
-                      });
-                      </script>
-
-                        </div>
-                      </div>
-                      <!-- END HERE -->
-                      <p> “El Plan B de Ballantine’s" Online Advertising Campaign by Pernod Ricard consisted in inviting the fans of a famous band (La Oreja de Van Gogh) to compose the lyrics for a new song using a mobile app, hear how their own lyrics would sound and share them with the band.
-                        In six months of campaign, more than 20.000 lyrics were received and the song created afterwards, using user lyrics, arrived soon to the Top 10 music charts. The campaign was awarded with the first prize in “El Sol” advertising and communication festival. Voctro Labs developed a female Synthetic Voice Model and an on-line web service to convert the user lyrics into synthesized singing by the female virtual voice, retaining the singing expression and naturality of the band's real singer.
-                      </p>
-
+                      <ul>Unless otherwise specifically provided, no personal data is requested or required from Users and no registration processes by the incorporation of mandatory forms are established on the web site http://www.voiceful.io  (hereinafter referred to as the “Web Site”).;</ul>
+                      <ul>In the event that any personal data is requested, so that the omission of any of it may cause the impossibility to provide you our services and/or attend your requests, in compliance with provisions set forth in Act 15/1.999, of 13th December, on Protection of Personal Data (hereinafter referred to as the “LOPD”) and its developing regulations, we hereby inform you that: </ul>
+                      <ul>Any personal data you provide us under a registration online form on the Web Site, included but not limited to your CV or project in terms of our professional collaboration, as well as the information collected  by virtue of the commercial relation and/or provision of services acquired through the Web Site, shall be incorporated into a file duly registered before the General Registry of the Spanish Data Protection Agency, under the responsibility of VOCTRO LABS, S.L., C/ Pujades 74-80, 08005 - Barcelona (Spain), with Tax Identification Number B-65.699.662 (hereinafter referred to as the “VOCTRO LABS”). The purpose of the data processing is the provision of the services offered by VOCTRO LABS on the Web Site, including the Customer Service, enquiry assistance and information requests, job applicants evaluating processes and projects as well as claim management. </ul>
+                    </td>
+                    <td>
+                      <ul>You may exercise the right of access, rectification, cancellation and opposition and revoke your consent for the processing of your personal data. For this purpose, the you may:
+                      <ul>Send a written communication to VOCTRO LABS, S.L., C/ Pujades 74-80, 08005, Barcelona (Spain), attaching a photocopy of your ID or official document that certifies your identity.</ul>
+                      <ul>Send an email to info@voctrolabs.com stating his/her Name, Surnames, contact telephone and a photocopy of your ID document or official document that certifies your identity. </ul>
+                      </ul>
                     </td>
                   </tr>
-
                   <tr>
-                    <td scope="row"><b>Frenadol Catarrator </b></td>
+                    <td>
+                      <ul>VOCTRO LABS uses Google Analytics cookies, whose settings are pre-determined by the service offered by the company Google, reason why we suggest you to consult the privacy page of Google Analytics, <a href="http://www.google.es/intl/es_ALL/analytics/learn/privacy.html">http://www.google.es/intl/es_ALL/analytics/learn/privacy.html</a> to obtain more information on the cookies used and how to disable them (it being understood that we are not liable for the contents or veracity of the third-party web sites).</ul>
+                    </td>
                   </tr>
                   <tr>
                     <td>
+                      <ul>Finally, we inform you that VOCTRO LABS, S.L. shall process your data absolutely confidential and keeping the mandatory secrecy in respect thereof, pursuant to provisions set forth in the applicable regulations in force at any time, adopting therefor any necessary technical and organizational measures that guarantee the security of your data and avoid their alteration, loss, non-authorised processing or access, considering the estate of technology, the nature of the data stored and the risks at which they may be exposed.</ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Updated in February 2020</p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /#privacy-modal -->
+  
+      <div id="vosyn-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">VoSyn</h4>
+            </div>
+            <div class="modal-body">
+              <p> Recent advances in the area of Machine Learning and Artificial Intelligence can be applied to the generation of a human-like voice signals. Given a set of recordings of a speaker or singer of several minutes, we can create a voice model that captures its main treats, including singing expression. Once this voice model is loaded, Voiceful can generate new content. You can refer to the technical details in this research publication. </p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /#vosyn-modal -->
+    
+      <div id="votrans-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">VoTrans</h4>
+            </div>
+            <div class="modal-body">
+              <p> Manipulating voice recordings have several applications in the creative media industries. Voiceful offers a patented voice transformation technology [Patent Nr.]   that can be integrated in real-time (e.g. a plugin for a Unity videogame, audio FX in a DAW) or as batch processing tool in a post-production workflow (e.g. for film, games, animation, TV, music). </p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /#votrans-modal -->
+    
+      <div id="voalign-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">VoAlign</h4>
+            </div>
+            <div class="modal-body">
+              <p> Editing a voice recording without altering the original voice quality has been extensively used in music and film productions with tools such as pitch correction and dialogue synchronization.
+                Voiceful provides a tool that analyzes and automatically corrects a voice recording. In film applications, Voiceful can synchronize two voice recordings in the ADR workflow (Automatic Dialogue Replacement). We can use onset and phonetic alignment to generate lip-synched animations. In music, VoAlign allows to automatically estimate the musical key of an a capella recording and applying pitch correction to achieve perfect tuning. </p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /#voalign-modal -->
+    
+      <div id="vodesc-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">VoDesc</h4>
+            </div>
+            <div class="modal-body">
+              <p>A voice recording conveys an incredible amount of information. For speech, it can be information about the words, about the person, about the emotion; while for singing voice it can bring also information about notes, intonation, the key and tempo of a song. To make clear, Voiceful is not a speech recognition solution. Besides the world of creative media, the analysis algorithms in Voiceful can be further extended for Medical or forensic applications. Check in this example the analysis output and the format of exported data.</p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /#vodesc-modal -->
+    
+      <div id="voscale-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">VoScale</h4>
+            </div>
+            <div class="modal-body">
+              <p>Be it a commercial music downmix, be it a field-recording for a film, Voiceful can change the duration and key while preserving the quality of the original recording. Playback speed and transposition controls can be passed dynamically in real-time. For example, the tempo of a song can be changed on the fly synched by a runner's pace, or a gesture movement on a mobile phone. This is a validated professional audio tool, and we are happy when clients with trained ears choose Voiceful over other solutions in the market. Check our demo in <a href="https://drive.google.com/file/d/0B1VsSgcFDRGKc2RsbFMxMW9SdzA/view" alt="VoctroLabs - VoScale" target="_blank">this video</a></p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /#voscale-modal -->
+    
+      <div id="vomix-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">VoMix</h4>
+            </div>
+            <div class="modal-body">
+              <p>This is a utility to automatically mix the contents generated by Voiceful with existing musical or FX background tracks. All parameters are configurable and can be adjusted through our VoMix Editor GUI tool  <a target="_blank" href="img/vomix_UI.png"> [see screenshot]</a>.  VoMix is usually place as tha last process in a multi-stage workflow. </p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /#vomix-modal -->
 
-                      <!-- START  HERE -->
-                      <div class="row" align="center">
-                        <div class="large-12 columns">
-
-                      <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
-
-                      <div id="ytapiplayer3" align="middle" style="display:none;">
-                        <object >
-                        <param name="movie" value="https://www.youtube.com/embed/F6_Dol1xlJ0?controls=0&rel=0&showinfo=0&autoplay=0"></param>
-                        <param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param>
-                        <iframe src="https://www.youtube.com/embed/F6_Dol1xlJ0?controls=0&rel=0&showinfo=0&autoplay=0"  allowscriptaccess="always" allowfullscreen="true" ></iframe>
-                        </object>
-                      </div>
-
-                      <img src="img/catarrator2.png" id="imageID3" />
-                        <script type="text/javascript">
-                        $('#imageID3').click(function() {
-                        $('#ytapiplayer3').show();
-                        $('#imageID3').hide();
-                        });
-                        </script>
-                      </div>
-                      </div>
-                      <!-- END HERE -->
-
-                  <p>
-                    Frenadol Catarrator is an innovative and funny way of marketing that has been used for a product called Frenadol by Johnson Johnson, a company operating in pharmaceutical sector.
-                    The user can record an up to 15 seconds voice message, justifying his absence or apologising for failing to meet a commitment. Thanks to the app, the voice becomes congested by various cold symptoms (cough, hoarseness, sneezing) to make it sound realistic. The result is the perfect excuse to get rid of the most boring plans, even if the costumers are perfectly healthy after having used the product.
-                    Voctro Labs integrates a Voice Transformation technology that allows manipulating the voice of the user to generate cold disease effects. The app was launched in 2013 and is still available for iOS and Android.
-                  </p>
-
-                  </td>
+      <div id="usage-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Usage table</h4>
+            </div>
+            <div class="modal-body">
+              <div class="table-responsive no-border">
+                <table class="table">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th class="text-center">User input is...</th>
+                    <th class="text-center">What languages?</th>
+                    <th class="text-center">Processing</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="active">
+                    <th scope="row" colspan="4">Synthetic voices</th>
+                  </tr>
+                  <tr>
+                    <td>Speech content</td>
+                    <td class="text-center vertical-center">Text</td>
+                    <td rowspan="2" class="text-center vertical-center">ENG, SPA <br><small>(other languages upon request)</small></td>
+                    <td rowspan="2" class="text-center vertical-center">Batch</td>
+                  </tr>
+                  <tr>
+                    <td>Singing content</td>
+                    <td class="text-center vertical-center" style="max-width: 150px">Text and/or MIDI, MusicXML</td>
+                  </tr>
+                  <tr class="active">
+                    <th scope="row" colspan="4">Transformed voices</th>
+                  </tr>
+                  <tr>
+                    <td>Speech content</td>
+                    <td rowspan="2" class="text-center vertical-center">Mic-in or Audio file</td>
+                    <td rowspan="2" class="text-center vertical-center">Any</td>
+                    <td rowspan="2" class="text-center vertical-center">Real-time, batch</td>
+                  </tr>
+                  <tr>
+                    <td>Singing content</td>
+                  </tr>
+                  <tr class="active">
+                    <th scope="row" colspan="4">Voice Description</th>
+                  </tr>
+                  <tr>
+                    <td>Speech content</td>
+                    <td rowspan="2" class="text-center vertical-center">Mic-in or Audio file</td>
+                    <td rowspan="2" class="text-center vertical-center">Any</td>
+                    <td rowspan="2" class="text-center vertical-center">Real-time, batch</td>
+                  </tr>
+                  <tr>
+                    <td>Singing content</td>
+                  </tr>
+                  <tr class="active">
+                    <th scope="row" colspan="4">Pitch and Time change</th>
+                  </tr>
+                  <tr>
+                    <td>Speech content</td>
+                    <td rowspan="3" class="text-center vertical-center">Audio file</td>
+                    <td rowspan="3" class="text-center vertical-center">Any</td>
+                    <td rowspan="3" class="text-center vertical-center">Real-time, batch</td>
+                  </tr>
+                  <tr>
+                    <td>Singing content</td>
+                  </tr>
+                  <tr>
+                    <td>Audio content</td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /#usage-modal -->
+  
+      <div id="software-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Software integration table</h4>
+            </div>
+            <div class="modal-body">
+              <div class="table-responsive no-border">
+                <table class="table table-hide-empty-cells table-center-content">
+                <thead>
+                  <tr>
+                    <th colspan="3" class="active">Supported SDK clients</th>
+                    <th colspan="2" class="active left-border">Architecture</th>
+                  </tr>
+                  <tr>
+                    <th>Web</th>
+                    <th>Mobile</th>
+                    <th>Desktop <br>Server</th>
+                    <th class="left-border">Standalone <br><small>(on device)</small></th>
+                    <th>Cloud API <br><small>(on server)</small></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>JS/PHP*</td>
+                    <td>iOS <br>Android</td>
+                    <td>Linux <br>OSX <br>Windows</td>
+                    <td class="text-center left-border"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                    <td class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="6">
+                      <em>*Clients also available for Python and Ruby.</em>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+              </div>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /#software-modal -->
+  
+      <div id="features-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Features table</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Features</th>
+                    <th class="text-center">Available on Voiceful</th>
+                    <th class="text-center">Custom built</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="active">
+                    <th scope="row" colspan="3">Synthetic voices</th>
+                  </tr>
+                  <tr>
+                    <td>Catalogue: <br>male pop, female pop</td>
+                    <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Custom: <br>celebrities, artists, personal...</td>
+                    <td></td>
+                    <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                  </tr>
+                  <tr class="active">
+                    <th scope="row" colspan="3">Transformed voices</th>
+                  </tr>
+                  <tr>
+                    <td>Human: <br>male, female, child, elder</td>
+                    <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Fiction: <br>robot, alien, cartoon, monster</td>
+                    <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Custom: <br>game character, ...</td>
+                    <td></td>
+                    <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                  </tr>
+                  <tr class="active">
+                    <th scope="row" colspan="3">Pitch and Time change</th>
+                  </tr>
+                  <tr>
+                    <td>Time-scaling, Pitch-shifting, <br>Pitch Correction, Time Alignment</td>
+                    <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                    <td></td>
+                  </tr>
+                  <tr class="active">
+                    <th scope="row" colspan="3">Voice Description</th>
+                  </tr>
+                  <tr>
+                    <td>Voice data analysis</td>
+                    <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Graphics and design</td>
+                    <td></td>
+                    <td class="text-center vertical-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                   </tr>
                 </tbody>
               </table>
             </div>
-          </div> <!-- /.modal-body -->
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div id="success2-modal" class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Success Stories - Interactive/Social Apps</h4>
-          </div>
-          <div class="modal-body">
-              <table class="table">
-                <tbody>
-                  <tr>
-                    <td scope="row"><b> DJ Voxchanger - Audionamix </b></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <!-- START  HERE -->
-                      <div class="row" align="center">
-                        <div class="large-12 columns">
-
-                      <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
-
-                      <div id="ytapiplayer4" align="middle" style="display:none;">
-                        <object >
-                        <param name="movie" value="https://www.youtube.com/embed/iKgXsxfrcH8?controls=0&rel=0&showinfo=0&autoplay=0"></param>
-                        <param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param>
-                        <iframe src="https://www.youtube.com/embed/iKgXsxfrcH8?controls=0&rel=0&showinfo=0&autoplay=0"  allowscriptaccess="always" allowfullscreen="true" ></iframe>
-                        </object>
-                      </div>
-
-                      <img src="img/djvoxchanger2.png" id="imageID4" />
-                        <script type="text/javascript">
-                        $('#imageID4').click(function() {
-                        $('#ytapiplayer4').show();
-                        $('#imageID4').hide();
-                        });
-                        </script>
-                      </div>
-                      </div>
-                      <!-- END HERE -->
-
-                      <p>“DJ Voxchanger” offers tech lovers and music hobbyists the ability to separate and transform any vocal, in any song (mono or stereo), independently from original multi-track recordings. DJ Voxchanger's preset effects and familiar faders instantly transform any vocalist into a Robot, Monster, Alien, alter the age or gender of any vocalist, add harmonizer and tuner effects or even change the overall pitch of the vocal performance. This remix can be recorded in the real-time and shared by email, iTunes, Soundcloud, or other apps on your device such as Dropbox.
-                      Voctro Labs integrates proprietary Voice Transformation technology that allows transforming vocals in real-time and apply effects like gender change, pitch correction, harmonizer, robot, alien or monster.
-                      </p>
-                      <p>
-                        <a href="http://www.djvoxchanger.com">www.djvoxchanger.com</a>
-                      </p>
-
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td scope="row"><b>Ditty - Zya Music</b></td>
-                  </tr>
-                  <tr>
-                    <td>
-
-                      <!-- START  HERE -->
-                      <div class="row" align="center">
-                        <div class="large-12 columns">
-
-                      <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
-
-                      <div id="ytapiplayer5" align="middle" style="display:none;">
-                        <object >
-                        <param name="movie" value="https://www.youtube.com/embed/dDe2nTgRv5Y?controls=0&rel=0&showinfo=0&autoplay=0"></param>
-                        <param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param>
-                        <iframe src="https://www.youtube.com/embed/dDe2nTgRv5Y?controls=0&rel=0&showinfo=0&autoplay=0"  allowscriptaccess="always" allowfullscreen="true" ></iframe>
-                        </object>
-                      </div>
-
-                      <img src="img/ditty2.png" id="imageID5" />
-                        <script type="text/javascript">
-                        $('#imageID5').click(function() {
-                        $('#ytapiplayer5').show();
-                        $('#imageID5').hide();
-                        });
-                        </script>
-                      </div>
-                      </div>
-                      <!-- END HERE -->
-
-                  <p>
-                    “Ditty” for Messenger Mobile app is a fast and fun new way to send friends a custom song and lyric video. It is as simple as write a short text, pick a song from the library containing classic songs and current hits and Ditty sings your message for you. Creations can also include a video to be shared instantly via Instagram, Facebook, Twitter, SMS, email and more. The app reached more than 1 millions downloads during the first month and became a top trending app during its launch days. The app won the 2015 Appy Award for Best Music App.
-                    Voctro Labs integrates Singing Voice Synthesis technology and develops custom voices for this mobile app. The app was launched in 2015.
-                  </p>
-                  <p> <a href="https://zyamusic.com/products/ditty">www.zyamusic.com/products/ditty</a></p>
-
-                  </td>
-                  </tr>
-                </tbody>
-              </table>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /#features-modal -->
+      <!-- Begin demo Info Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Disclaimer</h4>
             </div>
-          </div> <!-- /.modal-body -->
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+            <div class="modal-body">
+              <p><b>Happy Birthday</b> Sing along <a href="https://www.youtube.com/watch?v=YUAGh0nYXUs">karaoke track</a> belongs to Allstars kids Club<br>
+                (c) <a href="https://www.allstarskidsclub.com">All Stars Kids Club</a><br></p>
 
-    <div id="success3-modal" class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Success Stories - Games / VR</h4>
-          </div>
-          <div class="modal-body">
-              <table class="table">
-                <tbody>
-                  <tr>
-                    <td scope="row"><b>Mursion </b></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <!-- START  HERE -->
-                      <div class="row" align="center">
-                        <div class="large-12 columns">
-
-                      <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
-
-                      <div id="ytapiplayer6" align="middle" style="display:none;">
-                        <object >
-                        <param name="movie" value="https://www.youtube.com/embed/Ppl5cY9HG8o?controls=0&rel=0&showinfo=0&autoplay=0"></param>
-                        <param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param>
-                        <iframe src="https://www.youtube.com/embed/Ppl5cY9HG8o?controls=0&rel=0&showinfo=0&autoplay=0"  allowscriptaccess="always" allowfullscreen="true" ></iframe>
-                        </object>
-                      </div>
-
-                      <img src="img/mursionvr2.png" id="imageID6" />
-                        <script type="text/javascript">
-                        $('#imageID6').click(function() {
-                        $('#ytapiplayer6').show();
-                        $('#imageID6').hide();
-                        });
-                        </script>
-                      </div>
-                      </div>
-                      <!-- END HERE -->
-
-                      <p>“Mursion" is a virtual reality company based in San Francisco, USA. The company develops and provides a virtual reality environment where professionals practice and master the complex interpersonal skills necessary to be effective in high-stress professions. Used by a wide range of innovative organizations in healthcare, education, hospitality, finance, and other corporate sectors, Mursion delivers customized virtual reality simulations that recreate the most demanding interpersonal challenges that professionals confront on the job every day.
-                      Voctro Labs integrates voice transformation technology, where user voice is modified in real-time changing its timbre using a configurable preset.
-                      </p>
-                      <p> <a href="https://mursion.com/">www.mursion.com</a> </p>
-
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td scope="row"><b>Take 7 </b></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <!-- START  HERE -->
-                      <div class="row" align="center">
-                        <div class="large-12 columns">
-
-                      <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
-
-                      <div id="ytapiplayer7" align="middle" style="display:none;">
-                        <object >
-                        <param name="movie" value="https://www.youtube.com/embed/IBOy0r9lvJo?controls=0&rel=0&showinfo=0&autoplay=0"></param>
-                        <param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param>
-                        <iframe src="https://www.youtube.com/embed/IBOy0r9lvJo?controls=0&rel=0&showinfo=0&autoplay=0"  allowscriptaccess="always" allowfullscreen="true" ></iframe>
-                        </object>
-                      </div>
-
-                      <img src="img/take7music2.png" id="imageID7" />
-                        <script type="text/javascript">
-                        $('#imageID7').click(function() {
-                        $('#ytapiplayer7').show();
-                        $('#imageID7').hide();
-                        });
-                        </script>
-                      </div>
-                      </div>
-                      <!-- END HERE -->
-
-                  <p>“Take 7" is a state-of-the-art music learning program that guarantees to improve your musicianship based on proven pedagogical methods. Take7 will record your performance through a computer microphone, analyse it and give you a score, suggest ways you can improve your playing, and guide you through exercises to help you accelerate your learning. You can select backing tracks to play along with and adjust the playback speed with the tempo slider to find a tempo that's comfortable for you without sacrificing audio quality. The performance can be reviewed anytime and even shared with friends.
-                  Voctro Labs integrates audio transformation technologies that allow to control tempo of the songs, speeding up or slowing down the music without degrading the audio quality. It has been adapted to be cross-platform and is available on all major computers and devices.
-                  </p>
-                  <p> <a href="http://www.take7music.com">www.take7music.com</a> </p>
-
-                  </td>
-                  </tr>
-                </tbody>
-              </table>
+              <p><b>Let It Go</b> is a song from Disney's 2013 animated feature film Frozen<br>
+                (c) <a href="https://www.disney.com">Disney</a><br></p>
             </div>
-          </div> <!-- /.modal-body -->
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-
-    <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">
-            <img alt="voiceful" src="img/voicefulx2.png">
-          </a>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#how">HOW DOES IT WORK</a></li>
-            <li><a href="#clients">WHO USES IT</a></li>
-            <li><a href="#people">COMPANY</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-            <li><a href="developers.html">DEVELOPERS</a></li>
-            <li><a href="demos.html" class="btn btn-default navbar-btn">TRY DEMO</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
       </div>
-    </nav>
+      <!-- End Info Modal -->
+    </div>
+
+    <div id="navmenu"></div>
 
     <div class="container-fluid">
-
       <div id="slider">
-        <a class="text-center" data-toggle="modal" href="#video-modal">
-          <img id="player" alt="video" src="img/player.png">
-        </a>
-      </div>
-
-      <div id="first-row" class="row section text-center">
-        <div class="col-xs-12">
-          <h1>Give voice to your ideas</h1>
+        <!-- Carousel -->
+        <div class="flex-box col-xs-12">
+          <div id="video-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#video-carousel" data-slide-to="0" class="active"></li>
+              <li data-target="#video-carousel" data-slide-to="1"></li>
+              <li data-target="#video-carousel" data-slide-to="2"></li>
+              <li data-target="#video-carousel" data-slide-to="3"></li>
+              <li data-target="#video-carousel" data-slide-to="4"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <div class="row">
+                  <div class="video-text-block col-sm-3 col-sm-offset-2 col-xs-12">
+                    <h3>Voiceful</h3>
+                    <h4>Give voice to your ideas</h4>
+                    <p>Voiceful is a toolkit that uses voice technology to create new ways of expressing yourself.</p>
+                  </div>
+                  <div class="col-sm-5 col-xs-12 youtube-video-parent">
+                    <div class="youtube-16by9">
+                      <div class="youtube-video" id="91ZCL-4WWTw"></div>
+                    </div>
+                  </div>                      
+                </div>
+              </div> <!-- /.item active -->
+              <div class="item">
+                <div class="row">
+                  <div class="video-text-block col-sm-3 col-sm-offset-2 col-xs-12">
+                    <h3><a style="text-decoration: none;" href="solutions.html#singing-synthesis">Singing synthesis</a></h3>
+                    <h4>Say it with a song</h4>
+                    <p>You write or customize the lyrics, and an incredibly expressive voice sings it for you.</p>
+                  </div>
+                  <div class="col-sm-5 col-xs-12 youtube-video-parent">
+                    <div class="youtube-16by9">
+                      <div class="youtube-video" id="Cf7gjHcUo-A"></div>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- /.item -->
+              <div class="item">
+                <div class="row">
+                  <div class="video-text-block col-sm-3 col-sm-offset-2 col-xs-12">
+                    <h3><a style="text-decoration: none;" href="solutions.html#brand-voices">Brand voices</a></h3>
+                    <h4>Make a celebrity sing</h4>
+                    <p>Commission us your own voice model, be it a famous or a beloved one, be it dead or alive.</p>
+                  </div>
+                  <div class="col-sm-5 col-xs-12 youtube-video-parent">
+                    <div class="youtube-16by9">
+                      <div class="youtube-video" id="oHmLO0MN_-Y"></div>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- /.item -->
+              <div class="item">
+                <div class="row">
+                  <div class="video-text-block col-sm-3 col-sm-offset-2 col-xs-12">
+                    <h3><a style="text-decoration: none;" href="solutions.html#voice-changer">Voice changer</a></h3>
+                    <h4>Transform your voice</h4>
+                    <p>Sound like a robot. Sound like your son. Sound faster, or chilled. Do some voice lifting.</p>
+                  </div>
+                  <div class="col-sm-5 col-xs-12 youtube-video-parent">
+                    <div class="youtube-16by9">
+                      <div class="youtube-video" id="_fa8qEjyGLU"></div>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- /.item -->
+              <div class="item">
+                <div class="row">
+                  <div class="video-text-block col-sm-3 col-sm-offset-2 col-xs-12">
+                    <h3><a style="text-decoration: none;" href="solutions.html#vocals-correction">Vocals correction</a></h3>
+                    <h4>Pretend you can sing</h4>
+                    <p>Everyone is gifted with a hidden talent. Sound like you can sing and share it to the world.</p>
+                  </div>
+                  <div class="col-sm-5 col-xs-12 youtube-video-parent">
+                    <div class="youtube-16by9">
+                      <div class="youtube-video" id="KRx0sLm2GSc"></div>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- /.item -->
+            </div> <!-- /.carousel-inner -->
+    
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#video-carousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#video-carousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div> <!-- /#video-carousel -->
         </div>
-        <div class="col-xs-12">
+      </div>
+      <div id="first-row" class="row text-center">
+        <div class="col-xs-12 header-section">
+          <h1>Give voice to your ideas</h1>
           <p class="subtitle">
-            We want to help people communicate better <br>
-            so we have developed Voiceful, a toolkit that uses voice<br>
-            to create new ways of expressing yourself.
+            Voiceful provides AI Voice solutions for creative apps, games and media content productions.
           </p>
         </div>
       </div>
-
     </div>
-
     <div id="rubric" class="container-fluid">
-      <div id="rubric-inner">
-        <div id="what" class="row section grey-bg text-center">
-          <div class="col-xs-12">
-            <div class="row" src="img/icon1.png">
-              <div class="col-xs-12">
-                <h2>WHAT CAN YOU DO<br> WITH VOICEFUL?</h2>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-12 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
-                   <a class="icon-link" data-toggle="modal" href="#audio-modal" data-title="Say it with a song"
-                      data-audio="https://www.youtube.com/embed/Cf7gjHcUo-A?enablejsapi=1&autoplay=1">
-                  <img class="icon-img icon-img-default" src="img/icon1.png">
-                  <img class="icon-img icon-img-hover" src="img/demos_play.png">
-                </a>
-                <h4>Say it with a song</h4>
-                <p>You write or customize the lyrics, and an incredibly expressive voice sings it for you.</p>
-                <a class="btn btn-default btn-lg btn-play-demo visible-xs-inline-block"
-                   data-toggle="modal" href="#audio-modal" data-title="Say it with a song"
-                   data-audio="https://www.youtube.com/embed/Cf7gjHcUo-A?enablejsapi=1&autoplay=1">
-                  WATCH VIDEO!
-                </a>
-              </div>
-              <div class="col-xs-12 col-sm-4 col-md-3">
-                <a class="icon-link" data-toggle="modal" href="#audio-modal" data-title="Make a celebrity sing"
-                   data-audio="https://www.youtube.com/embed/oHmLO0MN_-Y?enablejsapi=1">
-                  <img class="icon-img icon-img-default" src="img/icon2.png">
-                  <img class="icon-img icon-img-hover" src="img/demos_play.png">
-                </a>
-                <h4>Make a celebrity sing</h4>
-                <p>Commission us your own voice model, be it a famous or a beloved one, be it dead or alive.</p>
-                <a class="btn btn-default btn-lg btn-play-demo visible-xs-inline-block"
-                   data-toggle="modal" href="#audio-modal" data-title="Make a celebrity sing"
-                   data-audio="https://www.youtube.com/embed/oHmLO0MN_-Y?enablejsapi=1">
-                  WATCH VIDEO!
-                </a>
-              </div>
-            </div>
-            <div class="row hidden-xs">
-              <div class="col-xs-12 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
-                <a class="btn btn-default btn-lg btn-play-demo"
-                   data-toggle="modal" href="#audio-modal" data-title="Say it with a song"
-                   data-audio="https://www.youtube.com/embed/Cf7gjHcUo-A?enablejsapi=1">
-                  WATCH VIDEO!
-                </a>
-              </div>
-              <div class="col-xs-12 col-sm-4 col-md-3">
-                <a class="btn btn-default btn-lg btn-play-demo"
-                   data-toggle="modal" href="#audio-modal" data-title="Make a celebrity sing"
-                   data-audio="https://www.youtube.com/embed/oHmLO0MN_-Y?enablejsapi=1">
-                  WATCH VIDEO!
-                </a>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-12 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
-                <a class="icon-link" data-toggle="modal" href="#audio-modal" data-title="Transform your voice"
-                   data-audio="https://www.youtube.com/embed/_fa8qEjyGLU?enablejsapi=1">
-                  <img class="icon-img icon-img-default" src="img/icon3.png">
-                  <img class="icon-img icon-img-hover" src="img/demos_play.png">
-                </a>
-                <h4>Transform your voice</h4>
-                <p>Sound like a robot. Sound like your son. Sound faster, or chilled. Do some voice lifting.</p>
-                <a class="btn btn-default btn-lg btn-play-demo visible-xs-inline-block"
-                   data-toggle="modal" href="#audio-modal" data-title="Transform your voice"
-                   data-audio="https://www.youtube.com/embed/_fa8qEjyGLU?enablejsapi=1">
-                  WATCH VIDEO!
-                </a>
-              </div>
-              <div class="col-xs-12 col-sm-4 col-md-3">
-                <a class="icon-link" data-toggle="modal" href="#audio-modal" data-title="Pretend you can sing"
-                   data-audio="https://www.youtube.com/embed/KRx0sLm2GSc?enablejsapi=1">
-                  <img class="icon-img icon-img-default" src="img/icon4.png">
-                  <img class="icon-img icon-img-hover" src="img/demos_play.png">
-                </a>
-                <h4>Pretend you can sing</h4>
-                <p>Everyone is gifted with a hidden talent. Sound like you can sing and share it to the world.</p>
-                <a class="btn btn-default btn-lg btn-play-demo visible-xs-inline-block"
-                   data-toggle="modal" href="#audio-modal" data-title="Pretend you can sing"
-                   data-audio="https://www.youtube.com/embed/KRx0sLm2GSc?enablejsapi=1">
-                  WATCH VIDEO!
-                </a>
-              </div>
-            </div>
-            <div class="row hidden-xs">
-              <div class="col-xs-12 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
-                <a class="btn btn-default btn-lg btn-play-demo"
-                   data-toggle="modal" href="#audio-modal" data-title="Transform your voice"
-                   data-audio="https://www.youtube.com/embed/_fa8qEjyGLU?enablejsapi=1">
-                  WATCH VIDEO!
-                </a>
-              </div>
-              <div class="col-xs-12 col-sm-4 col-md-3">
-                <a class="btn btn-default btn-lg btn-play-demo"
-                   data-toggle="modal" href="#audio-modal" data-title="Pretend you can sing"
-                   data-audio="https://www.youtube.com/embed/KRx0sLm2GSc?enablejsapi=1">
-                  WATCH VIDEO!
-                </a>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-12 center-block">
-                <img class="icon-img" src="img/icon5.png">
-                <h4>Have an idea?</h4>
-                <p>Try Voiceful and create new <br>ways of expressing yourself. <br>Or <a href="./developers.html#request">let’s talk</a>. We’re a collaborative bunch.</p>
-      <!--          <a class="btn btn-default btn-lg btn-demos"
-                        href="https://www.voctrolabs.com/cloud-demos/index_votrans_live.html" target="_blank">
-                  INTERACTIVE DEMOS
-                </a> -->
-                <a class="btn btn-default btn-lg btn-demos" href="demos.html">TRY DEMO</a>
-              </div>
-            </div>
-        <!--    <hr>
-            <div class="row">
-              <div class="col-xs-12">
-                <h3>Try Voiceful and create new<br>ways of expressing yourself</h3>
-                <a class="btn btn-default btn-lg btn-demos"
-                        href="https://www.voctrolabs.com/cloud-demos/index_votrans_live.html" target="_blank">
-                  INTERACTIVE DEMOS
-                </a>
-              </div>
-            </div> -->
-          </div>
-        </div>
+      <div id="rubric-inner">      
 
-        <div id="how" class="row section text-center">
-          <div class="col-xs-12 col-sm-offset-3 col-sm-6">
-            <h2>HOW DOES IT WORK?</h2>
-            <div class="vertical-block">
-              <img src="img/simbol1.jpg">
-              <h4>Digital and mobile</h4>
-              <p>
-                Voiceful is a toolkit built to design digital and mobile experiences with speech and singing voice.
-                Whether you’re a creative agency, an app developer or a content production company,
-                Voiceful helps you bring to life ideas that include voice interaction and personalization.
-                <strong><a data-toggle="modal" href="#usage-modal">+More info</a></strong>
+        <div id="home-services" class="row section grey-bg">
+          <div class="row">
+            <h2 class="text-center">   
+              PRODUCTS
+            </h2>
+          </div>     
+          <div id="products-container" class="row col-xs-12 col-sm-offset-2 col-sm-8">
+            <div class="col-xs-12 col-sm-4 text-center product-content">
+              <img src="img/icon6.png">
+              <p class="text-left">
+                Our <a href="cloud-api.html"><strong>Cloud API</strong></a>  is a RESTful API that can be easily integrated into web sites, mobile apps and other SaaS platforms.
               </p>
-            </div>
-            <div class="vertical-block">
-              <img src="img/simbol2.jpg">
-              <h4>Integration</h4>
-              <p>
-                Our API allows to develop ideas and integrate them easily into your app, website, game, social network or
-                products. You can use a Cloud API directly or integrate Voiceful natively in your mobile, desktop or server application.
-                <strong><a data-toggle="modal" href="#software-modal">+More info</a></strong>
-              </p>
-            </div>
-            <div class="vertical-block">
-              <img src="img/simbol3.jpg">
-              <h4>Pre-set vs Custom</h4>
-              <p>
-                Voiceful combines pre-defined features with a series of elements that can be configured for each project,
-                like language, background music or specific technology adaptation. We can also build ideas from scratch
-                if we love them. Contact us.
-                <strong><a data-toggle="modal" href="#features-modal">+More info</a></strong>
-              </p>
-            </div>
-            <div class="vertical-block">
-              <img src="img/simbol4.jpg">
-              <h4>Hosting</h4>
-              <p>
-                The content will be processed on our servers, no matter if uploaded by users or generated by Voiceful.
-                It will be available on our storage until expiration date – but you can also extend Voiceful as a storage
-                and distribution option with an extra fee.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div id="clients" class="row section grey-bg text-center">
-          <div class="col-xs-12">
-            <h2>WHO USES VOICEFUL?</h2>
-          </div>
-          <div class="col-xs-offset-1 col-xs-10">
-            <div class="row">
-              <div class="col-xs-12 col-sm-6 col-md-3 client-box">
-                <img src="img/uses1.png">
-                <h4>Media/Advertising</h4>
-                <p>for online advertising campaigns, second screen and other branding applications.
-                <a data-toggle="modal" href="#success-modal">+Success stories</a> </p>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-3 client-box">
-                <img src="img/uses2.png">
-                <h4>Interactive/Social Apps</h4>
-                <p>for musical and social apps offering novel user experiences with user's voice.
-                  <a data-toggle="modal" href="#success2-modal">+Success stories</a> </p>
-              </div>
-              <div class="clearfix visible-sm-block"></div>
-              <div class="col-xs-12 col-sm-6 col-md-3 client-box">
-                <img src="img/uses3.png">
-                <h4>Games / VR</h4>
-                <p>for generating character voices with our <a href="./characters.html"> TTS Unity plugin</a>, or transforming player’s voice.
-                  <a data-toggle="modal" href="#success3-modal">+Success stories</a> </p>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-3 client-box">
-                <img src="img/uses4.png">
-                <h4>IoT / Toys</h4>
-                <p>for voice interaction devices, personalized interactive products, internet of things and robotics.
-                <!--   <a data-toggle="modal" href="#success4-modal">+Success stories</a>  -->
+              <div class="product-price-text">
+                <hr/>
+                <p>
+                  Starting at <b>10€/month</b>
                 </p>
+                <a class="btn btn-lg btn-demos" href="cloud-api.html">Details</a>
+              </div>
+            </div>
+          
+            <div class="col-xs-12 col-sm-4 text-center product-content">
+              <img src="img/icon3.png">
+              <p class="text-left">
+                Our <a href="sdk.html"><strong>Standalone SDK</strong></a> can be integrated as cross-platform C++ libraries for Mobile (iOS/Android), Desktop or Server applications. 
+              </p>
+              <div class="product-price-text">
+                <hr/>
+                <p>
+                  Tier-based yearly licenses
+                </p>
+                <a class="btn btn-lg btn-demos" href="sdk.html">Details</a>
+              </div>
+            </div>
+          
+            <div class="col-xs-12 col-sm-4 text-center product-content">
+              <img src="img/icon5.png">
+              <p class="text-left">
+                We offer <strong>Custom Services</strong> to extend and customize our technologies for the specific needs of your project idea.
+              </p>
+              <div class="product-price-text">
+                <hr/>
+                <p>
+                  Get in touch for a quote
+                </p>
+                <a class="btn btn-lg btn-demos" href="#contact">Contact us</a>
+              </div>
+            </div>
+          </div>     
+        </div>
+
+        <!-- begin demo -->
+        <div id="demo-container" class="row section">
+          <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+            <h3 class="text-center">   
+              Here's a demo: have an AI voice singing your own lyrics!
+            </h3>
+
+            <div id="voiceful-demo-widget" class="synth-widget" style="display:block">
+              <div id="content-voiceful-demo">
+                <ul class="nav nav-tabs nav-justified">
+                  <li class="nav-item active" id="nav-happybday-tab" data-toggle="tab" href="#nav-happybday" role="tab" aria-controls="nav-happybday" aria-selected="true">
+                    <a class="nav-link active" id="nav-happybday-link" href="#" onclick="synthwidget.selectSong(0)">Happy Birthday</a>
+                  </li>
+                  <li class="nav-item" id="nav-letitgo-tab" data-toggle="tab" href="#nav-letitgo" role="tab" aria-controls="nav-letitgo" aria-selected="false">
+                    <a class="nav-link" id="nav-letitgo-link" href="#" onclick="synthwidget.selectSong(1)">Let it go</a>
+                  </li>
+                </ul>
+
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade active lyrics in" id="nav-happybday" role="tabpanel" aria-labelledby="nav-happybday-tab">
+                    <div id="demo-happy-text" >
+                      <p><span id="">Happy Birthday to you</span></p>
+                      <p><span id="">Happy Birthday to you</span></p>
+                      <p><span id="">Happy Birthday, &nbsp;&nbsp;</span>
+                      <input id="demo-happy-input" type="text" maxlength="30" oninput="synthwidget.change(0)" onfocus="synthwidget.focus(0)" onblur="synthwidget.losefocus(0)" onkeydown="synthwidget.synthesize(event,0)" value="dear Voiceful" style="width: 153px; min-width: 153px;">
+                      <span id="demo-happy-original" class="original-lyrics"></span></p>
+                      <p><span id="">Happy Birthday to you</span></p>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade lyrics" id="nav-letitgo" role="tabpanel" aria-labelledby="nav-letitgo-tab">
+                    <div id="demo-letitgo-text">
+                      <p><span id="">Let it go, let it go</span><br></p>
+                      <p><input id="demo-letitgo-input-1" type="text" maxlength="50" oninput="synthwidget.change(1)" onfocus="synthwidget.focus(1)" onblur="synthwidget.losefocus(1)" onkeydown="synthwidget.synthesize(event)" value="Can't hold it back anymore" style="width: 253px; min-width: 253px;">
+                      <span id="demo-letitgo-original-1" class="original-lyrics"></span></p>
+  
+                      <p><span id="">Let it go, let it go</span></p>
+                      <p><input id="demo-letitgo-input-2" type="text" maxlength="50" oninput="synthwidget.change(2)" onfocus="synthwidget.focus(2)" onblur="synthwidget.losefocus(2)" onkeydown="synthwidget.synthesize(event)" value="Turn away and slam the door" style="width: 253px; min-width: 253px;">
+                      <span id="demo-letitgo-original-2" class="original-lyrics"></span></p>
+                    </div>
+                  </div>
+                </div>                
+              </div>
+              <hr>
+              <div id="help-voiceful-demo" class="text-center" >
+                <p id="help" style="display: block;">Click on the text box to change lyrics.</p>
+                <div id="demo-play-info-container">
+                  <button id="synthesize-button" class="btn btn-lg btn-demos text-center" style="display:none" onclick="synthwidget.synthesize(event)"><i class="glyphicon glyphicon-music"></i>&nbsp;&nbsp;CREATE SONG&nbsp;&nbsp;<i class="glyphicon glyphicon-music"></i></button>
+                  <button id="play-button" style="display:none" class="btn btn-lg btn-demos text-center" onclick="synthwidget.play()"><i class="glyphicon glyphicon-play"></i>&nbsp;&nbsp;PLAY</button>
+                  <button id="demo-info-button" type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-info-sign"></i></button>
+                </div>
+              </div>
+              <audio preload="auto" id="audio-voiceful-demo" onplaying="synthwidget.audio_status='playing'" onpause="synthwidget.audio_status='stop'" onended="synthwidget.ended()" onerror="synthwidget.error()"><source type="audio/mp3" src="https://s3-eu-west-1.amazonaws.com/media.voctrolabs/vocloud/vomix_tasks/66cd6069-9e40-4328-afaa-715330a8aa90/outputs/original/output.mp3"></audio>          
+            </div> 
+            <div class="text-center">
+              <a class="btn btn-lg btn-demos" href="demos.html">Try more demos!</a>
+            </div>           
+          </div>
+          <div class="row">
+            <div class="col-xs-12 text-center">
+              <hr/>
+              <h3>   
+                Do you want to know more?
+              </h3>
+              <a class="btn btn-lg btn-demos" href="#contact">CONTACT US!</a>
+            </div>
+          </div>
+        </div>
+        <!-- end demo -->
+
+        <div id="clients" class="row section grey-bg">
+          <div class="col-xs-12">
+            <h2 class="text-center">THESE ARE SOME OF OUR CLIENTS</h2>
+            <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+              <div class="slick-carousel">
+                <div class="slide slide--has-caption slick-slide">
+                  <img src="img/companies/alysia.png" alt="Alysia">
+                  <div class="slide-caption">Alysia</div>
+                </div>
+                <div class="slide slide--has-caption slick-slide">
+                  <img src="img/companies/audionamix.png" alt="Audionamix">
+                  <div class="slide-caption">Audionamix</div>
+                </div>
+                <div class="slide slide--has-caption slick-slide">
+                  <img src="img/companies/beeping.png" alt="Beeping">
+                  <div class="slide-caption">Beeping</div>
+                </div>            
+                <div class="slide slide--has-caption slick-slide">
+                  <img src="img/companies/ditty.png" alt="Ditty">
+                  <div class="slide-caption">Ditty</div>
+                </div>
+                <div class="slide slide--has-caption slick-slide">
+                  <img src="img/companies/mediapro.png" alt="Mediapro">
+                  <div class="slide-caption">Mediapro</div>
+                </div> 
+                <div class="slide slide--has-caption slick-slide">
+                  <img src="img/companies/mursion.png" alt="Mursion">
+                  <div class="slide-caption">Mursion</div>
+                </div> 
+                <div class="slide slide--has-caption slick-slide">
+                  <img src="img/companies/soundtrap.png" alt="Soundtrap">
+                  <div class="slide-caption">Soundtrap</div>
+                </div> 
+                <div class="slide slide--has-caption slick-slide">
+                  <img src="img/companies/spotify.png" alt="Spotify">
+                  <div class="slide-caption">Spotify</div>
+                </div>                 
+                <div class="slide slide--has-caption slick-slide">
+                  <img src="img/companies/take7.png" alt="Take 7">
+                  <div class="slide-caption">Take7</div>
+                </div>                             
+                <div class="slide slide--has-caption slick-slide">
+                  <img src="img/companies/voicemod.png" alt="Voicemod">
+                  <div class="slide-caption">Voicemod</div>
+                </div> 
+                <div class="slide slide--has-caption slick-slide">
+                  <img src="img/companies/yamaha.png" alt="Yamaha">
+                  <div class="slide-caption">Yamaha - Vocaloid</div>
+                </div> 
+                <div class="slide slide--has-caption slick-slide">
+                  <img src="img/companies/agora.png" alt="Agora">
+                  <div class="slide-caption">Agora.io</div>
+                </div> 
+                <div class="slide slide--has-caption slick-slide">
+                  <img src="img/companies/bmat.png" alt="bmat">
+                  <div class="slide-caption">BMAT</div>
+                </div> 
               </div>
             </div>
           </div>
         </div>
-
-        <div id="people" class="row section text-center">
-          <div class="col-xs-12">
-            <h2>WHO'S BEHIND VOICEFUL?</h2>
-          </div>
-          <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
-            <img src="img/team.jpg">
-            <p class="subtitle">
-              Voiceful is created by Voctro Labs, a team of audio experts passionate about innovation.
-            </p>
-            <p>
-              With 15 years of applied research experience at MTG-UPF, we’ve licensed technology worldwide from our
-              Barcelona-based offices. We have worked with creative companies, industrial businesses and start-ups to
-              deliver innovation projects. Amongst all of us we have contributed to dozens of patents and research publications. And we’re ready for
-              new adventures.
-            </p>
-          </div>
-
-          <div class="col-xs-12" style="margin-top:30px">
-            <h2>CAREERS</h2>
-          </div>
-          <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6" style="margin-top:-40px">
-            <p class="subtitle" >
-              If you are eager to work in a research-driven company passionate about voice and music and its creative applications check our current open positions and join us!
-            </p>
-            <br>
-            <p><b>- Research Scientist on Speech/Singing Technologies & Deep Learning (PhD/MSc) (Barcelona) </b>
-               <br>
-               <i><small>Publication date: February 2020</small></i>
-            </p>
-            <p>We are looking for a Researcher specialized in Speech/Audio Processing and Deep Learning. Role as researcher in R&D projects related to Voice Processing and Real-time Audio systems. Collaboration in projects with our team of researchers, software developers, musicians and sound engineers. Publication and patenting opportunities in the scope of the projects.</p2>
-            <br>
-              <a href="https://www.voctrolabs.com/jobs/Researcher_SpeechProc_DL_02-2020.pdf" target="_blank">View Job Offer</a>
-            </p>
-
-          </div>
-
-        </div>
-
-        <div id="contact" class="row section text-center">
-          <div class="col-xs-12">
-            <h2>CONTACT US</h2>
-          </div>
-          <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
-            <p>Please send us a message to get a quote for your projects or to explore options for collaboration.</p>
-            <form action="https://formspree.io/info@voctrolabs.com" method="POST">
-              <div class="form-group">
-                <input name="name" type="text" class="form-control" placeholder="Name">
-              </div>
-              <div class="form-group">
-                <input name="email" type="email" class="form-control" placeholder="Email">
-              </div>
-              <div class="form-group">
-                <textarea name="briefing" class="form-control" rows="3" placeholder="Briefing"></textarea>
-              </div>
-              <input type="hidden" name="_subject" value="Voiceful.io contact" />
-              <button id="send" type="submit" class="btn btn-danger pull-right">SEND</button>
-            </form>
-            <div class="clearfix"></div>
-            <div class="row contact-boxes">
-              <div class="col-xs-12 col-sm-4 contact-box">
-                <img src="img/contact1.png">
-                <p>info@voctrolabs.com</p>
-              </div>
-              <div class="col-xs-12 col-sm-4 contact-box">
-                <img src="img/contact2.png">
-                <p>C/ Pujades 74-80<br>08005, Barcelona</p>
-              </div>
-              <div class="col-xs-12 col-sm-4 contact-box">
-                <img src="img/contact3.png">
-                <p>+34 931 587 637</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="contact" class="row section text-center"></div>
       </div>
     </div>
 
-    <footer class="footer">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-xs-12 col-sm-3">
-            <img id="footer-logo" src="img/footer_logo.png" srcset="img/footer_logox2.png 2x">
-            <p>
-              Voiceful is a product of <strong>Voctro Labs</strong><br>
-              <strong>
-                info @ voctrolabs . com<br>
-                +34 931 587 637<br>
-                C/ Pujades 74-80 08005<br>
-                Barcelona<br>
-              </strong>
-            </p>
-            <p><a data-toggle="modal" href="#legal-modal">LEGAL NOTICE</a></p>
-            <p><a data-toggle="modal" href="#privacy-modal">PRIVACY</a></p>
-          </div>
-          <div class="col-xs-12 col-sm-offset-6 col-sm-3 col-lg-offset-7 col-lg-2">
-              <h5>MENU</h5>
-              <h6><a href="#how">HOW DOES IT WORK?</a></h6>
-              <h6><a href="#clients">WHO USES IT?</a></h6>
-              <h6><a href="#people">COMPANY</a></h6>
-              <h6><a href="#contact">CONTACT</a></h6>
-              <h6><a href="developers.html">DEVELOPERS</a></h6>
-              <h6><a href="demos.html">TRY DEMO</a></h6>
-              <div id="social">
-                <h5>FOLLOW US ON</h5>
-                <a href="https://www.facebook.com/VoctroLabs/" target="_blank">
-                  <img src="img/facebook.png">
-                </a>
-                <a href="https://twitter.com/VoctroLabs" target="_blank">
-                  <img src="img/twitter.png">
-                </a>
-                <a href="https://www.youtube.com/user/voctrolabs" target="_blank">
-                  <img src="img/youtube.png">
-                </a>
-              </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
+    <div id="footer"></div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -1111,6 +842,68 @@
     <script src="js/vendor/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/vendor/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/vendor/bootstrap-swipe-carousel.min.js"></script>
+    <!-- <script src="js/vendor/bootstrap-dropdownhover.min.js"></script> -->
     <script src="js/index.js"></script>
+    <script src="js/vendor/slick.min.js"></script>
+    <script src="js/youtube-api.js"></script>
+    <script> 
+      $(function(){
+        $("#navmenu").load("navmenu.html"); 
+      });
+      $(function(){
+        $("#contact").load("contact.html"); 
+      });
+      $(function(){
+        $("#footer").load("footer.html"); 
+      });
+    </script>
+    <script>
+      $('#video-carousel').carousel().swipeCarousel({
+        // low, medium or high
+        sensitivity:'medium'
+      });
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.slick-carousel').slick({
+          variableWidth: false,
+          slidesToShow: 6,
+          slidesToScroll: 1,
+          infinite: true,
+          autoplay: true,
+          autoplaySpeed: 1000,
+          dots: false,
+          arrows: false,
+          swipeToSlide: true,
+          responsive: [
+            {
+              breakpoint: 980, // tablet breakpoint
+              settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3
+              }
+            },
+            {
+              breakpoint: 480, // mobile breakpoint
+              settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2
+              }
+            }
+          ]
+        });
+      });
+    </script>
+    <script src="js/demo_common.js"></script>
+    <script src="js/synth_widget.js"></script>
+    <!-- Make parent click link -->
+    <!-- <script>
+      jQuery(function($) {
+          $('.dropdown > a').click(function(){
+              location.href = this.href;
+          });
+      });
+    </script> -->
   </body>
 </html>

@@ -141,13 +141,13 @@
        <div id="navbar" class="" style="float:right;">
             <ul class="nav navbar-nav">
               <li><a href="#try_voiceful_characters" class="btn btn-default navbar-btn" style="background-color:#26a990;padding-left:5px;padding-right:5px;margin-left:5px;margin-right:5px;">TRY DEMO APP</a></li>
-              <li><a href="#voiceful_characters_buy" class="btn btn-default navbar-btn" style="background-color:#f6a804;padding-left:5px;padding-right:5px;margin-left:5px;margin-right:5px;">GET NOW</a></li>
+              <li><a href="#voiceful_characters_buy" class="btn btn-default navbar-btn" style="background-color:#f6a804;padding-left:5px;padding-right:5px;margin-left:5px;margin-right:5px;">BUY NOW</a></li>
             </ul>
       </div><!--/.nav-collapse -->
     </div>
   </nav>
 
-  <div id="first-row" class="row section text-center" style="">
+  <div id="first-row" class="row section text-center">
     <div class="col-xs-12">
       <h1>Voiceful Characters</h1>
       <img src="img/characters_icon1.png">
@@ -196,18 +196,19 @@
 
     <!-- lite -->
     <div class="col-lg-4 col-mg-4 col-xs-12 text-center" style="padding-top:25px;padding-bottom:5px;">
-      <p><strong><span class="text" style="font-size:150%">LITE</span></strong> </p>      
-      <p style="margin-bottom:10px"><span style="font-size:100%">Available on request, if you are interested in the BETA version, please contact us to get a quote for your game</span> </p>
-      <!--<form name="lite_form_name" action="https://www.paypal.com/cgi-bin/webscr" onsubmit="return validateLiteForm()" method="post" target="_top">
+      <p><strong><span class="text" style="font-size:150%">LITE</span></strong> </p>
+      <p style="margin-bottom:10px"><span style="font-size:120%">60 &euro;</span> <span style="font-size:80%">(incl. tax)</span></p>
+      <form name="lite_form_name" action="https://www.paypal.com/cgi-bin/webscr" onsubmit="return validateLiteForm()" method="post" target="_top">
         <p><input type="checkbox" name="checkbox_eula"/> I have read and accept the <a class="view-pdf" href="docs/EULA_VOICEFUL_CHARACTERS_052019.pdf">EULA</a>.</p>
         <p><input type="checkbox" name="checkbox_salespolicy"/> I agree with the <a class="view-pdf" href="docs/SalesPolicy-Voiceful.io.pdf">Sales Policy</a>.</p>
-        <input type="hidden" name="cmd" value="_s-xclick"> 
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <!--<input type="hidden" name="hosted_button_id" value="YRRFL5NX8P8BC">-->
         <input type="hidden" name="hosted_button_id" value="QTCS4GTX7A5YC">
+        <!--<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">-->
+
         <input type="submit" class="btn btn-default btn-lg btn-demos" name="submit" alt="PayPal - The safer, easier way to pay online!" value="Buy Now">
-      </form> -->
-        <form name="pro_form_name" action="index.html#contact" method="post" target="_top">
-        <input type="submit" class="btn btn-default btn-lg btn-demos" name="submit" alt="Contact Us!" value="Contact Us">
-        </form>
+        <!--<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">-->
+      </form>
     </div>
     <!-- /lite -->
     
@@ -304,7 +305,7 @@
           <tr>
             <td>License price<br><em><small>Perpetual license</small></em></td>
             <td>Free</td> 
-            <td><a href="./index.html#contact">Contact us</a></td>
+            <td>€ 60 EUR</td>
             <td><a href="./index.html#contact">Contact us</a></td>   
           </tr>
           <!--<tr>
@@ -316,7 +317,7 @@
           <tr>
             <td>Purchase License</td>
             <td><a href="#voiceful_characters_buy">download now</a></td> 
-            <td><a href="./index.html#contact">Contact us</a></td>
+            <td><a href="#voiceful_characters_buy">buy now</a></td>
             <td><a href="./index.html#contact">Contact us</a></td>   
           </tr>
         </table>
@@ -343,181 +344,157 @@
         </table>
       </div>
     </div>
+  </div> 
+  <div id="tools" class="row text-center">
+    <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+      <h2>FEATURES</h2>
+      <div class="vertical-block">
+        <img src="img/simbol1.png">
+        <h4>State of the art Voice generation</h4>
+        <p> Our expressive voice generation approach, based on Deep Learning, is able to generate AI voices with high realism. It can convert text-to-speech for different types of game character voices (human-like, monsters, robots,...) and emotions (neutral, angry, afraid,...).
+        </p>
+      </div>
+      <div class="vertical-block">
+        <img src="img/simbol2.png">
+        <h4>Easy integration into Unity projects</h4>
+        <p>
+          We provide Unity packages with a plug-in and sample scenes so you can import them into your project without fuss and get started quickly.
+        </p>
+      </div>
+      <div class="vertical-block">
+        <img src="img/simbol3.png">
+        <h4>Complete and standalone solution</h4>
+        <p>
+          The plug-in doesn't require internet connection or external dependencies, as all of the synthesis is done inside of your application or game. Audio clips can be generated and played back on-the-fly.
+        </p>
+      </div>
+      <div class="vertical-block">
+        <img src="img/simbol4.png">
+        <h4>Flexible and customizable</h4>
+        <p>
+          We offer built-in factory voice presets and the possibility to design your own (PRO version only). Also, you can either apply standard Unity audio effects to the synthesized voice or use your own custom processing.
+        </p>
+      </div>
+      <div class="vertical-block">
+        <img src="img/simbol1.png">
+        <h4>Cross-platform</h4>
+        <p>
+          Windows and OSX plug-ins available, with mobile platforms to come soon!
+        </p>
+      </div>
+    </div>
   </div>
-        
-        
-
-
-        
-        
-      <div id="tools" class="row text-center">
-        <div class="col-xs-12 col-sm-offset-3 col-sm-6">
-          <h2>FEATURES</h2>
-
-          <div class="vertical-block">
-            <img src="img/simbol1.jpg">
-            <h4>State of the art Voice generation</h4>
-            <p> Our expressive voice generation approach, based on Deep Learning, is able to generate AI voices with high realism. It can convert text-to-speech for different types of game character voices (human-like, monsters, robots,...) and emotions (neutral, angry, afraid,...).
-            </p>
-          </div>
-          <div class="vertical-block">
-            <img src="img/simbol2.jpg">
-            <h4>Easy integration into Unity projects</h4>
-            <p>
-              We provide Unity packages with a plug-in and sample scenes so you can import them into your project without fuss and get started quickly.
-            </p>
-          </div>
-          <div class="vertical-block">
-            <img src="img/simbol3.jpg">
-            <h4>Complete and standalone solution</h4>
-            <p>
-              The plug-in doesn't require internet connection or external dependencies, as all of the synthesis is done inside of your application or game. Audio clips can be generated and played back on-the-fly.
-            </p>
-          </div>
-          <div class="vertical-block">
-            <img src="img/simbol4.jpg">
-            <h4>Flexible and customizable</h4>
-            <p>
-              We offer built-in factory voice presets and the possibility to design your own (PRO version only). Also, you can either apply standard Unity audio effects to the synthesized voice or use your own custom processing.
-            </p>
-          </div>
-
-          <div class="vertical-block">
-            <img src="img/simbol1.jpg">
-            <h4>Cross-platform</h4>
-            <p>
-              Windows and OSX plug-ins available, with mobile platforms to come soon!
-            </p>
-          </div>
-        </div>
-      </div>
-
-      
-
-
-      <a name="try_voiceful_characters"></a>
-      <div id="rubric" class="container-fluid">
-        <div id="rubric-inner">
-          <div id="what" class="row section text-center">
-            <div class="col-xs-12">
-              <div class="row">
-                <div class="col-xs-12">
-                  <h2>TRY IT OUT!</h2>
-                </div>
-                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">                  
-                  <img class="icon-img" src="img/icon3.png">
-                  <p class="subtitle">
-                    Trial demo app of the PRO version is available*. 
-                  </p>
-                  <p>*Trial version is limited to 15 days with up to 15 words per sentence and 30 synthesized sentences per hour.<br>
-                  </p>
-                  <a class="btn btn-default btn-lg btn-demos" href="https://s3-eu-west-1.amazonaws.com/files.voctrolabs.com/downloads/public/VoicefulCharactersPROTrial_WIN.zip">Download for Windows</a>
-                  <a class="btn btn-default btn-lg btn-demos" href="https://s3-eu-west-1.amazonaws.com/files.voctrolabs.com/downloads/public/VoicefulCharactersPROTrial_OSX.zip">Download for OSX</a>                  
-                  <div><br>
-                      <img class="img-center" src="img/characters_pro_capture.png">
-                    </div>                    
-                </div>
-              </div>             
-            </div>
-          </div>
-
-          <a name="documentation"></a>
-          <div id="documentation_voicefulcharacters" class="row section grey-bg text-center">
-            <div class="col-xs-12">
-              <h2>DOCUMENTATION</h2>
-            </div>
-            <div class="col-xs-offset-1 col-xs-10">
-              <div class="row">
-                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
-                  <img class="icon-img" src="img/icon5.png">
-                  <p class="subtitle">If you want to get an idea of how the plug-in and the Unity integration works (as well as the available API), please <a href="https://bit.ly/2UBt9Ts" target="_blank">visit the documentation page</a>.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <a name="mailinglist"></a>
-          <div id="request" class="row section text-center">
-            <div class="col-xs-12">
-              <h2>WANT TO KNOW MORE?</h2>
-            </div>
-            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
-              <p class="subtitle">Subscribe to our mailing list for updates and availability dates.</p>
-              <form action="https://formspree.io/info@voctrolabs.com" method="POST">
-                <div class="form-group">
-                  <input name="name" type="text" class="form-control" placeholder="Name">
-                </div>
-                <div class="form-group">
-                  <input name="email" type="email" class="form-control" placeholder="Email">
-                </div>
-                <div class="form-group">
-                  <input name="company" type="text" class="form-control" placeholder="Company">
-                </div>
-                <input type="hidden" name="_subject" value="Voiceful Characters subscription to mailing list" />
-                <button id="send" type="submit" class="btn btn-danger pull-right">SEND</button>
-              </form>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-
-          <div id="technologybackground_voicefulcharacters" class="row section grey-bg text-center">
-            <div class="col-xs-12">
-              <h2>TECHNOLOGY BACKGROUND</h2>
-            </div>
-            <div class="col-xs-offset-1 col-xs-10">
-              <div class="row">
-                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
-                  <p>Voiceful combines +15 years of R&D expertise in audio and music technologies with latest artificial intelligence for voice generation.
-                    Our patented technologies originate from academic research carried out by Voctro Labs’ cofounders at <a href="http://www.mtg.upf.edu"> MTG-UPF</a>, and since 2011 they have been  integrated in award-wining applications worldwide. Our technology portfolio is being continuously extended with recent research in the field.
-                  </p>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <div align="right" >
-            <p style="font-size:100%"><i>Last updated 14th August 2019</i></p>
-          </div>
-
-        </div>
-      </div>
-
-      <footer class="footer">
-        <div class="container-fluid">
+  <a name="try_voiceful_characters"></a>
+  <div id="rubric" class="container-fluid">
+    <div id="rubric-inner">
+      <div id="what" class="row section text-center">
+        <div class="col-xs-12">
           <div class="row">
-            <div class="col-xs-12 col-sm-3">
-              <img id="footer-logo" src="img/footer_logo.png" srcset="img/footer_logox2.png 2x">
-              <p>
-                Voiceful is a product of <strong>Voctro Labs</strong><br>
-                <strong>
-                  info @ voctrolabs . com<br>
-                  +34 931 587 637<br>
-                  C/ Pujades 74-80 08005<br>
-                  Barcelona<br>
-                </strong>
-              </p>
-              <p><a data-toggle="modal" href="#legal-modal">LEGAL NOTICE</a></p>
-              <p><a data-toggle="modal" href="#privacy-modal">PRIVACY</a></p>
+            <div class="col-xs-12">
+              <h2>TRY IT OUT!</h2>
             </div>
-            <div class="col-xs-12 col-sm-offset-6 col-sm-3 col-lg-offset-7 col-lg-2">
-              <div id="social">
-                <h5>FOLLOW US ON</h5>
-                <a href="https://www.facebook.com/VoctroLabs/" target="_blank">
-                  <img src="img/facebook.png">
-                </a>
-                <a href="https://twitter.com/VoctroLabs" target="_blank">
-                  <img src="img/twitter.png">
-                </a>
-                <a href="https://www.youtube.com/user/voctrolabs" target="_blank">
-                  <img src="img/youtube.png">
-                </a>
-              </div>
+            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">                  
+              <img class="icon-img" src="img/icon3.png">
+              <p class="subtitle">Trial demo app of the PRO version is available*.</p>
+              <p>*Trial version is limited to 15 days with up to 15 words per sentence and 30 synthesized sentences per hour.<br></p>
+              <a class="btn btn-default btn-lg btn-demos" href="https://s3-eu-west-1.amazonaws.com/files.voctrolabs.com/downloads/public/VoicefulCharactersPROTrial_WIN.zip">Download for Windows</a>
+              <a class="btn btn-default btn-lg btn-demos" href="https://s3-eu-west-1.amazonaws.com/files.voctrolabs.com/downloads/public/VoicefulCharactersPROTrial_OSX.zip">Download for OSX</a>                  
+              <div>
+                <br><img class="img-center" src="img/characters_pro_capture.png">
+              </div>                    
+            </div>
+          </div>             
+        </div>
+      </div>
+      <a name="documentation"></a>
+      <div id="documentation_voicefulcharacters" class="row section grey-bg text-center">
+        <div class="col-xs-12">
+          <h2>DOCUMENTATION</h2>
+        </div>
+        <div class="col-xs-offset-1 col-xs-10">
+          <div class="row">
+            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+              <img class="icon-img" src="img/icon5.png">
+              <p class="subtitle">If you want to get an idea of how the plug-in and the Unity integration works (as well as the available API), please <a href="https://bit.ly/2UBt9Ts" target="_blank">visit the documentation page</a>.</p>
             </div>
           </div>
         </div>
-      </footer>
+      </div>
+      <a name="mailinglist"></a>
+      <div id="request" class="row section text-center">
+        <div class="col-xs-12">
+          <h2>WANT TO KNOW MORE?</h2>
+        </div>
+        <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+          <p class="subtitle">Subscribe to our mailing list for updates and availability dates.</p>
+          <form action="https://formspree.io/info@voctrolabs.com" method="POST">
+            <div class="form-group">
+              <input name="name" type="text" class="form-control" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <input name="email" type="email" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input name="company" type="text" class="form-control" placeholder="Company">
+            </div>
+            <input type="hidden" name="_subject" value="Voiceful Characters subscription to mailing list" />
+            <button id="send" type="submit" class="btn btn-danger pull-right">SEND</button>
+          </form>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div id="technologybackground_voicefulcharacters" class="row section grey-bg text-center">
+        <div class="col-xs-12">
+          <h2>TECHNOLOGY BACKGROUND</h2>
+        </div>
+        <div class="col-xs-offset-1 col-xs-10">
+          <div class="row">
+            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+              <p>Voiceful combines +15 years of R&D expertise in audio and music technologies with latest artificial intelligence for voice generation.
+                Our patented technologies originate from academic research carried out by Voctro Labs’ cofounders at <a href="http://www.mtg.upf.edu"> MTG-UPF</a>, and since 2011 they have been  integrated in award-wining applications worldwide. Our technology portfolio is being continuously extended with recent research in the field.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div align="right" >
+        <p style="font-size:100%"><i>Last updated 14th August 2019</i></p>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-3">
+          <img id="footer-logo" src="img/footer_logo.png" srcset="img/footer_logox2.png 2x">
+          <p>
+            Voiceful is a product of <strong>Voctro Labs</strong><br>
+            <strong>
+              info @ voctrolabs . com<br>
+              +34 931 587 637<br>
+              C/ Pujades 74-80 08005<br>
+              Barcelona<br>
+            </strong>
+          </p>
+          <p><a data-toggle="modal" href="#legal-modal">LEGAL NOTICE</a></p>
+          <p><a data-toggle="modal" href="#privacy-modal">PRIVACY</a></p>
+        </div>
+        <div class="col-xs-12 col-sm-offset-6 col-sm-3 col-lg-offset-7 col-lg-2">
+          <div id="social">
+            <h5>FOLLOW US ON</h5>
+            <a href="https://www.facebook.com/VoctroLabs/" target="_blank">
+              <img src="img/facebook.png">
+            </a>
+            <a href="https://twitter.com/VoctroLabs" target="_blank">
+              <img src="img/twitter.png">
+            </a>
+            <a href="https://www.youtube.com/user/voctrolabs" target="_blank">
+              <img src="img/youtube.png">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
       <!-- Bootstrap core JavaScript
@@ -655,7 +632,5 @@
 
           });
       </script>
-
-
     </body>
     </html>

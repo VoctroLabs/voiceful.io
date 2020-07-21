@@ -1,0 +1,81 @@
+<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target="#navbar-main"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">
+        <img alt="voiceful" src="img/voicefulx2.png" />
+      </a>
+    </div>
+    <div id="navbar-main" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li id="menuitem-solutions" class="dropdown">
+          <!-- To use dropdown hover plugin, use "data-hover="dropdown" data-animations="fadeIn" -->
+          <a
+            href="solutions.html"            
+            >SOLUTIONS <span class="caret"></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li><a href="solutions.html#singing">SINGING</a></li>
+            <li><a href="solutions.html#speech">SPEECH</a></li>
+            <li><a href="solutions.html#audio-music">AUDIO/MUSIC</a></li>
+          </ul>
+        </li>
+        <li id="menuitem-products" class="dropdown">
+          <!-- To use dropdown hover plugin, use "data-hover="dropdown" data-animations="fadeIn" -->
+          <a
+            style="text-decoration: none;"
+            href="#"    
+            onclick="return false;"        
+            >PRODUCTS <span class="caret"></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li><a href="cloud-api.html">CLOUD API</a></li>
+            <li><a href="sdk.html">SDK</a></li>
+          </ul>
+        </li>
+        <li id="menuitem-whousesit"><a href="who-uses-it.html">WHO USES IT</a></li>
+        <li id="menuitem-aboutus" class="dropdown">
+          <!-- To use dropdown hover plugin, use "data-hover="dropdown" data-animations="fadeIn" -->
+          <a
+            href="about-us.html"
+            >ABOUT US <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="about-us.html#company">COMPANY</a></li>
+            <li><a href="about-us.html#careers">CAREERS</a></li>
+            <li><a href="technologies.html">TECHNOLOGIES</a></li>
+          </ul>
+        </li>
+        <li id="menuitem-demos"><a href="demos.html">DEMOS</a></li>
+        <li><a class="btn btn-default navbar-btn" href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+    <!--/#navbar-main -->
+  </div>
+  <!--/#navbar-header -->
+</nav>
+
+<!-- Hover dropdown menu -->
+<script>
+  $("ul.nav li.dropdown").hover(
+    function () {
+      $(this).find(".dropdown-menu").stop(true, true).delay(10).fadeIn(200);
+    },
+    function () {
+      $(this).find(".dropdown-menu").stop(true, true).delay(10).fadeOut(200);
+    }
+  );
+</script>

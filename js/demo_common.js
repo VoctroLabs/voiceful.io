@@ -9,6 +9,7 @@ function stepTransition(hideElem, showElem, func) {
 // Returns if we are running in development mode
 function devMode() {
     return location.hostname === "localhost" || location.hostname === "127.0.0.1";
+    return false;
 }
 
 /* VOCLOUD */
@@ -125,15 +126,16 @@ function VocloudTask(api) {
 
     self.process = function process(parameters, uploads) {
         var deferred = $.Deferred();
+        var fail = function() {deferred.reject()};
         self.create(parameters).done(function () {
             self._processUploads(uploads).done(function () {
                 self.start().done(function () {
                     self.updateUntilProcessed().done(function () {
                         deferred.resolve();
-                    });
-                });
-            });
-        });
+                    }).fail(fail);
+                }).fail(fail);
+            }).fail(fail);
+        }).fail(fail);
         return deferred;
     };
 

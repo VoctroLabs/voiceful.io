@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="google-site-verification" content="mBVpkL04TKlqMsV3VnjYFH7g24LJL-WnUbcLfPKe-wI" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-NXV9SPS');</script>
+    <!-- End Google Tag Manager -->
+    
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://www.voiceful.io/",
+      "logo": "https://www.voiceful.io/img/voicefulx2.png",
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "+34 931 587 637",
+        "email": "info@voctrolabs.com",
+        "contactType": "customer service"  
+      }]
+    }
+    </script>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106536482-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments)};
+        gtag('js', new Date());
+
+        gtag('config', 'UA-106536482-1');
+    </script>
+    
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="image_src" href="img/voiceful_claim.png" />
+
+    <title>Voiceful - Standalone SDK</title>
+
+    <meta name="description" content="We want to help people communicate better so we have developed Voiceful, a toolkit that uses voice to create new ways of expressing yourself.">
+    <meta name="author" content="Voctro Labs, S.L.">
+    <meta name="organization" content="Voctro Labs, S.L.">
+
+    <meta name="keywords" content="voiceful, voice text to speech, text to speech, text to sing, toolkit, speech demo, voice demo, customize lyrics, auto, tune, pitch correction, tuning, voice interaction, speech voctro labs, try a speech demo, create new ways of speech, voice to text online, music pitch and time, voice morphing, voice generator, generate customized speech, AI voices, IA voces online, TTS, voice maker, voice synthesis, voice to speech, SDK, voice proccessing, voice morphing, voice transformation, cloud text to speech api, deep learning text to speech, mobile voice transformation, VR voices, singing voctro labs, emotional text to speech">
+
+    <meta name="robots" content="index,follow">
+
+    <meta property="og:title" content="Voiceful - Give voice to your ieas">
+    <meta property="og:description" content="We want to help people communicate better so we have developed Voiceful, a toolkit that uses voice to create new ways of expressing yourself.">
+
+    <meta property="og:url" content="https://www.voiceful.io/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Voiceful.io">
+    <meta property="og:image" content="img/voiceful_claim.png">
+
+    <meta property="fb:pages" content="1051558524978877">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@voiceful_io">
+    <meta name="twitter:creator" content="@VoctroLabs">
+    <meta name="twitter:title" content="Voiceful - Give voice to your ideas">
+    <meta name="twitter:description" content="We want to help people communicate better so we have developed Voiceful, a toolkit that uses voice to create new ways of expressing yourself">
+    <meta name="twitter:image" content="https://www.voiceful.io/img/voiceful_claim.png">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Highlight.js styles -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="fonts/fonts.css" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:300,600" rel="stylesheet">-->
+
+    <!-- Custom styles for this template -->
+    <link href="css/common.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXV9SPS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div id="modals">
+      <div id="legal-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Legal notice</h4>
+            </div>
+            <div class="modal-body">
+  
+                <p>
+                  The company Voctro Labs,S.L., with registered offices in C/ Pujades 74-80, 08005 - Barcelona (Spain), with Tax Identification Number B-65.699.662, registered in  the Companies Registry of Barcelona, Volume 42942, Folio 161, Page number B 42023  (hereinafter referred to as “VOCTRO LABS”) is the owner of the web site <a href="http://www.voiceful.io"> http://www.voiceful.io </a> (hereinafter referred to as “Web Site”).
+                </p>
+                <p> Address: C/ Pujades 74-80, 08005 – Barcelona (Spain).<br>
+                    Telephone:  +34 931 587 637.
+                    Email: info@voctrolabs.com   </p>
+  
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <td scope="row"><b> 1.- General Terms of Use </b></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <ul>The user voluntarily accesses this Web Site, which implies that the user shall use it pursuant to this legal notice, the law, morality, good faith and/or proper conduct;</ul>
+                        <ul>The use of this Web Site implies the acceptance of this legal notice;</ul>
+                        <ul>The web pages of this Web Site may be freely visited by users;</ul>
+                        <ul>VOCTRO LABS reserves the right to modify, with no prior notice, the contents of this legal notice so that, for a correct use of the Web Site, we recommend you to periodically visit this section.</ul>
+                      </td>
+                    </tr>
+  
+                    <tr>
+                      <td scope="row"><b>2.- Intellectual and industrial property </b></td>
+                    </tr>
+                    <tr>
+                      <td>
+                      <ul>© 2020, VOCTRO LABS, S.L., <a href="http://www.voiceful.io"> http://www.voiceful.io </a>  All rights reserved. </ul>
+                      <ul>The intellectual property rights on the contents of the Web Site, including, but without being limited thereto, its text, graphic design, trade dress (trademarks and commercial names), underlying computer programs (including the source codes) and databases, as well as the different elements that comprise the Web Site and allow its operation, are owned by VOCTRO LABS or, if applicable, VOCTRO LABS has the license or right of use thereof from the holders. All contents of the Web Site are duly protected by the intellectual and/or industrial property rights regulations in force.</ul>
+                      <ul>The use of the Web Site by the user shall not imply the assignment of any intellectual and/or industrial property rights on the different elements or contents of the Web Site. Regardless of the purpose for which they may be used, total or partial reproduction, use, exploitation, distribution, public communication, transformation, availability, extraction and/or marketing of the elements and contents of the Web Site shall require the prior written authorisation of VOCTRO LABS. Any use not previously authorised by VOCTRO LABS shall imply a serious infringement of the intellectual and/or industrial property rights of their holders. The reproduction or any use of elements or contents of the Web Site for profit-making or commercial purposes is hereby expressly and absolutely forbidden.</ul>
+                      <ul>You may send us any remark on possible infringements of the intellectual and/or industrial property rights or any of the contents of the Web Site to our contact e-mail info@voctrolabs.com </ul>
+                    </td>
+                    </tr>
+  
+                    <tr>
+                      <td scope="row"><b>3.- Limitation of Liability </b></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <ul>VOCTRO LABS reserves the right to disrupt the access to the Web Site, as well as the provision of any service through the Web Site from time to time with no prior notice, either on technical, security, maintenance or any other grounds; </ul>
+                        <ul>VOCTRO LABS shall not be liable for any disruption of the service, delay or malfunction or other drawbacks that may result from reasons beyond the control of VOCTRO LABS and/or which may be due to any fraudulent or negligent action of the user and/or force majeur events;</ul>
+                        <ul>The information contained on this Web Site may not be correct despite the efforts made for its accuracy and updating. Therefore, VOTRO LABS shall not be liable for any errors in its contents or any damages resulting from its use; </ul>
+                        <ul>This Web Site may contain links to other web sites for whose consents, usefulness or accuracy VOCTRO LABS shall not be liable. The incorporation of any link into this Web Site may not be considered as a recommendation for users to use them, which decision shall be the users’ liability;</ul>
+                        <ul>VOCTRO LABS shall not liable for any damages arisen from the use of this Web Site or its contents, thus not guaranteeing the absence of virus or the impossibility to cause damages to the computer system of the user;</ul>
+                        <ul>VOCTROLABS does not assume any liability for any improper use of this Web Site.
+                      </td>
+                    </tr>
+  
+                    <tr>
+                      <td scope="row"><b>4.- Governing law and competent courts </b></td>
+                    </tr>
+                    <tr>
+                    <tr>
+                      <td>
+                        <ul>The conditions of this Web Site and the relations between the user and VOCTRO LABS shall be governed by the Spanish law. </ul>
+                        <ul>For the settlement of any discrepancy that may arise between the user and VOCTRO LABS, the parties submit to the competent Courts and Tribunals pursuant to the applicable law.</ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Updated in February 2020</p>
+  
+            </div> <!-- /.modal-body -->
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /#legal-modal -->
+  
+      <div id="privacy-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Privacy policy</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td>
+                      <ul>Unless otherwise specifically provided, no personal data is requested or required from Users and no registration processes by the incorporation of mandatory forms are established on the web site http://www.voiceful.io  (hereinafter referred to as the “Web Site”).;</ul>
+                      <ul>In the event that any personal data is requested, so that the omission of any of it may cause the impossibility to provide you our services and/or attend your requests, in compliance with provisions set forth in Act 15/1.999, of 13th December, on Protection of Personal Data (hereinafter referred to as the “LOPD”) and its developing regulations, we hereby inform you that: </ul>
+                      <ul>Any personal data you provide us under a registration online form on the Web Site, included but not limited to your CV or project in terms of our professional collaboration, as well as the information collected  by virtue of the commercial relation and/or provision of services acquired through the Web Site, shall be incorporated into a file duly registered before the General Registry of the Spanish Data Protection Agency, under the responsibility of VOCTRO LABS, S.L., C/ Pujades 74-80, 08005 - Barcelona (Spain), with Tax Identification Number B-65.699.662 (hereinafter referred to as the “VOCTRO LABS”). The purpose of the data processing is the provision of the services offered by VOCTRO LABS on the Web Site, including the Customer Service, enquiry assistance and information requests, job applicants evaluating processes and projects as well as claim management. </ul>
+                      <tr>
+                        <td>
+                      <ul>You may exercise the right of access, rectification, cancellation and opposition and revoke your consent for the processing of your personal data. For this purpose, the you may:
+                      <ul>Send a written communication to VOCTRO LABS, S.L., C/ Pujades 74-80, 08005, Barcelona (Spain), attaching a photocopy of your ID or official document that certifies your identity.</ul>
+                      <ul>Send an email to info@voctrolabs.com stating his/her Name, Surnames, contact telephone and a photocopy of your ID document or official document that certifies your identity. </ul>
+                      </ul>
+                    </td>
+                      </tr>
+                      <tr>
+                        <td>
+                      <ul>VOCTRO LABS uses Google Analytics cookies, whose settings are pre-determined by the service offered by the company Google, reason why we suggest you to consult the privacy page of Google Analytics, <a href="http://www.google.es/intl/es_ALL/analytics/learn/privacy.html">http://www.google.es/intl/es_ALL/analytics/learn/privacy.html</a> to obtain more information on the cookies used and how to disable them (it being understood that we are not liable for the contents or veracity of the third-party web sites).</ul>
+                    </td>
+                  </tr>
+                      <tr>
+                        <td>
+                      <ul>Finally, we inform you that VOCTRO LABS, S.L. shall process your data absolutely confidential and keeping the mandatory secrecy in respect thereof, pursuant to provisions set forth in the applicable regulations in force at any time, adopting therefor any necessary technical and organizational measures that guarantee the security of your data and avoid their alteration, loss, non-authorised processing or access, considering the estate of technology, the nature of the data stored and the risks at which they may be exposed.</ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Updated in February 2020</p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /#privacy-modal -->
+  
+      <div id="vosyn-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">VoSyn</h4>
+            </div>
+            <div class="modal-body">
+              <p> Recent advances in the area of Machine Learning and Artificial Intelligence can be applied to the generation of a human-like voice signals. Given a set of recordings of a speaker or singer of several minutes, we can create a voice model that captures its main treats, including singing expression. Once this voice model is loaded, Voiceful can generate new content. You can refer to the technical details in this research publication. </p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /#vosyn-modal -->
+    
+      <div id="votrans-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">VoTrans</h4>
+            </div>
+            <div class="modal-body">
+              <p> Manipulating voice recordings have several applications in the creative media industries. Voiceful offers a patented voice transformation technology [Patent Nr.]   that can be integrated in real-time (e.g. a plugin for a Unity videogame, audio FX in a DAW) or as batch processing tool in a post-production workflow (e.g. for film, games, animation, TV, music). </p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /#votrans-modal -->
+    
+      <div id="voalign-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">VoAlign</h4>
+            </div>
+            <div class="modal-body">
+              <p> Editing a voice recording without altering the original voice quality has been extensively used in music and film productions with tools such as pitch correction and dialogue synchronization.
+                Voiceful provides a tool that analyzes and automatically corrects a voice recording. In film applications, Voiceful can synchronize two voice recordings in the ADR workflow (Automatic Dialogue Replacement). We can use onset and phonetic alignment to generate lip-synched animations. In music, VoAlign allows to automatically estimate the musical key of an a capella recording and applying pitch correction to achieve perfect tuning. </p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /#voalign-modal -->
+    
+      <div id="vodesc-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">VoDesc</h4>
+            </div>
+            <div class="modal-body">
+              <p>A voice recording conveys an incredible amount of information. For speech, it can be information about the words, about the person, about the emotion; while for singing voice it can bring also information about notes, intonation, the key and tempo of a song. To make clear, Voiceful is not a speech recognition solution. Besides the world of creative media, the analysis algorithms in Voiceful can be further extended for Medical or forensic applications. Check in this example the analysis output and the format of exported data.</p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /#vodesc-modal -->
+    
+      <div id="voscale-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">VoScale</h4>
+            </div>
+            <div class="modal-body">
+              <p>Be it a commercial music downmix, be it a field-recording for a film, Voiceful can change the duration and key while preserving the quality of the original recording. Playback speed and transposition controls can be passed dynamically in real-time. For example, the tempo of a song can be changed on the fly synched by a runner's pace, or a gesture movement on a mobile phone. This is a validated professional audio tool, and we are happy when clients with trained ears choose Voiceful over other solutions in the market. Check our demo in <a href="https://drive.google.com/file/d/0B1VsSgcFDRGKc2RsbFMxMW9SdzA/view" alt="VoctroLabs - VoScale" target="_blank">this video</a></p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /#voscale-modal -->
+    
+      <div id="vomix-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">VoMix</h4>
+            </div>
+            <div class="modal-body">
+              <p>This is a utility to automatically mix the contents generated by Voiceful with existing musical or FX background tracks. All parameters are configurable and can be adjusted through our VoMix Editor GUI tool  <a target="_blank" href="img/vomix_UI.png"> [see screenshot]</a>.  VoMix is usually place as tha last process in a multi-stage workflow. </p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /#vomix-modal -->
+    </div>
+  
+    <div id="navmenu"></div>
+
+    <div class="container-fluid">
+      <div class="row padding-bottom text-center">
+        <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+          <img class="icon-img" src="img/icon3.png">
+          <h1>Standalone SDK</h1>
+          <p class="text-justify">
+            Voiceful allows us to create new digital voice experiences for apps and services. It features speech and singing synthesis, transformation, pitch-correction, time-alignment, audio-to-midi, among others.
+          </p>
+          <p class="text-justify">
+Our Native SDK can be integrated as cross-platform C++ libraries for Mobile (iOS/Android), Desktop (macOS/Windows/Linux) or Server applications.
+<a href="#evaluation-account">Contact us </a> for an evaluation account.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="rubric" class="container-fluid">
+      <div id="rubric-inner">
+        <!-- Took "section" class out of "what" DIV-->
+        <div id="tools" class="row section text-center grey-bg">
+          <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+            <h2>TOOLKIT FEATURES</h2>
+            <div class="vertical-block">
+              <img src="img/simbol1.png">
+              <h4>Voice generation | VoSyn</h4>
+              <p class="text-justify"> Our expressive voice generation approach, based on Deep Learning, was initially developed to generate artificial singing voice with high realism. It can learn a model from existing recordings of any individual and generate new speech or singing content.
+                <strong><a data-toggle="modal" href="#vosyn-modal">+More info</a></strong>
+              </p>
+            </div>
+            <div class="vertical-block">
+              <img src="img/simbol2.png">
+              <h4>Voice Transformation | VoTrans</h4>
+              <p class="text-justify">
+                We can transform an actor's voice into a monster vocalization for a film, change a male voice into a kid or elder voice, and integrate it in real-time in games, social apps, or music applications.
+                <strong><a data-toggle="modal" href="#votrans-modal">+More info</a></strong>
+              </p>
+            </div>
+            <div class="vertical-block">
+              <img src="img/simbol3.png">
+              <h4>Voice Alignment and Pitch Correction | VoAlign</h4>
+              <p class="text-justify">
+                VoAlign analyzes and automatically corrects a voice recording without losing quality. We can align it to a reference recording for lip-syncing or ADR, or apply pitch correction automatically to an estimated musical key. <br>
+                <strong><a data-toggle="modal" href="#voalign-modal">+More info</a></strong>
+              </p>
+            </div>
+            <div class="vertical-block">
+              <img src="img/simbol4.png">
+              <h4>Voice Description | VoDesc</h4>
+              <p class="text-justify">
+                This voice analysis tool extracts acoustic and musical information from a voice recording. Data can be sent in real-time, or exported in a readable format to be used in applications such as  visualization, classification, monitoring or singing rating.
+                <strong><a data-toggle="modal" href="#vodesc-modal">+More info</a></strong>
+              </p>
+            </div>
+            <div class="vertical-block">
+              <img src="img/simbol1.png">
+              <h4>Time-scaling and Pitch-shifting | VoScale</h4>
+              <p class="text-justify">
+                Beyond voice signals, Voiceful includes also a high-quality time-scaling and pitch-shifting to process any audio content (music, field recordings, dialogues, etc).
+                <strong><a data-toggle="modal" href="#voscale-modal">+More info</a></strong>
+              </p>
+            </div>
+            <div class="vertical-block">
+              <img src="img/simbol2.png">
+              <h4>Mixing and FX | VoMix</h4>
+              <p class="text-justify">
+                VoMix works as a virtual DAW with all standard audio effects (autogain, compression, EQ, reverb, delay, panning, mixing, etc.) to deliver audio in a professional-like quality.
+                <strong><a data-toggle="modal" href="#vomix-modal">+More info</a></strong>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="what" class="row section  text-center">
+          <div class="col-xs-12">
+            <div class="row">
+              <div class="col-xs-12">
+                <h2>DOCUMENTATION</h2>
+              </div>
+              <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+                <p>
+                  See below an example code for integrating our SDK tools in C++.
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+                <div id="sdk-code" class="code-tabs">
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#sdk-code-c++" aria-controls="home" role="tab" data-toggle="tab">C++</a></li>
+                  </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="sdk-code-c++">
+                      <pre class="pre-scrollable">
+                        <code class="lang-c++">
+#include "VoTransLib_api.h"
+
+/***************************************************************
+C++ usage example for VOICEFUL VoTrans Stand Alone SDK
+The below code is incomplete, it lacks audio in/out that will
+be implemented using standard audio driver libraries or
+reading from audio files on disk
+****************************************************************/
+
+//VoTrans object
+void* mVoTrans = NULL;
+
+//parameters
+float gain_val = 0.9f;
+float pitch_val = 3.f;
+float mTimbreParameters[5] = { 0.5f, 0.6f, 0.7f, 0.55f, 0.5f };
+float vibratodepth_val = 0.2f;
+float vibratofreq_val = 0.3f;
+float robot_val = 0.0f;
+float alien_val = 0.0f;
+float pitchcorrection_val = 0.0f;
+float harmonizer_val = 0.0f;
+
+//INITIALIZATION OF THE LIBRARY
+int init()
+{
+int mnCh = 2; //number of channels
+float mSampleRate = 44100.f;
+int mBlockSize = 256;
+
+mVoTrans = VT_Create();
+
+//CONFIGURATION
+int highQuality = 1;
+int noisy = 0;
+int bypass = 0;
+VT_Configure(mnCh, mSampleRate, mBlockSize,
+highQuality, noisy, bypass, mVoTrans);
+VT_SetPreAnalysis(NULL, mVoTrans);
+VT_BeginProcess(mVoTrans);
+}
+
+//PROCESS (in loop)
+//This function will be the audio driver callback if used in realtime or
+//called in a loop while reading from a disk file or memory buffer if
+//transforming offline samples
+void ProcessCallback(float* inbuffer, float* outbuffer)
+{
+//set parameters (e.g. from gui)
+VT_SetGainParameter(gain_val, mVoTrans);
+
+VT_SetPitchTranspositionInSemitonesParameter(pitch_val, mVoTrans);
+
+VT_SetTimbreParameters(mTimbreParameters, mVoTrans);
+
+VT_SetVibratoDepthParameter(vibratodepth_val, mVoTrans);
+VT_SetVibratoFreqParameter(vibratofreq_val, mVoTrans);
+
+VT_SetRobotParameter(robot_val, mVoTrans);
+VT_SetAlienParameter(alien_val, mVoTrans);
+VT_SetPitchCorrectionParameter(pitchcorrection_val, mVoTrans);
+VT_SetHarmonizerParameter(harmonizer_val, mVoTrans);
+
+//inbuffer & outbuffer memory is allocated by the user,
+//DoProcessFloat fills the outbuffer with a maximum of
+//configured blocksize (e.g. mBlockSize=256)
+int n = VT_DoProcessFloat(inbuffer, outbuffer, mVoTrans);
+}
+
+//DESTROY
+void end()
+{
+VT_EndProcess(mVoTrans);
+VT_Destroy(mVoTrans);
+}
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="customize" class="row section grey-bg">
+          <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+            <div class="row">
+              <div class="col-xs-12">
+                <h2 class="text-center">Q&A</h2>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                      <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          How is the Native Standalone SDK provided?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                      <div class="panel-body">
+                        We can provide it in the native C++ from existing code, or a wrapper library for desktop (Windows, macOS and Linux) or mobile (Android/iOS). We also provide an example with corresponding source code to show the integration. For iOS we distribute a iOS Framework. 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Do you license each SDK tool (VoSyn, VoTrans, VoAlign) separately?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                      <div class="panel-body">
+                        Yes, each SDK tool (VoSyn, VoTrans, VoAlign, VoDesc, VoScale) is licensed individually, so that only the required processing library needs to be integrated in the client’s app.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          Do you offer pitch-correction, both offline and in real time?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                      <div class="panel-body">
+                        Yes. As the internal functionality is different,  they are included in two separate tools VoAlign for offline, and VoTrans for real-time.  
+  VoAlign provides an offline pitch-correction and time-correction functionalities, processing at once a complete  vocal recording (e.g. a 20-30 seconds excerpt). It carries out a first musical knowledge analysis step (Key estimation, note analysis, etc.), which is used later in the signal correction step. 
+
+  VoTrans provides the real-time version. In this case, there is no musical knowledge analysis, and the pitch is quantized instantly, which might result in more rapid changes.
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFour">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                          Can VoSyn generate both speech and singing synthesis?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                      <div class="panel-body">
+                        Yes, the same tool can be used to generate artificial spoken or sung content. The input is different: for speech the input is a text (or SSML format), and for singing the input is a music score.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFive">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                          How are the lyrics of a song passed to VoSyn?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                      <div class="panel-body">
+                        To generate a vocal track, VoSyn requires a digital musical score containing the musical notes and the lyrics. The required input format is MusicXML, which follows the notation of a traditional music score.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingSix">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                          Can users commercialize the voice track generated in VoSyn within an app?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                      <div class="panel-body">
+                        When using VoSyn, the generated voice can be used for the sole purposes of the app, but the users do not own the voice track. Users do not have rights to use it commercially broadcast it and receive royalties without permission.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingSeven">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                          Do you have a demo app to try out the real-time VoTrans?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+                      <div class="panel-body">
+                        Yes, we can provide a real-time GUI demo app (macOS / Windows) to evaluate VoTrans. This prototype has a GUI and allows you to apply voice transformation effects in real time.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingEight">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                          Can we try out the VoTrans real-time solution on Android?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+                      <div class="panel-body">
+                        Yes! We prepared an android test app for evaluation. You will be able to test the user experience on different devices! <a href="#evaluation-account">Contact us!</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingNine">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                          Can the user modify the transformation parameters in VoTrans?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
+                      <div class="panel-body">
+                        Yes, when integrating the VoTrans SDK, we provide functions to control the transformation parameters programmatically (e.g. changing pitch shift, timbre, vibrato rate,  etc.). There is the option to store presets, so that they can be directly called within the app.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTen">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                          Is real time pitch-correction included in VoAlign?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
+                      <div class="panel-body">
+                        No, real time pitch-correction is part of VoTrans real-time. With VoTrans you can test the pitch quantization (correction) in real-time.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingEleven">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                          Does the demo app allow us to select a key? Is the key selection not supported in VoTrans?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseEleven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEleven">
+                      <div class="panel-body">
+                        The key selection is not implemented on the test app GUI; however, it is possible to select it when using the API directly.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row text-center">
+              <div class="col-xs-12">
+                <h4>No answer? Maybe you're interested in the Cloud API or need a custom development!</h4>                
+                <div id="products-container" class="row col-xs-12">
+                  <div class="col-xs-12 col-sm-6 text-center product-content">
+                    <img src="img/icon6.png">
+                    <p class="text-left">
+                      Our <a href="cloud-api.html"><strong>Cloud API</strong></a>  is a RESTful API that can be easily integrated into web sites, mobile apps and other SaaS platforms.
+                    </p>
+                    <div class="product-price-text">
+                      <a class="btn btn-lg btn-demos" href="cloud-api.html">Details</a>
+                    </div>
+                  </div>
+                
+                  <div class="col-xs-12 col-sm-6 text-center product-content">
+                    <img src="img/icon5.png">
+                    <p class="text-left">
+                      We offer <strong>Custom Services</strong> to extend and customize our technologies for the specific needs of your project idea.
+                    </p>
+                    <div class="product-price-text">
+                      <a class="btn btn-lg btn-demos" href="#contact">Contact us</a>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div> <!-- /#customize-->
+
+        <div id="request" class="row section text-center ">
+          <div id="evaluation-account" class="col-xs-12">
+            <h2>EVALUATION ACCOUNT</h2>
+          </div>
+          <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+            <p class="subtitle">SDK tools are available also on our Cloud API for evaluation.</p>
+            <p>Request us a <a href="#evaluation-account">free 1-month evaluation</a> account and obtain the Terms of Use and Pricing information. <em>(Account limited to evaluation purposes and only for professionals: companies, business individuals or research institutions).</em></p>
+            <form action="https://formspree.io/info@voctrolabs.com" method="POST">
+              <div class="form-group">
+                <input name="name" type="text" class="form-control" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <input name="email" type="email" class="form-control" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input name="company" type="text" class="form-control" placeholder="Company">
+              </div>
+              <div class="form-group">
+                <select name="Sector" class="form-control">
+                  <option value="Sector" disabled selected>Sector</option>
+                  <option value="Advertising and Brands">Advertising and Brands</option>
+                  <option value="Apps and Game developer">Apps and Game developer</option>
+                  <option value="Music industry">Music industry</option>
+                  <option value="Film/VR industry">Film/VR industry</option>
+                  <option value="Research & Development">Research & Development</option>
+                  <option value="Education">Education</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select name="Integration" class="form-control">
+                  <option value="Integration" disabled selected>Integration</option>
+                  <option value="Cloud API">Cloud API</option>
+                  <option value="Unity3D Package">Unity3D Package</option>
+                  <option value="Standalone SDK (Mobile)">Standalone SDK (Mobile)</option>
+                  <option value="Standalone SDK (Server/Desktop)">Standalone SDK (Server/Desktop)</option>
+                  <option value="All">All</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea name="purpose" class="form-control" rows="3" placeholder="Purpose of use"></textarea>
+              </div>
+              <input type="hidden" name="_subject" value="Voiceful.io Evaluation Request" />
+              <button id="send" type="submit" class="btn btn-danger pull-right">SEND</button>
+            </form>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <div id="contact" class="row section text-center"></div>
+      </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/highlight.js@9.12.0/highlight.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/vendor/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/developers.js"></script>
+    <script> 
+      $(function(){        
+        $("#navmenu").load("navmenu.html", function(){
+          $("#menuitem-products").addClass("active");
+        });        
+      });
+      $(function(){
+        $("#footer").load("footer.html"); 
+      });
+      $(function(){
+        $("#contact").load("contact.html"); 
+      });
+    </script>
+
+  </body>
+</html>

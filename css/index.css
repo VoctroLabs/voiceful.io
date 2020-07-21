@@ -1,4 +1,4 @@
-#slider {
+#slider, #video-carousel {
     background: url("../img/slider.jpg") 60%;
     background-size: cover;
     height: 545px;
@@ -8,12 +8,32 @@
 }
 #slider a {
     outline: none;
+    z-index: 10;
 }
 #slider img#player {
     display: block;
     margin: auto;
     width: 142px;
     padding-top: 201px;
+}
+#video-carousel .carousel-inner {
+    height: 545px;
+}
+#video-carousel .video-text-block {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+}
+#video-carousel .row, #video-carousel .item {
+    height: 100%;
+} 
+.carousel-indicators .active {
+    background-color: #f6a802;
+}
+.carousel-indicators li {
+    border-color: #f6a802;
+}
+.carousel-control {
+    color: #f6a802;
 }
 #first-row {
     margin-top: 545px;
@@ -111,4 +131,84 @@
     max-width: 70px;
     width: auto;
     height: auto;
+}
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 767px) {
+    #video-carousel .video-text-block {
+        padding: 10px 30px;
+    }
+}
+@media (min-width: 768px) {
+    #video-carousel .video-text-block {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    #video-carousel .carousel-inner {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .youtube-video-parent {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+#products-container {
+  padding-top: 30px;
+  display: flex;
+}
+
+/***************/
+/* DEMO WIDGET */
+/***************/
+#voiceful-demo-widget {
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  max-width: 767px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 2px solid rgba(0,0,0,.2);
+  border-radius: 15px;
+  box-shadow: 0 7px 10px rgba(0,0,0,.1);
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: lighter;
+  color: #575756;
+  text-align: left;
+  /*font-family: -apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,sans-serif;*/
+}
+
+.widget-embed {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+#voiceful-demo-widget a {
+font-weight: bold;
+text-decoration: none;
+}
+
+#voiceful-demo-widget hr {
+width: 80%;
+}
+
+#demo-play-info-container {
+position: relative;
+}
+
+#demo-info-button {
+position: absolute;
+right: 0;
+bottom: 0;
+background-color: transparent;
+}
+
+#demo-container {
+  padding-bottom: 5vh;
+}
+
+.product-price-text {
+  margin-top: auto;
 }
