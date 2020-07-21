@@ -755,6 +755,14 @@ textarea.form-control {
     border-color: #FFFFFF;
     color: #575756;
 }
+@media (max-width: 991px) {
+  #try .demo-box h1, #demo-trial .demo-box h1 {
+      font-size: 8vw;
+  }
+  #try .demo-box {
+    margin-top: 20px
+  }
+}
 @media (min-width: 992px) and (max-width: 1140px) {
     #try .demo-box h1, #demo-trial .demo-box h1 {
         font-size: 34px;
