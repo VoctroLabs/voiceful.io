@@ -137,6 +137,10 @@
     #video-carousel .video-text-block {
         padding: 10px 30px;
     }
+
+    #products-container {
+      padding-top: 30px;
+    }
 }
 @media (min-width: 768px) {
     #video-carousel .video-text-block {
@@ -152,11 +156,11 @@
         top: 50%;
         transform: translateY(-50%);
     }
-}
 
-#products-container {
-  padding-top: 30px;
-  display: flex;
+    #products-container {
+      padding-top: 30px;
+      display: flex;
+    }
 }
 
 /***************/

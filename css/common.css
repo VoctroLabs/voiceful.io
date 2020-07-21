@@ -770,6 +770,9 @@ textarea.form-control {
     table br {
         display: block;
     }
+    #footer-menu {
+      display: none;
+    }
     .footer br {
         display: block;
     }
@@ -913,7 +916,16 @@ textarea.form-control {
   align-self: center;
 }
 
-.product-content {
-  display: flex;
-  flex-direction: column;
+@media (max-width: 767px) {
+  .product-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+}
+@media (min-width: 768px) {
+  .product-content {
+    display: flex;
+    flex-direction: column;
+  }
 }
