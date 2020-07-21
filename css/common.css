@@ -77,6 +77,11 @@ hr {
     margin-bottom: 50px;
     width: 125px;
 }
+
+#site {
+  overflow-x: hidden;
+  position: relative;
+}
 /*********************/
 /* GENERAL USE */
 /*********************/
