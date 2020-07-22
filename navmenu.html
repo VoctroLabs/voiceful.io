@@ -24,6 +24,7 @@
         <li id="menuitem-solutions" class="dropdown">
           <!-- To use dropdown hover plugin, use "data-hover="dropdown" data-animations="fadeIn" -->
           <a
+            id="solutions-link"
             href="solutions.html"            
             >SOLUTIONS <span class="caret"></span
           ></a>
@@ -38,7 +39,7 @@
           <a
             style="text-decoration: none;"
             href="#"    
-            onclick="return false;"        
+            onclick="return false;"
             >PRODUCTS <span class="caret"></span
           ></a>
           <ul class="dropdown-menu">
@@ -50,11 +51,12 @@
         <li id="menuitem-aboutus" class="dropdown">
           <!-- To use dropdown hover plugin, use "data-hover="dropdown" data-animations="fadeIn" -->
           <a
+            id="aboutus-link"
             href="about-us.html"
             >ABOUT US <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="about-us.html#company">COMPANY</a></li>
+            <li><a href="about-us.html">COMPANY</a></li>
             <li><a href="about-us.html#careers">CAREERS</a></li>
             <li><a href="technologies.html">TECHNOLOGIES</a></li>
           </ul>
@@ -78,4 +80,11 @@
       $(this).find(".dropdown-menu").stop(true, true).delay(10).fadeOut(200);
     }
   );
+  if ($(window).width() < 480 || $(window).height() < 480) {
+    //small screen, remove links for solutions and about us
+    $("#solutions-link").attr("href", "#");
+    $("#solutions-link").attr("onclick", "return false;");
+    $("#aboutus-link").attr("href", "#");
+    $("#aboutus-link").attr("onclick", "return false;");
+}
 </script>
