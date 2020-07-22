@@ -25,3 +25,9 @@ $('#audio-modal')
         var modal = $(this);
         modal.find('.modal-body .video-wrapper iframe').attr('src', '')
     });
+
+$('#video-carousel').bind('slide.bs.carousel', function (e) {
+  $( ".youtube-video" ).each(function() {
+    $(this)[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+  });
+}); 
