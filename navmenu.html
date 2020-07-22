@@ -24,6 +24,7 @@
         <li id="menuitem-solutions" class="dropdown">
           <!-- To use dropdown hover plugin, use "data-hover="dropdown" data-animations="fadeIn" -->
           <a
+            class="dropdown"
             id="solutions-link"
             href="solutions.html"            
             >SOLUTIONS <span class="caret"></span
@@ -37,6 +38,7 @@
         <li id="menuitem-products" class="dropdown">
           <!-- To use dropdown hover plugin, use "data-hover="dropdown" data-animations="fadeIn" -->
           <a
+            class="dropdown"
             style="text-decoration: none;"
             href="#"    
             onclick="return false;"
@@ -51,12 +53,13 @@
         <li id="menuitem-aboutus" class="dropdown">
           <!-- To use dropdown hover plugin, use "data-hover="dropdown" data-animations="fadeIn" -->
           <a
+            class="dropdown"
             id="aboutus-link"
             href="about-us.html"
             >ABOUT US <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="about-us.html">COMPANY</a></li>
+            <li><a href="about-us.html#title">COMPANY</a></li>
             <li><a href="about-us.html#careers">CAREERS</a></li>
             <li><a href="technologies.html">TECHNOLOGIES</a></li>
           </ul>
@@ -86,5 +89,10 @@
     $("#solutions-link").attr("onclick", "return false;");
     $("#aboutus-link").attr("href", "#");
     $("#aboutus-link").attr("onclick", "return false;");
-}
+  }
+  $(document).on('click','.navbar-collapse.in',function(e) {
+    if( $(e.target).is('a:not(".dropdown")') ) {
+        $(this).collapse('hide');
+    }
+});
 </script>
