@@ -71,59 +71,30 @@ function newWindow(url) {
             'titlebar=no',
             'toolbar=no'
         ].join(',');
-    return window.open(url, '_blank', specs, false);
-}
-
-function shortenUrl(url) {
-    return $.ajax({
-        type: 'POST',
-        contentType: 'application/json',
-        dataType: 'json',
-        url: 'https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyDCiqYCNPukOyDIRsQKWM-EdlhwhxT9XL8',
-        data: JSON.stringify({longUrl: url})
-    }).fail(function (jqXHR, textStatus, errorThrown) {
-        self.log('Error: ' + textStatus);
-        alert('There was an error shortening the link to be shared');
-    });
+    return window.open(url, '_blank', specs);
 }
 
 // Pass a url that contains "CURRENT_URL"
-// It will be replaced with a shortened version of the current url
-// The shareBtn will be modified to be on a loading status while the current_url is shortened
-// The shortened url is saved so it does not need to be recalculated
-var shortCurrentUrl;
-function newShareWindow(url, shareBtn) {
-    if (!shortCurrentUrl) {
-        btnsCircle.addClass('disabled');
-        var icon = shareBtn.find('.fa'),
-            iconClasses = icon.attr('class'),
-            popup = newWindow('');
-        icon.attr('class', 'fa fa-refresh spinning');
-        shortenUrl(currentUrl).done(function (data) {
-            shortCurrentUrl = encodeURIComponent(data.id);
-            popup.location = url.replace('CURRENT_URL', shortCurrentUrl);
-            icon.attr('class', iconClasses);
-            btnsCircle.removeClass('disabled');
-        });
-    } else newWindow(url.replace('CURRENT_URL', shortCurrentUrl));
+function newShareWindow(url) {
+    newWindow(url.replace('CURRENT_URL', currentUrl));
 }
 
 facebookBtn.click(function () {
-    var url = 'http://www.facebook.com/sharer.php?p[url]=CURRENT_URL';
-    newShareWindow(url, facebookBtn);
+    var url = "https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=CURRENT_URL&display=popup&ref=plugin&src=share_button"
+    newShareWindow(url);
 });
 
 twitterBtn.click(function () {
     var message = 'Check this out CURRENT_URL #voiceful_io #voctrolabs',
         url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(message);
-    newShareWindow(url, twitterBtn);
+    newShareWindow(url);
 });
 
 emailBtn.click(function () {
     var subject = 'Guess who it is',
-        message = 'Check this out CURRENT_URL';
+        message = 'Check this out:\n\nCURRENT_URL';
         url = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(message);
-    newShareWindow(url, emailBtn);
+    newShareWindow(url);
 });
 
 // ### Run on load ready

@@ -229,5 +229,5 @@ function voscale() {
 
 $('#share-btn').click(function () {
     var url = 'demo_voscale_share.html?audio_url=' + encodeURIComponent(shareAudioUrl);
-    window.open(url, '_self');
+    window.location.assign(url);
 });

@@ -154,7 +154,7 @@ class Buttons extends React.Component {
     const lyrics = encodeURIComponent(state.text);
     const shareAudioUrl = encodeURIComponent(this.props.shareAudioUrl);
     const url = `demo_vosyn_share.html?audio_url=${shareAudioUrl}&lyrics=${lyrics}`;
-    window.open(url, '_self');
+    window.location.assign(url);
   }
 
   render() {

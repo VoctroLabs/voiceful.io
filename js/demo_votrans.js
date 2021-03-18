@@ -263,5 +263,5 @@ function votrans() {
 
 $('#share-btn').click(function () {
     var url = 'demo_votrans_share.html?audio_url=' + encodeURIComponent(shareAudioUrl);
-    window.open(url, '_self');
+    window.location.assign(url);
 });
