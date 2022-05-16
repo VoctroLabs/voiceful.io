@@ -25,8 +25,8 @@ function SynthWidget()
   };
 
   this.audio_srcs = [];
-  this.audio_srcs[0] = "https://s3-eu-west-1.amazonaws.com/media.voctrolabs/vocloud/vomix_tasks/66cd6069-9e40-4328-afaa-715330a8aa90/outputs/original/output.mp3";
-  this.audio_srcs[1] = "https://s3-eu-west-1.amazonaws.com/media.voctrolabs/vocloud/vomix_tasks/e072b121-2bd6-430c-9289-3853dfd6eac4/outputs/original/output.mp3";
+  this.audio_srcs[0] = "https://s3-eu-west-1.amazonaws.com/media.voctrolabs/vocloud/vomix_tasks/2315b53d-3b9f-4683-92ab-973a662e00e2/outputs/original/output.mp3";
+  this.audio_srcs[1] = "https://s3-eu-west-1.amazonaws.com/media.voctrolabs/vocloud/vomix_tasks/cdcb62a2-9720-43b7-b1d5-1da373d4ac77/outputs/original/output.mp3";
 
   this.init=function()
   {
@@ -54,8 +54,8 @@ function SynthWidget()
     this.phrase_status[2] = 'default';
 
     //Init audio default URLs
-    this.audio_srcs[0] = "https://s3-eu-west-1.amazonaws.com/media.voctrolabs/vocloud/vomix_tasks/66cd6069-9e40-4328-afaa-715330a8aa90/outputs/original/output.mp3";
-    this.audio_srcs[1] = "https://s3-eu-west-1.amazonaws.com/media.voctrolabs/vocloud/vomix_tasks/e072b121-2bd6-430c-9289-3853dfd6eac4/outputs/original/output.mp3";
+    this.audio_srcs[0] = "https://s3-eu-west-1.amazonaws.com/media.voctrolabs/vocloud/vomix_tasks/2315b53d-3b9f-4683-92ab-973a662e00e2/outputs/original/output.mp3";
+    this.audio_srcs[1] = "https://s3-eu-west-1.amazonaws.com/media.voctrolabs/vocloud/vomix_tasks/cdcb62a2-9720-43b7-b1d5-1da373d4ac77/outputs/original/output.mp3";
 
     this.elements.help.innerHTML='Click on the text box to change the lyrics.';
 
@@ -357,11 +357,11 @@ function SynthWidget()
       if (synthwidget.songID == 0)
       {
         vosynPreset = 'happybirthday_excerpt';
-        vomixPreset = 'happybirthday_mix2';
+        vomixPreset = 'happybirthday_mix2_maika';
 
         vosynParams = {
           preset_name: vosynPreset,
-          voice: "ayesha",
+          voice: "maika",
           input_text_upload_parts: 1
         };
 
@@ -378,7 +378,7 @@ function SynthWidget()
       else
       {
         vosynPreset = 'let_it_go_excerpt';
-        vomixPreset = 'let_it_go_mix2';
+        vomixPreset = 'let_it_go_mix2_ayesha';
 
         vosynParams = {
           preset_name: vosynPreset,
@@ -398,7 +398,7 @@ function SynthWidget()
 
       }
 
-      const vosynTask = new VocloudTask('vosyn');
+      const vosynTask = new VocloudTask('vosyn2');
       vosynTask.process(vosynParams, vosynUploads).done(function () 
       {
         if (vosynTask.status != "finished")
