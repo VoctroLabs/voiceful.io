@@ -1,49 +1,268 @@
-<div class="col-xs-12">
-  <h2>CONTACT US</h2>
-</div>
-<div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
-  <p>
-    Please send us a message to get a quote for your projects or to explore
-    options for collaboration.
-  </p>
-  <form action="https://formspree.io/info@voctrolabs.com" method="POST">
-    <div class="form-group">
-      <input name="name" type="text" class="form-control" placeholder="Name" />
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9454JZDE6N"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-9454JZDE6N');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voiceful Modal Redirect</title>
+    <style>
+      @font-face {
+        font-family: 'Replicalltt webfont';
+        src: url('https://uploads-ssl.webflow.com/621dae3ca310b354c76e0abd/62f0e6972f2108b934403428_replicalltt-regular-webfont.woff2')
+          format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Replicalltt webfont';
+        src: url('https://uploads-ssl.webflow.com/621dae3ca310b354c76e0abd/62f0e6981ea8fa9481afc823_replicalltt-bold-webfont.woff2')
+          format('woff2');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: 'Replicalltt webfont', sans-serif;
+      }
+      .overlay-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 32px 24px;
+        background-color: hsla(0, 0%, 0%, 0.35);
+        z-index: 9999;
+      }
+      .overlay {
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        height: 512px;
+        padding: 48px;
+        background-color: #fff;
+        border-radius: 10px;
+        background-color: #282a33;
+        color: #ffffff;
+      }
+      .overlay-content {
+        position: relative;
+        z-index: 1;
+      }
+      .logo-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .text-wrapper {
+        margin-bottom: 32px;
+        margin-top: 20px;
+        max-width: 380px;
+      }
+      .text-wrapper h1 {
+        margin: 0 0 16px 0;
+        font-size: 3rem;
+      }
+      .text-wrapper p {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+      .modal-img-wrapper {
+        position: absolute;
+        bottom: -4px;
+        right: 0;
+      }
+      .close-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 24px;
+        cursor: pointer;
+      }
+      .hide-modal {
+        display: none;
+      }
+      .link-wrapper {
+        display: flex;
+      }
+      .link-button {
+        position: relative;
+        overflow: hidden;
+        padding-top: 1rem;
+        padding-right: 2.5rem;
+        padding-bottom: 1rem;
+        padding-left: 2.5rem;
+        border-top-left-radius: 8rem;
+        border-top-right-radius: 8rem;
+        border-bottom-left-radius: 8rem;
+        border-bottom-right-radius: 8rem;
+        background-color: hsla(177.88235294117646, 100%, 50%, 1);
+        color: hsla(0, 0%, 3.14%, 1);
+        text-decoration: none;
+      }
+      .link-button .button--calypso {
+        grid-auto-columns: 1fr;
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+      }
+      /* CTA/button animation*/
+      .link-button {
+        pointer-events: auto;
+        border: none;
+        margin: 0rem;
+      }
+      .link-button::before,
+      .link-button::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .button--calypso {
+        overflow: hidden;
+        border-radius: 8rem;
+        color: #080808;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+      }
+      .button--calypso:hover .button-text {
+        animation: MoveScaleUpInitial 0.25s, MoveScaleUpEnd 0.25s 0.25s;
+      }
+      @keyframes MoveScaleUpInitial {
+        to {
+          transform: translate3d(0, -105%, 0) scale3d(1, 1, 1);
+          opacity: 0;
+        }
+      }
+      @keyframes MoveScaleUpEnd {
+        from {
+          transform: translate3d(0, 100%, 0) scale3d(1, 1, 1);
+          opacity: 0;
+        }
+        to {
+          transform: translate3d(0, 0, 0);
+          opacity: 1;
+        }
+      }
+      .button--calypso::before {
+        content: '';
+        background: #e6fffe;
+        width: 120%;
+        height: 0;
+        padding-bottom: 120%;
+        top: -110%;
+        left: -10%;
+        border-radius: 50%;
+        transform: translate3d(0, 68%, 0) scale3d(0, 0, 0);
+      }
+      .button--calypso:hover::before {
+        transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+        transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+      }
+      .button--calypso::after {
+        content: '';
+        background: #e6fffe;
+        transform: translate3d(0, -100%, 0);
+        transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+      }
+      .button--calypso:hover::after {
+        transform: translate3d(0, 0, 0);
+        transition-duration: 0.05s;
+        transition-delay: 0.4s;
+        transition-timing-function: linear;
+      }
+      .button-text {
+        position: relative;
+        z-index: 10;
+        font-size: 14px;
+      }
+      @media screen and (max-width: 425px) {
+        .overlay {
+          padding: 24px;
+        }
+        .text-wrapper h1 {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="overlay-wrapper">
+      <div class="overlay">
+        <div class="modal-img-wrapper">
+          <img src="images/modal-image.png" alt="modal images" width="209" />
+        </div>
+        <div class="close-btn">
+          <img src="images/close-btn.png" alt="modal images" width="24" />
+        </div>
+        <div class="overlay-content">
+          <div class="logo-wrapper">
+            <img
+              src="images/voiceful-logo.png"
+              alt="Voiceful logo"
+              width="85.98" />
+            <img
+              src="images/arrow_left.png"
+              alt="right arrow icon"
+              width="14" />
+            <img
+              src="images/voicemod-logo.png"
+              alt="Voicemod logo"
+              width="94.66" />
+          </div>
+          <div class="text-wrapper">
+            <h1>Redirecting!</h1>
+            <p>
+              Attention: The Voiceful website is no longer active. We are
+              redirecting you to Voicemod's website.
+            </p>
+          </div>
+          <div class="link-wrapper">
+            <a
+              class="link-button button--calypso"
+              href="https://www.voicemod.net/developers/"
+              ><div class="button-text">Let’s go!</div></a
+            >
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="form-group">
-      <input
-        name="email"
-        type="email"
-        class="form-control"
-        placeholder="Email"
-      />
-    </div>
-    <div class="form-group">
-      <textarea
-        name="briefing"
-        class="form-control"
-        rows="3"
-        placeholder="Briefing"
-      ></textarea>
-    </div>
-    <input type="hidden" name="_subject" value="Voiceful.io contact" />
-    <button id="send" type="submit" class="btn btn-danger pull-right">
-      SEND
-    </button>
-  </form>
-  <div class="clearfix"></div>
-  <div class="row contact-boxes">
-    <div class="col-xs-12 col-sm-4 contact-box">
-      <img src="img/contact1.png" />
-      <p>info@voctrolabs.com</p>
-    </div>
-    <div class="col-xs-12 col-sm-4 contact-box">
-      <img src="img/contact2.png" />
-      <p>C/ Pujades 74-80<br />08005, Barcelona</p>
-    </div>
-    <div class="col-xs-12 col-sm-4 contact-box">
-      <img src="img/contact3.png" />
-      <p>+34 931 587 637</p>
-    </div>
-  </div>
-</div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"></script>
+    <script>
+      $('.close-btn').on('click', function () {
+        $('.overlay-wrapper').addClass('hide-modal');
+      });
+    </script>
+  </body>
+</html>
